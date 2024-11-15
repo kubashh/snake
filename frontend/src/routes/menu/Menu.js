@@ -1,41 +1,5 @@
 import { useState } from "react"
-
-const TextInput = ({text, input, setValue}) => {
-  return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "row",
-        margin: "24 auto 0 auto"
-      }}
-    >
-      <div
-        style={{
-          marginRight: 16,
-          height: 32,
-          width: 256
-        }}
-      >
-        {text}
-      </div>
-      <input
-        style={{
-          margin: 0,
-          border: 0,
-          padding: 0,
-          height: 32,
-          width: 128
-        }}
-        type={input.type}
-        value={input.value}
-        placeholder={input.placeholder}
-        onChange={(e) => {
-          setValue(e.target.value)
-        }}
-      />
-    </div>
-  )
-}
+import { TextInput } from "./TextInput"
 
 export const Menu = () => {
   const [nick, setNick] = useState(global.data.user.nick)
