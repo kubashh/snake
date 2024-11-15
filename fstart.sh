@@ -1,4 +1,4 @@
 clear
 
 cd frontend
-npm run deploy
+npm run deploy -- -m "u"
