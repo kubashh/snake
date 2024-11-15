@@ -1,12 +1,4 @@
-import { useState } from "react"
-
 export const UI = () => {
-  const [c, setC] = useState(false)
-  
-  global.data.socket.on(`connect`, () => {
-    setC(true)
-  })
-
   return (
     <div
       style={{
