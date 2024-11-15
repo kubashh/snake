@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { TextInput } from "./TextInput"
+import { UI } from "./UI"
 
 export const Menu = () => {
   const [nick, setNick] = useState(global.data.user.nick)
@@ -7,9 +8,7 @@ export const Menu = () => {
 
   return (
     <div>
-      <div>
-        {global.data.socket.connected ? <div>connected</div> : <div style={{color: "red"}}>not connected</div>}
-      </div>
+      <UI />
       <div
         style={{
           display: "flex",
@@ -51,6 +50,8 @@ export const Menu = () => {
           }}
           value="Start Game"
           onClick={() => {
+            global.data.user.nick = nick
+            global.data.user.color = color
             alert(`Start game`)
           }}
         />

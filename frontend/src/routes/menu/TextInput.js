@@ -26,7 +26,7 @@ export const TextInput = ({text, input, setValue}) => {
           padding: padding,
           height: 48,
           width: 196,
-          borderRadius: 16,
+          borderRadius: 32,
           fontSize: 24
         }}
         type={input.type}
