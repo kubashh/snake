@@ -1,5 +1,5 @@
-import "../setCss"
-import { setUpSocket } from "./socket"
+import "./setCss"
+import { setUpSocket } from "../socket"
 
 const setUp = () => {
   if(!global.data) {
