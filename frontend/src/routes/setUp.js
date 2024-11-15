@@ -23,7 +23,7 @@ export const setUp = () => {
 
   global.data.socket = connect(address)
 
-  global.data.socket.on(`connection`, () => {
+  global.data.socket.on(`conection`, () => {
     alert(`conected!`)
   })
 
