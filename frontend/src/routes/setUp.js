@@ -1,8 +1,10 @@
+import io from "socket.io-client"
+
 const serverPath = "verbose-succotash-69gq79965wq6fwgx.github.dev"
 const address = `ws://${serverPath}:4000`
 
 const setUpSocket = () => {
-  let socket = null
+  let socket = io.connect(address)
 
   const connectWebSocket = () => {
     //socket = new WebSocket(address, [])
