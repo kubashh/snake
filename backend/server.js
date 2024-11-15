@@ -5,5 +5,5 @@ const port = 4000
 const app = express()
 
 app.listen(port, () => {
-  `Snake listening on port ${port}...`
+  console.log(`Snake listening on port ${port}...`)
 })

@@ -1,2 +1,2 @@
 cd backend
-npm run
+node server.js

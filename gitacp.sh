@@ -1,3 +1,3 @@
 git add .
-git commit -m "Add gitacp"
+git commit -m $1
 git push

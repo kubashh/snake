@@ -1,7 +1,12 @@
+import { Game } from "./routes/Game"
+import { Menu } from "./routes/Menu"
+
 export const App = () => {
+  let inGame = false
+
   return (
-    <h1>
-      Snake
-    </h1>
+    <div>
+      {inGame ? <Game /> : <Menu />}
+    </div>
   )
 }
