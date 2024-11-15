@@ -1,4 +1,11 @@
-export const UI = () => {
+import { useState } from "react"
+
+export const UI = (connected = false) => {
+  const [connected, setConnected] = useState(global.data.user.connected)
+  if(connected) {
+    setConnected(true)
+  }
+
   return (
     <div
       style={{
