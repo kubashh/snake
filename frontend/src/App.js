@@ -7,7 +7,7 @@ export const App = () => {
 
   return (
     <div>
-      {global.data.connected ? <Game /> : <Menu />}
+      {global.data.inGame ? <Game /> : <Menu />}
     </div>
   )
 }

@@ -34,14 +34,13 @@ export const Menu = () => {
   console.log(global)
   const [user, serUser] = useState(global.data.user)
 
-  let connected = false
   let lastNick = "Your nick"
   let lastColor = "red"
 
   return (
     <div>
       <div>
-        {connected ? <div>connected</div> : <div style={{color: "red"}}>not connected</div>}
+        {global.data.socket.connected ? <div>connected</div> : <div style={{color: "red"}}>not connected</div>}
       </div>
       <div
         style={{
