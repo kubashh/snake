@@ -9,7 +9,7 @@ const corsOptions = {
   origin: "*"
 }
 
-const app = express(cors())
+const app = express(cors(corsOptions))
 
 const server = createServer(app)
 
