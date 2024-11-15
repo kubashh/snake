@@ -17,6 +17,11 @@ const TextInput = ({text, input}) => {
         {text}
       </div>
       <input
+        style={{
+          margin: 0,
+          border: 0,
+          padding: 0
+        }}
         type={input.type}
         value={input.value}
         placeholder={input.placeholder}
@@ -42,6 +47,7 @@ export const Menu = () => {
         style={{
           display: "flex",
           flexDirection: "column",
+          alignSelf: "center",
           marginTop: 100
         }}
       >
