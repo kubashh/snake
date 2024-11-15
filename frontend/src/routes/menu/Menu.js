@@ -7,7 +7,7 @@ export const Menu = ({ setState }) => {
   const [color, setColor] = useState(global.data.user.color)
 
   return (
-    <div>
+    <>
       <UI />
       <div
         style={{
@@ -61,6 +61,6 @@ export const Menu = ({ setState }) => {
           }}
         />
       </div>
-    </div>
+    </>
   )
 }
