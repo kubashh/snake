@@ -4,3 +4,8 @@
 
 # production
 /frontend/build
+
+# scripts
+/bstart.sh
+/fstart.sh
+/gitacp.sh
