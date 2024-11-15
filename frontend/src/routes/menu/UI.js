@@ -1,10 +1,10 @@
 import { useState } from "react"
 
 export const UI = () => {
-  const [connected, setConnected] = useState(global.data.socket.connected | false)
+  const [c, setC] = useState(false)
   
   global.data.socket.on(`connect`, () => {
-    setConnected(true)
+    setC(true)
   })
 
   return (
@@ -16,7 +16,7 @@ export const UI = () => {
       }}
     >
       <div>
-        {connected ? <div>connected</div> : <div style={{color: "red"}}>not connected</div>}
+        {global.data.socket.connected ? <div>connected</div> : <div style={{color: "red"}}>not connected</div>}
       </div>
     </div>
   )
