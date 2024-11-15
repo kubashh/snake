@@ -1,5 +1,7 @@
 export const Menu = () => {
   let connected = false
+  let lastNick = "Your nick"
+  let lastColor = "red"
 
   return (
     <div>
@@ -14,6 +16,25 @@ export const Menu = () => {
         }}
       >
         <h1>Menu</h1>
+        <div>
+          <div>
+            Name
+          </div>
+          <input
+            type="text"
+            value={lastNick}
+            placeholder="Your nick"
+          />
+        </div>
+        <div>
+          <div>
+            Color
+          </div>
+          <input
+            type="color"
+            value={lastColor}
+          />
+        </div>
       </div>
     </div>
   )
