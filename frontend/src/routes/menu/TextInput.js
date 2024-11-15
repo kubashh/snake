@@ -1,4 +1,6 @@
 export const TextInput = ({text, input, setValue}) => {
+  const padding = input.type == `text` ? "4px 12px" : 0
+
   return (
     <div
       style={{
@@ -21,7 +23,7 @@ export const TextInput = ({text, input, setValue}) => {
         style={{
           margin: 0,
           border: 0,
-          padding: "4px 12px",
+          padding: padding,
           height: 48,
           width: 196,
           borderRadius: 16,

@@ -46,7 +46,8 @@ export const Menu = () => {
             marginTop: 12,
             border: 0,
             borderRadius: 8,
-            height: 16
+            height: 48,
+            fontSize: 32
           }}
           value="Start Game"
           onClick={() => {
