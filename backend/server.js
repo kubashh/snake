@@ -15,7 +15,7 @@ const server = createServer(app)
 
 const io = new Server(server,{
   cors: {
-    origin: "*",
+    origin: "https://kubashh.github.io/snake",
     methods: ["GET", "POST"]
   }
 })
