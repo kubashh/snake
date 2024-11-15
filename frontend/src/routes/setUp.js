@@ -1,4 +1,16 @@
 const serverPath = "verbose-succotash-69gq79965wq6fwgx.github.dev"
+const address = `ws://${serverPath}:4000`
+
+const setUpSocket = () => {
+  let socket = null
+
+  const connectWebSocket = () => {
+    socket = new WebSocket(address)
+  }
+
+  connectWebSocket()
+  //global.data.socket = new WebSocket(`ws://${serverPath}:4000`)
+}
 
 export const setUp = () => {
   if(!global.data) {
@@ -18,9 +30,5 @@ export const setUp = () => {
     }
   }
 
-  //global.data.socket = new WebSocket(`ws://${serverPath}:4000`)
-
-  /*global.data.socket.on(`connection`, () => {
-    alert(`connected!`)
-  })*/
+  setUpSocket()
 }
