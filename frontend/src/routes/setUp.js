@@ -1,4 +1,4 @@
-import "./setCss"
+import "../setCss"
 import { setUpSocket } from "./socket"
 
 const setUp = () => {
