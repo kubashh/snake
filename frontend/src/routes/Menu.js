@@ -1,3 +1,5 @@
+import { useState } from "react"
+
 const TextInput = ({text, input}) => {
   return (
     <div
