@@ -47,7 +47,8 @@ export const Menu = () => {
           display: "flex",
           flexDirection: "column",
           alignSelf: "center",
-          marginTop: 100
+          marginTop: 100,
+          width: 400
         }}
       >
         <h1>Menu</h1>
@@ -70,6 +71,9 @@ export const Menu = () => {
         />
         <input
           type="button"
+          style={{
+            margin: "10 50"
+          }}
           value="Start Game"
           onClick={() => {
             alert(`Start game`)
