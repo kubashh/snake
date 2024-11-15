@@ -11,7 +11,9 @@ const TextInput = ({text, input, setValue}) => {
     >
       <div
         style={{
-          marginRight: 16
+          marginRight: 16,
+          height: 32,
+          width: 256
         }}
       >
         {text}
@@ -20,7 +22,9 @@ const TextInput = ({text, input, setValue}) => {
         style={{
           margin: 0,
           border: 0,
-          padding: 0
+          padding: 0,
+          height: 32,
+          width: 128
         }}
         type={input.type}
         value={input.value}
@@ -48,7 +52,10 @@ export const Menu = () => {
           flexDirection: "column",
           alignSelf: "center",
           margin: "100px auto 0 auto",
-          width: 400
+          width: 400,
+          padding: 32,
+          backgroundColor: "#333",
+          borderRadius: 16
         }}
       >
         <h1>Menu</h1>
@@ -72,7 +79,7 @@ export const Menu = () => {
         <input
           type="button"
           style={{
-            margin: "10px 50px"
+            marginTop: 12
           }}
           value="Start Game"
           onClick={() => {
