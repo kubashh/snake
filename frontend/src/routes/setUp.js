@@ -26,4 +26,6 @@ export const setUp = () => {
   global.data.socket.on(`connection`, () => {
     alert(`conected!`)
   })
+
+  alert(socket.connection)
 }
