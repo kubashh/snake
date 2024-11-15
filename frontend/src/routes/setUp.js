@@ -4,9 +4,9 @@ import io from "socket.io-client"
 const address = "https://verbose-succotash-69gq79965wq6fwgx-4000.app.github.dev" //`ws://${serverPath}:4000`
 
 const setUpSocket = () => {
-  let socket = io.connect(address)
+  global.data.socket = io.connect(address)
 
-  console.log(socket)
+  console.log(global.data.socket)
 
   const connectWebSocket = () => {
     //socket = new WebSocket(address, [])
