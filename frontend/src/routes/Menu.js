@@ -11,7 +11,7 @@ export const Menu = () => {
       <div
         style={{
           display: "flex",
-          alignItems: "center",
+          flexDirection: "column",
           marginTop: 100
         }}
       >
