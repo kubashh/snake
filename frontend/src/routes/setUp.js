@@ -1,6 +1,7 @@
+import "./setCss"
 import { setUpSocket } from "./socket"
 
-export const setUp = () => {
+const setUp = () => {
   if(!global.data) {
     global.data = {}
   }
@@ -21,3 +22,5 @@ export const setUp = () => {
 
   setUpSocket()
 }
+
+setUp()
