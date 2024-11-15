@@ -6,10 +6,10 @@ export const App = () => {
   const[state, setState] = useState(false);
 
   return (
-    <div>
+    <>
       {global.data.inGame ? <Game /> : <Menu
         setState={setState}
       />}
-    </div>
+    </>
   )
 }

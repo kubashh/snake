@@ -8,8 +8,6 @@ export const Game = () => {
   />
 
   return (
-    <div>
-      {gameCanvas}
-    </div>
+    gameCanvas
   )
 }
