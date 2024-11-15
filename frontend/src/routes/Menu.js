@@ -6,7 +6,15 @@ export const Menu = () => {
       <div>
         {connected ? <div>connected</div> : <div style={{color: "red"}}>not connected</div>}
       </div>
-      <h1>Menu</h1>
+      <div
+        style={{
+          display: "flex",
+          justyfyContent: "center",
+          marginTop: 100
+        }}
+      >
+        <h1>Menu</h1>
+      </div>
     </div>
   )
 }
