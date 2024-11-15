@@ -1,3 +1,5 @@
+import "./index.css"
+
 // body
 document.body.style = {
   margin: 0,
