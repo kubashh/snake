@@ -6,7 +6,6 @@ export const setUpSocket = () => {
   global.data.socket = connect(address)
 
   global.data.socket.on(`connect`, () => {
-    window.location.reload(false)
     alert(`connected!`)
   })
 }
