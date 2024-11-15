@@ -54,7 +54,6 @@ export const Menu = ({ setState }) => {
             global.data.user.color = color
             if(global.data.socket.connected) {
               global.data.inGame = true
-              alert(`Start game`)
               setState(true)
             } else {
               alert(`Connection lost`)
