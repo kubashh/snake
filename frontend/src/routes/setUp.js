@@ -18,9 +18,9 @@ export const setUp = () => {
     }
   }
 
-  global.data.socket = new WebSocket(`ws://${serverPath}:4000`)
+  //global.data.socket = new WebSocket(`ws://${serverPath}:4000`)
 
-  global.data.socket.on(`connection`, () => {
+  /*global.data.socket.on(`connection`, () => {
     alert(`connected!`)
-  })
+  })*/
 }
