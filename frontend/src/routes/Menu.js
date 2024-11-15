@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const TextInput = ({text, input}) => {
+const TextInput = ({text, input, setValue}) => {
   return (
     <div
       style={{
@@ -25,17 +25,17 @@ const TextInput = ({text, input}) => {
         type={input.type}
         value={input.value}
         placeholder={input.placeholder}
+        onChange={(e) => {
+          setValue(e.target.value)
+        }}
       />
     </div>
   )
 }
 
 export const Menu = () => {
-  console.log(global)
-  const [user, serUser] = useState(global.data.user)
-
-  let lastNick = "Your nick"
-  let lastColor = "red"
+  const [nick, setNick] = useState(global.data.user.nick)
+  const [color, setColor] = useState(global.data.user.color)
 
   return (
     <div>
@@ -55,15 +55,24 @@ export const Menu = () => {
           text="Nick"
           input={{
             type: "text",
-            value: lastNick,
+            value: nick,
             placeholder: "Your nick"
           }}
+          setValue={setNick}
         />
         <TextInput
           text="color"
           input={{
             type: "color",
-            value: lastColor
+            value: color
+          }}
+          setValue={setColor}
+        />
+        <input
+          type="button"
+          value="Start Game"
+          onClick={() => {
+            alert(`Start game`)
           }}
         />
       </div>
