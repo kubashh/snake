@@ -5,11 +5,11 @@ import { Server } from "socket.io"
 
 const port = 4000
 
-/*const corsOptions = {
+const corsOptions = {
   origin: "*"
-}*/
+}
 
-const app = express(cors())
+const app = express(cors(corsOptions))
 
 const server = createServer(app)
 
