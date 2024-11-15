@@ -26,6 +26,7 @@ const TextInput = ({text, input}) => {
 }
 
 export const Menu = () => {
+  console.log(global)
   const [user, serUser] = useState(global.data.user)
 
   let connected = false
