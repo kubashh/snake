@@ -9,7 +9,7 @@ export const Menu = () => {
       <div
         style={{
           display: "flex",
-          justyfyContent: "center",
+          alignItems: "center",
           marginTop: 100
         }}
       >
