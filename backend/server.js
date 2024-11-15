@@ -15,7 +15,7 @@ const server = createServer(app)
 
 const io = new Server(server,{
   cors: {
-    origin: ["https://verbose-succotash-69gq79965wq6fwgx-4000.app.github.dev", "https://kubashh.github.io/snake"],
+    origin: "*",
     methods: ["GET", "POST"]
   }
 })
