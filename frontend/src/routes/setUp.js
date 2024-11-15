@@ -1,4 +1,4 @@
-import io from "socket.io-client"
+import { connect } from "socket.io-client"
 
 const address = "https://verbose-succotash-69gq79965wq6fwgx-4000.app.github.dev"
 
@@ -21,7 +21,7 @@ export const setUp = () => {
     }
   }
 
-  global.data.socket = io.connect(address)
+  global.data.socket = connect(address)
 
   global.data.socket.on(`connection`, () => {
     alert(`conected!`)
