@@ -6,7 +6,7 @@ const TextInput = ({text, input}) => {
       style={{
         display: "flex",
         flexDirection: "row",
-        marginTop: 24
+        margin: "24 auto 0 auto"
       }}
     >
       <div

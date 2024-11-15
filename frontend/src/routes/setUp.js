@@ -8,11 +8,10 @@ const setUpSocket = () => {
 
   console.log(global.data.socket)
 
-  const connectWebSocket = () => {
-    //socket = new WebSocket(address, [])
-  }
+  global.data.socket.on(`connection`, () => {
+    alert(`conected!`)
+  })
 
-  connectWebSocket()
   //global.data.socket = new WebSocket(`ws://${serverPath}:4000`)
 }
 
