@@ -5,7 +5,7 @@ const setUpSocket = () => {
   let socket = null
 
   const connectWebSocket = () => {
-    socket = new WebSocket(address)
+    socket = new WebSocket(address, [])
   }
 
   connectWebSocket()
