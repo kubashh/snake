@@ -43,7 +43,10 @@ export const Menu = () => {
         <input
           type="button"
           style={{
-            marginTop: 12
+            marginTop: 12,
+            border: 0,
+            borderRadius: 8,
+            height: 16
           }}
           value="Start Game"
           onClick={() => {

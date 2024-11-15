@@ -11,7 +11,8 @@ export const TextInput = ({text, input, setValue}) => {
         style={{
           marginRight: 16,
           height: 48,
-          width: 256
+          width: 196,
+          fontSize: 32
         }}
       >
         {text}
@@ -22,7 +23,9 @@ export const TextInput = ({text, input, setValue}) => {
           border: 0,
           padding: 0,
           height: 48,
-          width: 128
+          width: 196,
+          borderRadius: 16,
+          fontSize: 32
         }}
         type={input.type}
         value={input.value}
