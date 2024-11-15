@@ -6,7 +6,7 @@ import { Server } from "socket.io"
 const port = 4000
 
 const corsOptions = {
-  origin: "*"
+  origin: "https://kubashh.github.io/snake"
 }
 
 const app = express(cors(corsOptions))
