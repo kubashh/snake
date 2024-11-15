@@ -1,7 +1,6 @@
 import io from "socket.io-client"
 
-//const serverPath = "verbose-succotash-69gq79965wq6fwgx.github.dev"
-const address = "https://verbose-succotash-69gq79965wq6fwgx-4000.app.github.dev" //`ws://${serverPath}:4000`
+const address = "https://verbose-succotash-69gq79965wq6fwgx-4000.app.github.dev"
 
 const setUpSocket = () => {
   global.data.socket = io.connect(address)
@@ -11,8 +10,6 @@ const setUpSocket = () => {
   global.data.socket.on(`connection`, () => {
     alert(`conected!`)
   })
-
-  //global.data.socket = new WebSocket(`ws://${serverPath}:4000`)
 }
 
 export const setUp = () => {
