@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 export const UI = () => {
-  const [connected, setConnected] = useState(global.data.socket.connected)
+  const [connected, setConnected] = useState(global.data.socket.connected | false)
   
   global.data.socket.on(`connect`, () => {
     setConnected(true)
