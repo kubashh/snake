@@ -5,6 +5,10 @@ import { Server } from "socket.io"
 
 const port = 4000
 
+const corsOptions = {
+  origin: "*"
+}
+
 const app = express(cors())
 
 const server = createServer(app)
