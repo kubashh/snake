@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.8b7535c4.css","mappings":"AAAA,yCACE,qBAAuB,CACvB,UACF,CAEA,YACE,cACF","sources":["index.css"],"sourcesContent":["body, input[type=\"text\"], input[type=\"button\"] {\n  background-color: black;\n  color: white;\n}\n\ninput:hover {\n  cursor: pointer;\n}"],"names":[],"sourceRoot":""}
