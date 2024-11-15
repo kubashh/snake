@@ -5,13 +5,17 @@ import { Server } from "socket.io"
 
 const port = 4000
 
+/*const corsOptions = {
+  origin: "*"
+}*/
+
 const app = express(cors())
 
 const server = createServer(app)
 
 const io = new Server(server,{
   cors: {
-    orygin: "https://verbose-succotash-69gq79965wq6fwgx.github.dev:4000",
+    origin: "*",
     methods: ["GET", "POST"]
   }
 })
