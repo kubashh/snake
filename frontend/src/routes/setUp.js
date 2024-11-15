@@ -6,6 +6,8 @@ const address = "https://verbose-succotash-69gq79965wq6fwgx-4000.app.github.dev"
 const setUpSocket = () => {
   let socket = io.connect(address)
 
+  console.log(socket)
+
   const connectWebSocket = () => {
     //socket = new WebSocket(address, [])
   }
