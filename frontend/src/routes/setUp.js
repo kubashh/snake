@@ -19,6 +19,7 @@ export const setUp = () => {
 
   if(global.data.setUp) {
     alert(`Code again`)
+    return
   } else {
     global.data.setUp = true
   }
