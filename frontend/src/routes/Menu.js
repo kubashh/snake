@@ -4,7 +4,7 @@ const TextInput = ({text, input}) => {
       style={{
         display: "flex",
         flexDirection: "row",
-        marginTop: 100
+        marginTop: 24
       }}
     >
       <div
@@ -24,6 +24,8 @@ const TextInput = ({text, input}) => {
 }
 
 export const Menu = () => {
+  const [user, serUser] = useState(global.data.user)
+
   let connected = false
   let lastNick = "Your nick"
   let lastColor = "red"

@@ -1,12 +1,13 @@
 import { Game } from "./routes/Game"
 import { Menu } from "./routes/Menu"
+import { setUp } from "./routes/setUp"
 
 export const App = () => {
-  let inGame = false
+  setUp()
 
   return (
     <div>
-      {inGame ? <Game /> : <Menu />}
+      {global.data.connected ? <Game /> : <Menu />}
     </div>
   )
 }
