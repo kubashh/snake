@@ -12,7 +12,7 @@ export const TextInput = ({text, input, setValue}) => {
           marginRight: 16,
           height: 48,
           width: 196,
-          fontSize: 32
+          fontSize: 24
         }}
       >
         {text}
@@ -21,11 +21,11 @@ export const TextInput = ({text, input, setValue}) => {
         style={{
           margin: 0,
           border: 0,
-          padding: 0,
+          padding: "4px 12px",
           height: 48,
           width: 196,
           borderRadius: 16,
-          fontSize: 32
+          fontSize: 24
         }}
         type={input.type}
         value={input.value}

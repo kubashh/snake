@@ -16,7 +16,7 @@ export const Menu = () => {
           flexDirection: "column",
           alignSelf: "center",
           margin: "100px auto 0 auto",
-          width: 400,
+          width: 480,
           padding: 32,
           backgroundColor: "#333",
           borderRadius: 16
