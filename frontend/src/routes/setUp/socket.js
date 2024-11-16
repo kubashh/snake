@@ -14,6 +14,6 @@ export const setUpSocket = (setState) => {
   })
 
   global.data.socket.on(`disconnect`, () => {
-    setState(true)
+    setState(false)
   })
 }
