@@ -1,15 +1,15 @@
 import { Server } from "socket.io"
 
-const setSocket = ({ on, emit }) => {
-  on(`newSnake`, ({ nick, color }) => {
+const setSocket = (socket) => {
+  socket.on(`newSnake`, ({ nick, color }) => {
     console.log(nick, color)
 
-    emit(`newSnake`, { message: `message` })
+    socket.emit(`newSnake`, { message: `message` })
   })
 }
 
 export const io = (server) => {
-  const io = new Server(server,{
+  const io = new Server(server, {
     cors: {
       origin: "*",
       methods: ["GET", "POST"]
