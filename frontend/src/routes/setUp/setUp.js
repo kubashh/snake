@@ -18,6 +18,10 @@ const setUp = () => {
       color: "red"
     }
   }
+
+  if(!global.data.socket) {
+    global.data.socket = {}
+  }
 }
 
 setUp()
