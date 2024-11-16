@@ -1,5 +1,5 @@
 import { Server } from "socket.io"
-import { setSocket } from "./setSocket"
+import { setSocket } from "./setSocket.js"
 
 export const io = (server) => {
   const io = new Server(server, {
