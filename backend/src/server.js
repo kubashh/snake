@@ -1,4 +1,4 @@
-import express from "express"
+import express, { json } from "express"
 import cors from "cors"
 import { createServer } from "http"
 
@@ -7,5 +7,6 @@ const corsOptions = {
 }
 
 const app = express(cors(corsOptions))
+app.use(json())
 
 export const server = createServer(app)
