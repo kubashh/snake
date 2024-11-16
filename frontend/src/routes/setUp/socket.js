@@ -12,4 +12,8 @@ export const setUpSocket = (setState) => {
   global.data.socket.on(`connect`, () => {
     setState(true)
   })
+
+  global.data.socket.on(`disconnect`, () => {
+    setState(true)
+  })
 }
