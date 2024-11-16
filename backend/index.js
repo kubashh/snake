@@ -1,4 +1,4 @@
-import { server } from "./src/app.js"
+import { server } from "./src/server.js"
 import { io } from "./src/io.js"
 
 const port = 4000
