@@ -10,9 +10,9 @@ export const io = (server) => {
   
   io.on(`connection`, (socket) => {
     console.log(`User connected ${socket.id}`)
-  })
 
-  io.on(`newSnake`, ({ nick, color }) => {
-    console.log(nick, color)
+    socket.on(`newSnake`, ({ nick, color }) => {
+      console.log(nick, color)
+    })
   })
 }

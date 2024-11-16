@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { TextInput } from "./TextInput"
 import { UI } from "./UI"
+import { startGame } from "./startGame"
 
 export const Menu = ({ setState }) => {
   const [nick, setNick] = useState(global.data.user.nick)
@@ -53,8 +54,8 @@ export const Menu = ({ setState }) => {
             global.data.user.nick = nick
             global.data.user.color = color
             if(global.data.socket.connected) {
-              global.data.inGame = true
-              setState("g")
+              // Start game
+              socket.emit(`newSnake`, { nick, color })
             } else {
               alert(`Connection lost`)
             }
