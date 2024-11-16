@@ -10,10 +10,10 @@ export const setUpSocket = (setState) => {
   global.data.socket = connect(address)
 
   global.data.socket.on(`connect`, () => {
-    setState(true)
+    setState("1")
   })
 
   global.data.socket.on(`disconnect`, () => {
-    setState(false)
+    setState("0")
   })
 }
