@@ -16,4 +16,8 @@ export const setUpSocket = (setState) => {
   global.data.socket.on(`disconnect`, () => {
     setState("0")
   })
+
+  global.data.socket.on(`newSnake`, ({ message }) => {
+    console.log(message)
+  })
 }
