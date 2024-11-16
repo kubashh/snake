@@ -1,13 +1,28 @@
-const snakes = []
+const randInt = (min, max) => {
+  return Math.floor(Math.random() * (max - min) + min)
+}
 
-class Snake {
-  constructor(nick, color) {
-    this.nick = nick
-    this.color = color
+const boardSize = 20
 
-    snakes.push(this)
+const createEmptyBoard = () => {
+  const array = []
+
+  for(let i = 0; i < boardSize; i++) {
+    const array2 = []
+    for(let j = 0; j < boardSize; j++) {
+      array2.push("#000000")
+    }
+
+    array.push(array2)
   }
 
+  return array
+}
+
+const snakes = []
+const board = createEmptyBoard()
+
+class Snake {
   static isFree(nick, color) {
     if(!nick || !color) {
       return {
@@ -16,6 +31,9 @@ class Snake {
     }
 
     // Check nick
+    console.log(snakes.find((snake) => {
+      return snake.nick === nick
+    }))
     if(false) {
       return {
         message: `Choose other nick`
@@ -31,6 +49,30 @@ class Snake {
 
     return {
       success: true
+    }
+  }
+
+  constructor(nick, color) {
+    this.nick = nick
+    this.color = color
+    this.direction = 0
+    const random = randInt
+    this.body = [{}]
+
+    snakes.push(this)
+  }
+
+  head() {
+    return this.body[this.body.length - 1]
+  }
+
+  move() {
+    let newHead = this.head()
+
+    switch(this.direction) {
+      case 0:
+        newHead.x
+        break
     }
   }
 }
