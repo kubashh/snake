@@ -1,5 +1,4 @@
 import "./setCss"
-import { setUpSocket } from "../socket"
 
 const setUp = () => {
   if(!global.data) {
@@ -19,8 +18,6 @@ const setUp = () => {
       color: "red"
     }
   }
-
-  setUpSocket()
 }
 
 setUp()
