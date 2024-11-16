@@ -13,6 +13,8 @@ export const io = (server) => {
 
     socket.on(`newSnake`, ({ nick, color }) => {
       console.log(nick, color)
+
+      socket.emit(`newSnake`, { message: `message` })
     })
   })
 }
