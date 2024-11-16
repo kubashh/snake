@@ -31,17 +31,14 @@ class Snake {
     }
 
     // Check nick
-    console.log(snakes.find((snake) => {
-      return snake.nick === nick
-    }))
-    if(false) {
+    if(snakes.find((snake) => snake.nick === nick)) {
       return {
         message: `Choose other nick`
       }
     }
 
     // Check color
-    if(false) {
+    if(snakes.find((snake) => snake.color === color)) {
       return {
         message: `Choose other color`
       }
