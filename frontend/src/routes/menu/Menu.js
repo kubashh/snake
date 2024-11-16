@@ -1,7 +1,6 @@
 import { useState } from "react"
 import { TextInput } from "./TextInput"
 import { UI } from "./UI"
-import { startGame } from "./startGame"
 
 export const Menu = ({ setState }) => {
   const [nick, setNick] = useState(global.data.user.nick)
