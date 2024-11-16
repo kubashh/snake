@@ -10,6 +10,7 @@ export const setUpSocket = (setState) => {
   global.data.socket = connect(address)
 
   global.data.socket.on(`connect`, () => {
+    alert(`connected`)
     setState(true)
   })
 }
