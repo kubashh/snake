@@ -17,7 +17,13 @@ export const setUpSocket = (setState) => {
     setState("0")
   })
 
-  global.data.socket.on(`newSnake`, ({ message }) => {
-    console.log(message)
+  global.data.socket.on(`newSnake`, ({ success, message }) => {
+    if(success) {
+      // Start game
+      global.data.inGame = true
+      setState("g")
+    } else {
+      alert(message)
+    }
   })
 }
