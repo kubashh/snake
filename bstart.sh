@@ -1,4 +1,4 @@
 clear
 
 cd backend
-node server.js
+node index.js
