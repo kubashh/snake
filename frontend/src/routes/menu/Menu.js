@@ -2,7 +2,7 @@ import { useState } from "react"
 import { TextInput } from "./TextInput"
 import { UI } from "./UI"
 
-export const Menu = ({ setState }) => {
+export const Menu = () => {
   const [nick, setNick] = useState(global.data.user.nick)
   const [color, setColor] = useState(global.data.user.color)
 

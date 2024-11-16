@@ -10,9 +10,7 @@ export const App = () => {
 
   return (
     <>
-      {global.data.inGame ? <Game /> : <Menu
-        setState={setState}
-      />}
+      {global.data.inGame ? <Game /> : <Menu />}
     </>
   )
 }
