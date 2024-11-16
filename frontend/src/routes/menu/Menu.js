@@ -55,7 +55,7 @@ export const Menu = ({ setState }) => {
             global.data.user.color = color
             if(global.data.socket.connected) {
               // Start game
-              socket.emit(`newSnake`, { nick, color })
+              global.data.socket.emit(`newSnake`, { nick, color })
             } else {
               alert(`Connection lost`)
             }
