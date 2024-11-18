@@ -1,5 +1,4 @@
-import { chance } from "./math.js"
-import { emptyBoard, board, snakes, apples } from "./consts.js"
+import { emptyBoard, board, snakes, apples, generateApple } from "./consts.js"
 import { Snake } from "./Snake.js"
 
 emptyBoard()
@@ -10,9 +9,7 @@ const update = () => {
   }
 
   // Generating apple
-  if(chance(0.06)) {
-    generateApple()
-  }
+  generateApple()
 
   // Update board
   emptyBoard()

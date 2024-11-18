@@ -1,4 +1,4 @@
-import { appleColor, apples, freePos, snakes } from "./consts.js"
+import { appleColor, apples, boardSize, freePos, snakes } from "./consts.js"
 
 export class Snake {
   static isFree(nick, color) {
@@ -71,6 +71,28 @@ export class Snake {
     }
   }
 
+  collide(head) {
+    const { x, y } = head
+
+    if(x < 0 || x > boardSize || y < 0 || y > boardSize) {
+      Snake.del(this)
+      return
+    }
+
+    for(const snake of snakes) {
+      if(snake.nick == this.nick) {
+        continue
+      }
+
+      for(const element of snake.body) {
+        if(x == element.x && y == element.y) {
+          Snake.del(this)
+          return
+        }
+      }
+    }
+  }
+
   move() {
     let newHead = this.head()
 
@@ -88,9 +110,7 @@ export class Snake {
         newHead.x -= 1
         break
     }
-  }
 
-  draw() {
-
+    this.collide(newHead)
   }
 }

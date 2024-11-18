@@ -32,8 +32,10 @@ export const freePos = (a = 0) => {
 }
 
 export const generateApple = () => {
-  if(apples.length < boardSize / 6) {
-    apples.push(freePos(3))
+  if(chance(0.06)) {
+    if(apples.length < boardSize / 6) {
+      apples.push(freePos(3))
+    }
   }
 }
 
