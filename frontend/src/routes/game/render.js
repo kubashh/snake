@@ -1,3 +1,3 @@
 export const render = () => {
-  global.data.socket.emit(`board`)
+  global.data.socket.emit(`board`, global.data.nick)
 }

@@ -18,7 +18,7 @@ export const setSocket = (socket) => {
     changeDirection(snake, direction)
   })
 
-  socket.on(`board`, () => {
-    socket.emit(`board`, onBoard())
+  socket.on(`board`, (nick) => {
+    socket.emit(`board`, onBoard(nick))
   })
 }

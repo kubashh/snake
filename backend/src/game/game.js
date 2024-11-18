@@ -30,10 +30,16 @@ const fps = 1000 / 8
 setInterval(update, fps)
 
 
-export const onBoard = () => {
+export const onBoard = (nick) => {
+  const snake = snakes.find((s) => {
+    return snake.nick == nick
+  })
+
+  const head = snake ? snake.head() : null
+
   return {
     board: board,
-    head: snakes[0] ? snakes[0].head() : { x: 5, y: 5 }
+    head: head
   }
 }
 
