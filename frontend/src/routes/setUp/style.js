@@ -3,7 +3,7 @@ body {
   margin: 0;
   font-family: sans-serif;
   background-color: black;
-  color: white:
+  color: white;
 }
 
 input[type="text"], input[type="button"] {

@@ -10,6 +10,8 @@ export const Game = () => {
   console.log(ctx)
 
   return (
-    {gameCanvas}
+    <>
+      {gameCanvas}
+    </>
   )
 }
