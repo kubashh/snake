@@ -1,6 +1,6 @@
 import { snake } from "../game/snake"
 
-const getCanvas = () => {
+export const getCanvas = () => {
   const gameCanvas = document.getElementById(`gameCanvas`)
 
   if(gameCanvas) {
@@ -15,5 +15,3 @@ const getCanvas = () => {
     setTimeout(getCanvas, 100)
   }
 }
-
-getCanvas()

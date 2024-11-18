@@ -1,5 +1,5 @@
 import "./setCss"
-import "./getCanvas"
+import { getCanvas } from "./getCanvas"
 
 const setUp = () => {
   if(!global.data) {
@@ -23,6 +23,8 @@ const setUp = () => {
   if(!global.data.socket) {
     global.data.socket = {}
   }
+
+  getCanvas()
 }
 
 setUp()
