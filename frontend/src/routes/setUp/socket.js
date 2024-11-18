@@ -3,11 +3,14 @@ import { drawBox } from "../game/drawBox"
 import { address, pixelSize } from "../data"
 
 const render = ({ head, board }) => {
+  const w = window.innerWidth, h = window.innerHeight
+
+  // Fill bg
+  drawBox(0, 0, w, h, "#008")
+
   const xa = Math.round(-head.x * pixelSize + window.innerWidth / 2),
     ya = Math.round(-head.y * pixelSize + window.innerHeight / 2)
 
-  const w = window.innerWidth, h = window.innerHeight
-  drawBox(0, 0, w, h, "#008")
   for(let i = 0; i < board.length; i++) {
     for(let j = 0; j < board[i].length; j++) {
       let x = i * pixelSize + xa, y = j * pixelSize + ya
