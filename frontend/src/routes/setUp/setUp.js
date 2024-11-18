@@ -22,7 +22,13 @@ const setUp = () => {
     }
 
     if(oldData) {
-      user = JSON.stringify(oldData)
+      const data = JSON.stringify(oldData)
+      if(data.nick && data.color) {
+        user = {
+          nick: data.nick,
+          color: data.color
+        }
+      }
     }
 
     global.data.user = user
