@@ -25,7 +25,7 @@ const update = () => {
   }
 }
 
-const fps = 1000 / 60
+const fps = 1000 / 8
 
 setInterval(update, fps)
 
