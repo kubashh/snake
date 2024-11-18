@@ -2,10 +2,10 @@ const getCanvas = () => {
   const gameCanvas = document.getElementById(`gameCanvas`)
 
   if(gameCanvas) {
-    gloobal.data.gameCanvas = gameCanvas
+    global.data.gameCanvas = gameCanvas
   }
 
-  if(!globalThis.DataTransfer.gameCanvas) {
+  if(!global.DataTransfer.gameCanvas) {
     setTimeout(getCanvas, 100)
   }
 }
