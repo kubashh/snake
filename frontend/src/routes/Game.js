@@ -7,6 +7,10 @@ export const Game = () => {
     }}
   />
 
+  const ctx = gameCanvas.getContext(`2d`)
+
+  console.log(ctx)
+
   return (
     gameCanvas
   )
