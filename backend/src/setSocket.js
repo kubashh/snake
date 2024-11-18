@@ -19,6 +19,6 @@ export const setSocket = (socket) => {
   })
 
   socket.on(`board`, () => {
-    socket.emit(`board`, getBoard())
+    socket.emit(`board`, onBoard())
   })
 }

@@ -33,8 +33,11 @@ const fps = 1000 / 60
 setInterval(update, fps)
 
 
-export const getBoard = () => {
-  return board
+export const onBoard = () => {
+  return {
+    board: board,
+    head: snakes[0].head()
+  }
 }
 
 export const dataValidation = (nick, color) => {
