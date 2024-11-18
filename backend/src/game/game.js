@@ -33,7 +33,7 @@ setInterval(update, fps)
 export const onBoard = () => {
   return {
     board: board,
-    head: snakes[0].head()
+    head: snakes[0] ? snakes[0].head() : { x: 5, y: 5 }
   }
 }
 
