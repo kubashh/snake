@@ -32,7 +32,7 @@ setInterval(update, fps)
 
 export const onBoard = (nick) => {
   const snake = snakes.find((s) => {
-    return snake.nick == nick
+    return s.nick == nick
   })
 
   const head = snake ? snake.head() : null
