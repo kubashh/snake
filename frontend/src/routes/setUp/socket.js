@@ -26,4 +26,9 @@ export const setUpSocket = (setState) => {
       alert(message)
     }
   })
+
+  global.data.socket.on(`board`, (board) => {
+    console.log(`Works`)
+    console.log(board)
+  })
 }
