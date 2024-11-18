@@ -3,6 +3,14 @@ import { drawBox } from "../game/drawBox"
 import { address, pixelSize } from "../data"
 
 const render = ({ head, board }) => {
+  if(!head) {
+    global.data.inGame = false
+
+    alert(`You lose!`)
+
+    return
+  }
+
   console.log(head, board)
 
   const w = window.innerWidth, h = window.innerHeight
