@@ -1,4 +1,5 @@
-import { fps, render } from "./render"
+import { fps } from "../data"
+import { render } from "./render"
 
 
 export const snake = () => {

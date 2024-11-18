@@ -1,9 +1,6 @@
 import { connect } from "socket.io-client"
 import { drawBox } from "../game/drawBox"
-
-const address = "https://verbose-succotash-69gq79965wq6fwgx-4000.app.github.dev"
-
-const pixelSize = 40
+import { address, pixelSize } from "../data"
 
 const render = ({ head, board }) => {
   const xa = Math.round(-head.x * pixelSize + window.innerWidth / 2),
