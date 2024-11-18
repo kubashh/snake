@@ -1,4 +1,4 @@
-import { randInt } from "./math.js"
+import { chance, randInt } from "./math.js"
 
 export const board = []
 export const boardSize = 20
