@@ -11,7 +11,7 @@ const getCanvas = () => {
     snake()
   }
 
-  if(!global.DataTransfer.gameCanvas) {
+  if(!global.data.ctx) {
     setTimeout(getCanvas, 100)
   }
 }
