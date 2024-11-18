@@ -1,1 +1,0 @@
-{"version":3,"file":"static/css/main.05da0a5c.css","mappings":"AAAA,oCACE,qBAAuB,CACvB,UACF,CAEA,YACE,cACF","sources":["routes/setUp/index.css"],"sourcesContent":["input[type=\"text\"], input[type=\"button\"] {\n  background-color: black;\n  color: white;\n}\n\ninput:hover {\n  cursor: pointer;\n}"],"names":[],"sourceRoot":""}
