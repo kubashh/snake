@@ -1,4 +1,5 @@
 import "./setCss"
+import "./getCanvas"
 
 const setUp = () => {
   if(!global.data) {
