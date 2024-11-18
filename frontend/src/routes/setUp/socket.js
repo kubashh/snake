@@ -8,6 +8,13 @@ const render = ({ head, board }) => {
 
     alert(`You lose!`)
 
+    localStorage.setItem(`data`, JSON.stringify({
+      nick: global.data.nick,
+      color: global.data.color
+    }))
+
+    window.location.reload()
+
     return
   }
 
