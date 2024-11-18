@@ -1,15 +1,6 @@
-const start = (ctx) => {
-  
+import { fps, render } from "./render"
+
+
+export const snake = () => {
+  setInterval(render, fps)
 }
-
-const snake = () => {
-  const gameCanvas = global.data.gameCanvas
-
-  if(global.data.gameCanvas) {
-    const ctx = gameCanvas.getContext(`2d`)
-
-    start(ctx)
-  }
-}
-
-snake()
