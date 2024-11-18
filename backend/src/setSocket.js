@@ -1,4 +1,4 @@
-import { getBoard, changeDirection, createSnake, dataValidation } from "./game/game.js"
+import { onBoard, changeDirection, createSnake, dataValidation } from "./game/game.js"
 
 
 export const setSocket = (socket) => {
