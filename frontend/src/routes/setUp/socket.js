@@ -3,6 +3,8 @@ import { drawBox } from "../game/drawBox"
 import { address, pixelSize } from "../data"
 
 const render = ({ head, board }) => {
+  console.log(head, board)
+
   const w = window.innerWidth, h = window.innerHeight
 
   // Fill bg
