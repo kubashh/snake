@@ -1,5 +1,7 @@
 export const setDirection = () => {
   document.addEventListener(`keydown`, (e) => {
-    console.log(e)
+    const { key } = e
+
+    console.log(key)
   })
 }
