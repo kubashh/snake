@@ -8,10 +8,9 @@ const render = ({ head, board }) => {
 
     alert(`You lose!`)
 
-    localStorage.setItem(`data`, JSON.stringify({
-      nick: global.data.user.nick,
-      color: global.data.user.color
-    }))
+    localStorage.setItem(`data`, JSON.stringify(global.data.user))
+
+    alert(JSON.stringify(global.data.user))
 
     window.location.reload()
 
