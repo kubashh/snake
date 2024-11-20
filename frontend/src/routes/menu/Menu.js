@@ -2,9 +2,36 @@ import { useState } from "react"
 import { TextInput } from "./TextInput"
 import { UI } from "./UI"
 
+const getOldData = () => {
+  if(!global.data.user) {
+    const oldData = localStorage.getItem(`data`)
+
+    let user = {
+      nick: "Nick",
+      color: "red"
+    }
+
+    if(oldData) {
+      const data = JSON.stringify(oldData)
+      if(data.nick && data.color) {
+        user = {
+          nick: data.nick,
+          color: data.color
+        }
+      }
+    }
+
+    global.data.user = user
+  }
+
+  return global.data.user
+}
+
 export const Menu = () => {
-  const [nick, setNick] = useState(global.data.user.nick)
-  const [color, setColor] = useState(global.data.user.color)
+  const user = getOldData()
+
+  const [nick, setNick] = useState(user.nick)
+  const [color, setColor] = useState(user.color)
 
   return (
     <>
