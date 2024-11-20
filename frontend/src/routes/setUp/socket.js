@@ -10,8 +10,6 @@ const render = ({ head, board }) => {
 
     localStorage.setItem(`data`, JSON.stringify(global.data.user))
 
-    alert(JSON.stringify(global.data.user))
-
     window.location.reload()
 
     return
