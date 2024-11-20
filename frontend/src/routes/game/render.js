@@ -1,3 +1,4 @@
+import { bgColor, pixelSize } from "../data"
 import { drawBox } from "./drawBox"
 
 export const render = ({ head, board }) => {
@@ -19,7 +20,7 @@ export const render = ({ head, board }) => {
   const [w, h] = [window.innerWidth, window.innerHeight]
 
   // Fill bg
-  drawBox(0, 0, w, h, "#008")
+  drawBox(0, 0, w, h, bgColor)
 
   const xa = Math.round(-head.x * pixelSize + window.innerWidth / 2)
   const ya = Math.round(-head.y * pixelSize + window.innerHeight / 2)
