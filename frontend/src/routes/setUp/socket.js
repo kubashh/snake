@@ -1,6 +1,7 @@
 import { connect } from "socket.io-client"
 import { address } from "../data"
 import { render } from "../game/render"
+import { setDirection } from "../game/direction"
 
 export const setUpSocket = (setState) => {
   if(global.data.setUp && global.data.socket.on) {
@@ -28,4 +29,6 @@ export const setUpSocket = (setState) => {
   })
 
   global.data.socket.on(`board`, render)
+
+  setDirection()
 }
