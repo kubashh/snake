@@ -4,4 +4,8 @@ git add .
 git commit -m $1
 git push
 
-sh ./fstart.sh
+cd frontend
+npm run deploy -- -m "u"
+
+cd ..
+sh ./bstart.sh
