@@ -18,7 +18,7 @@ const getOldData = () => {
         user.color = color
       }
     }
-    console.log(user)
+    alert(JSON.stringify(user))
 
     global.data.user = user
   }
