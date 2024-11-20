@@ -1,5 +1,5 @@
 export const TextInput = ({text, input, setValue}) => {
-  const padding = input.type == `text` ? "4px 12px" : 0
+  const padding = input.type === `text` ? "4px 12px" : 0
 
   return (
     <div
