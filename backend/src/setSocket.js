@@ -1,5 +1,5 @@
-import { onBoard, changeDirection, createSnake, dataValidation } from "./game/game.js"
-
+import { snakes } from "./game/consts.js"
+import { onBoard, changeDirection, createSnake, dataValidation, addToUpdates, removeFromUpdates } from "./game/game.js"
 
 export const setSocket = (socket) => {
   let snake = null
@@ -12,13 +12,19 @@ export const setSocket = (socket) => {
     }
 
     socket.emit(`newSnake`, data)
+
+    const updateFunction = function() {
+      if(snakes.find((s) => s.nick === snake.nick)) {
+        removeFromUpdates(this)
+      }
+
+      socket.emit(`board`, onBoard(snake.nick))
+    }
+
+    addToUpdates(updateFunction)
   })
 
   socket.on(`direction`, (direction) => {
     changeDirection(snake, direction)
-  })
-
-  socket.on(`board`, (nick) => {
-    socket.emit(`board`, onBoard(nick))
   })
 }

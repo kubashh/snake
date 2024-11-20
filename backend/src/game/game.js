@@ -1,6 +1,8 @@
 import { emptyBoard, board, snakes, apples, generateApple } from "./consts.js"
 import { Snake } from "./Snake.js"
 
+const updateFunctions = []
+
 emptyBoard()
 
 const update = () => {
@@ -22,6 +24,10 @@ const update = () => {
   
   for(let apple of apples) {
     board[apple.x][apple.y] = "yellow"
+  }
+
+  for(const f of updateFunctions) {
+    f()
   }
 }
 
@@ -53,4 +59,12 @@ export const createSnake = (nick, color) => {
 
 export const changeDirection = (snake, direction) => {
   snake.changeDirection(direction)
+}
+
+export const addToUpdates = (f) => {
+  updateFunctions.push(f)
+}
+
+export const removeFromUpdates = (f) => {
+  updateFunctions.slice(updateFunctions.indexOf(f), 0)
 }
