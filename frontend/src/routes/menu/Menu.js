@@ -6,19 +6,20 @@ const getOldData = () => {
   if(!global.data.user) {
     const oldData = localStorage.getItem(`data`)
 
+    alert(oldData)
+
     let user = {
       nick: "Nick",
       color: "#ff0000"
     }
 
     if(oldData) {
-      const { nick, color } = JSON.stringify(oldData)
+      const { nick, color } = JSON.parse(oldData)
       if(nick && color) {
         user.nick = nick
         user.color = color
       }
     }
-    alert(JSON.stringify(user))
 
     global.data.user = user
   }
