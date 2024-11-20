@@ -12,10 +12,10 @@ const getOldData = () => {
     }
 
     if(oldData) {
-      const data = JSON.stringify(oldData)
-      if(data.nick && data.color) {
-        user.nick = data.nick
-        user.data.color
+      const { nick, color } = JSON.stringify(oldData)
+      if(nick && color) {
+        user.nick = nick
+        user.color = color
       }
     }
 
