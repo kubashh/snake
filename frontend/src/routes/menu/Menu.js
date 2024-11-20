@@ -30,6 +30,8 @@ const getOldData = () => {
 export const Menu = () => {
   const user = getOldData()
 
+  console.log(user)
+
   const [nick, setNick] = useState(user.nick)
   const [color, setColor] = useState(user.color)
 
