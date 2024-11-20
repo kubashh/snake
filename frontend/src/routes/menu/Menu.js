@@ -18,6 +18,7 @@ const getOldData = () => {
         user.color = color
       }
     }
+    console.log(user)
 
     global.data.user = user
   }
