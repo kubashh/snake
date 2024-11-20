@@ -4,6 +4,7 @@ import { address, pixelSize } from "../data"
 
 const render = ({ head, board }) => {
   if(!head) {
+    console.log(head, board)
     global.data.inGame = false
 
     alert(`You lose!`)
@@ -17,7 +18,7 @@ const render = ({ head, board }) => {
 
   console.log(head, board)
 
-  const w = window.innerWidth, h = window.innerHeight
+  const [w, h] = [window.innerWidth, window.innerHeight]
 
   // Fill bg
   drawBox(0, 0, w, h, "#008")
