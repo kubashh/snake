@@ -8,4 +8,5 @@ cd frontend
 npm run deploy -- -m "u"
 
 cd ..
-sh ./bstart.sh
+cd backend
+node index.js
