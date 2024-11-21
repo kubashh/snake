@@ -1,18 +1,5 @@
 import { appleColor, apples, board, boardSize, freePos, snakes } from "./consts.js"
 
-export const onBoard = (nick) => {
-  const snake = snakes.find((s) => {
-    return s.nick == nick
-  })
-
-  const head = snake ? snake.head() : null
-
-  return {
-    board: board,
-    head: head
-  }
-}
-
 export class Snake {
   static isFree(nick, color) {
     // Check values
@@ -132,6 +119,11 @@ export class Snake {
   }
 
   sendBoard() {
-    this.socket.emit(`board`, onBoard(this.nick))
+    const obj = {
+      board: board,
+      head: this.head()
+    }
+
+    this.socket.emit(`board`, obj)
   }
 }

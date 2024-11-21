@@ -4,6 +4,10 @@ const changeDirection = (direction) => {
 
 export const setDirection = () => {
   document.addEventListener(`keydown`, ({ key }) => {
+    if(!global.data.inGame) {
+      return
+    }
+
     switch(key) {
       case `w`:
         changeDirection(0)

@@ -1,4 +1,4 @@
-import { changeDirection, createSnake, dataValidation } from "./game/game.js"
+import { createSnake, dataValidation } from "./game/game.js"
 
 export const setSocket = (socket) => {
   let snake = null
@@ -18,6 +18,6 @@ export const setSocket = (socket) => {
       return
     }
 
-    changeDirection(snake, direction)
+    snake.changeDirection(direction)
   })
 }

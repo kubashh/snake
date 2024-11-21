@@ -1,13 +1,11 @@
 import { emptyBoard, board, snakes, apples, generateApple } from "./consts.js"
 import { Snake } from "./Snake.js"
 
-const updateFunctions = []
-
 emptyBoard()
 
 const update = () => {
-  for(let snake of snakes) {
-    snake.move()
+  for(const { move } of snakes) {
+    move()
   }
 
   // Generating apple
@@ -16,18 +14,18 @@ const update = () => {
   // Update board
   emptyBoard()
 
-  for(let snake of snakes) {
-    for(let bodyElement of snake.body) {
-      board[bodyElement.x][bodyElement.y] = snake.color
+  for(let { body, color } of snakes) {
+    for(let { x, y } of body) {
+      board[x][y] = color
     }
   }
   
-  for(let apple of apples) {
-    board[apple.x][apple.y] = "yellow"
+  for(let { x, y } of apples) {
+    board[x][y] = "yellow"
   }
 
-  for(const snake of snakes) {
-    snake.sendBoard()
+  for(const { sendBoard } of snakes) {
+    sendBoard()
   }
 }
 
@@ -42,12 +40,4 @@ export const dataValidation = (nick, color) => {
 
 export const createSnake = (nick, color, socket) => {
   return new Snake(nick, color, socket)
-}
-
-export const changeDirection = (snake, direction) => {
-  snake.changeDirection(direction)
-}
-
-export const addToUpdates = (obj) => {
-  updateFunctions.push(obj)
 }
