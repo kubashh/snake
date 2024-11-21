@@ -16,17 +16,19 @@ export const render = ({ head, board, boardSize }) => {
   // Fill bg
   drawBox(0, 0, width, height, bgColor)
 
-  const xa = Math.round(-head.x * pixelSize + width / 2 - pixelSize / 2)
-  const ya = -Math.round(-head.y * pixelSize + height / 2 - pixelSize / 2)
+  const a = {
+    x: Math.round(-head.x * pixelSize + width / 2 - pixelSize / 2),
+    y: -Math.round(-head.y * pixelSize + height / 2 - pixelSize / 2)
+  }
 
   // Draw border bg
-  drawBox(xa, ya, boardSize * pixelSize, boardSize * pixelSize, `#000`)
+  drawBox(a.x, a.y, boardSize * pixelSize, boardSize * pixelSize, `#000`)
   drawBox(width / 2 - pixelSize / 2, height / 2 - pixelSize / 2, pixelSize, pixelSize, `#000`)
 
   /*for(let i = 0; i < boardSize; i++) {
     for(let j = 0; j < boardSize; j++) {
-      const x = i * pixelSize + xa
-      const y = j * pixelSize + ya
+      const x = i * pixelSize + a.x
+      const y = j * pixelSize + a.y
       //if(0 < x && x < height && 0 < y && y < width) {
         drawBox(x, y, pixelSize, pixelSize, board[i][j])
       //}
