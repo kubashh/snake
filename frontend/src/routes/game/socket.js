@@ -1,7 +1,7 @@
 import { connect } from "socket.io-client"
 import { address } from "../data"
-import { render } from "../game/render"
-import { setDirection } from "../game/direction"
+import { render } from "./render"
+import { setDirection } from "./direction"
 
 export const setUpSocket = (setState) => {
   if(global.data.setUp && global.data.socket.on) {
@@ -31,6 +31,8 @@ export const setUpSocket = (setState) => {
   global.data.socket.on(`board`, render)
 
   global.data.socket.on(`endGame`, () => {
+    localStorage.setItem(`data`, JSON.stringify(global.data.user))
+
     global.data.inGame = false
 
     alert(`You lose! (From endGame)`)

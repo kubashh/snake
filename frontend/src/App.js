@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Game } from "./routes/game/Game"
 import { Menu } from "./routes/menu/Menu"
-import { setUpSocket } from "./routes/setUp/socket"
+import { setUpSocket } from "./routes/game/socket"
 
 export const App = () => {
   const[, setState] = useState("");
