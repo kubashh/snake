@@ -1,11 +1,8 @@
-import { getCanvas } from "./getCanvas"
 import { useEffect, useRef } from "react"
 
 export const Game = () => {
-  //getCanvas()
-
   const ref = useRef()
-
+js
   const draw = (ctx) => {
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
     ctx.fillStyle = `gray`
@@ -17,6 +14,7 @@ export const Game = () => {
     const ctx = canvas.getContext(`2d`)
     draw(ctx)
     global.data.ctx = ctx
+    console.log(global.data.ctx)
   }, [])
 
   return (
