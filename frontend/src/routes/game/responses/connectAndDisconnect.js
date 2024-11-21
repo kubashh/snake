@@ -1,9 +1,9 @@
-export const setConnectAndDiconect = (setState) => {
+export const setConnectAndDiconect = () => {
   global.data.socket.on(`connect`, () => {
-    setState("1")
+    global.data.reload()
   })
 
   global.data.socket.on(`disconnect`, () => {
-    setState("0")
+    global.data.reload()
   })
 }

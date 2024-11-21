@@ -1,4 +1,4 @@
-export const setEndGame = (setState) => {
+export const setEndGame = () => {
   global.data.socket.on(`endGame`, () => {
     localStorage.setItem(`data`, JSON.stringify(global.data.user))
 
@@ -6,6 +6,6 @@ export const setEndGame = (setState) => {
 
     alert(`You lose! (From endGame)`)
 
-    setState(`e`)
+    global.data.reload()
   })
 }
