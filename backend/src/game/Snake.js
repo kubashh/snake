@@ -67,7 +67,7 @@ export class Snake {
       direction === 1 && this.body[this.body.length - 2].x != this.head().x + 1)
 
     if(condition) {
-      this.direction = a
+      this.direction = direction
     }
   }
 
