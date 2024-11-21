@@ -1,8 +1,21 @@
 import { chance, randInt } from "./math.js"
 
-export const board = []
+const initBoard = () => {
+  board.length = 0
+
+  for(let i = 0; i < boardSize; i++) {
+    const array2 = []
+    for(let j = 0; j < boardSize; j++) {
+      array2.push(`#000000`)
+    }
+
+    board.push(array2)
+  }
+}
+
+export const board = initBoard()
 export const boardSize = 20
-export const appleColor = "yellow"
+export const appleColor = `yellow`
 export const snakes = []
 export const apples = []
 
@@ -39,15 +52,10 @@ export const generateApple = () => {
   }
 }
 
-export const emptyBoard = () => {
-  board.length = 0
-
+export const clearBoard = () => {
   for(let i = 0; i < boardSize; i++) {
-    const array2 = []
     for(let j = 0; j < boardSize; j++) {
-      array2.push("#000000")
+      board[i][j] = `#000000`
     }
-
-    board.push(array2)
   }
 }

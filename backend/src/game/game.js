@@ -1,11 +1,9 @@
-import { emptyBoard, board, snakes, apples, generateApple } from "./consts.js"
+import { board, snakes, apples, generateApple, clearBoard } from "./consts.js"
 import { Snake } from "./Snake.js"
-
-emptyBoard()
 
 const update = () => {
   // Update board
-  emptyBoard()
+  clearBoard()
 
   for(const snake of snakes) {
     snake.move()

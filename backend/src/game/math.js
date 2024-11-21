@@ -3,5 +3,5 @@ export const randInt = (min, max) => {
 }
 
 export const chance = (a) =>{
-  return Math.random < a
+  return Math.random() < a
 }
