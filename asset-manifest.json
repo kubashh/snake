@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/snake/static/js/main.97273d06.js",
+    "main.js": "/snake/static/js/main.fca2b64a.js",
     "index.html": "/snake/index.html",
-    "main.97273d06.js.map": "/snake/static/js/main.97273d06.js.map"
+    "main.fca2b64a.js.map": "/snake/static/js/main.fca2b64a.js.map"
   },
   "entrypoints": [
-    "static/js/main.97273d06.js"
+    "static/js/main.fca2b64a.js"
   ]
 }
