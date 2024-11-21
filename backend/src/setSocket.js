@@ -16,6 +16,8 @@ export const setSocket = (socket) => {
     const updateFunction = function() {
       if(snakes.find((s) => s.nick === snake.nick)) {
         removeFromUpdates(this)
+
+        snake = null
       }
 
       socket.emit(`board`, onBoard(snake.nick))
@@ -25,7 +27,7 @@ export const setSocket = (socket) => {
   })
 
   socket.on(`direction`, (direction) => {
-    if(!snake.name) {
+    if(!snake) {
       return
     }
 
