@@ -35,7 +35,7 @@ const update = () => {
 
   console.time(`sendBoard`)
   for(const snake of snakes) {
-    snake.sendBoard()
+    setTimeout(snake.sendBoard, 0)
   }
   console.timeEnd(`sendBoard`)
 }
