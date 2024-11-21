@@ -49,26 +49,25 @@ export const createSnake = (nick, color, socket) => {
   return new Snake(nick, color, socket)
 }
 
-const fps = 1000 / 1
 
-//setInterval(() => {
-//  update()
-//}, fps)
+// start
+const delay = 1000
 
 const now = () => {
   return Date.now()
 }
 
-
 let timeLast = now()
-const delay = 1000
+
 export const start = () => {
   let timeNow = now()
 
   if(timeNow - timeLast > delay) {
     timeLast += delay
+    console.time(`all`)
     update()
+    console.timeEnd(`all`)
   }
 
-  setTimeout(start, 2)
+  setTimeout(start, 1)
 }
