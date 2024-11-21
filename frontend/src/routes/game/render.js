@@ -1,12 +1,10 @@
 import { bgColor, pixelSize } from "../data"
 import { drawBox } from "./drawBox"
-import { getCanvas } from "./getCanvas"
 
 export const render = ({ head, board, boardSize }) => {
   const { ctx } = global.data
   if(!ctx || !ctx.fillRect) {
     alert(`Don't works!!!`)
-    //getCanvas()
     return
   }
 
