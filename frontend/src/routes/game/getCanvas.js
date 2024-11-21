@@ -8,6 +8,6 @@ export const getCanvas = () => {
   }
 
   if(!global.data.ctx) {
-    setTimeout(getCanvas, 10)
+    setTimeout(getCanvas, 0)
   }
 }
