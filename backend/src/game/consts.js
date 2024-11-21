@@ -20,15 +20,13 @@ export const freePos = (a = 0) => {
         }
       }
     }
-    for(let apple of apples) {
-      if(pos.x == apple.x && pos.y == apple.y) {
+    for(let { x, y } of apples) {
+      if(pos.x == x && pos.y == y) {
         pos = { x: randInt(a, boardSize - a), y: randInt(a, boardSize - a) }
         b = true
       }
     }
   }
-
-  console.log(pos)
 
   return pos
 }

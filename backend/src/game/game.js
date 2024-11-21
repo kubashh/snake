@@ -7,8 +7,8 @@ const update = () => {
   // Update board
   emptyBoard()
 
-  for(const { move } of snakes) {
-    move()
+  for(const snake of snakes) {
+    snake.move()
   }
 
   // Generating apple
