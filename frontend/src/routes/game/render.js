@@ -9,14 +9,15 @@ export const render = ({ head, board, boardSize }) => {
   // Fill bg
   drawBox(0, 0, w, h, bgColor)
 
-  const xa = Math.round(-head.x * pixelSize + window.innerWidth / 2)
-  const ya = Math.round(-head.y * pixelSize + window.innerHeight / 2)
+  const xa = Math.round(-head.x * pixelSize + w / 2)
+  const ya = Math.round(-head.y * pixelSize + h / 2)
 
   for(let i = 0; i < boardSize; i++) {
     for(let j = 0; j < boardSize; j++) {
-      let x = i * pixelSize + xa, y = j * pixelSize + ya
+      const x = i * pixelSize + xa
+      const y = j * pixelSize + ya
       //if(0 < x && x < h && 0 < y && y < w) {
-        drawBox(x, y, pixelSize, `#888`)// board[i][j])
+        drawBox(x, y, pixelSize, board[i][j])
       //}
     }
   }
