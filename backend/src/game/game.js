@@ -60,17 +60,15 @@ const now = () => {
 }
 
 
+let timeLast = now()
+const delay = 1000
 export const start = () => {
-  let timeLast = now()
-  const delay = 1000
-  while(true) {
-    let timeNow = now()
+  let timeNow = now()
 
-    if(timeNow - timeLast > delay) {
-      timeLast += delay
-      update()
-    }
-
-    setTimeout(() => {}, 0)
+  if(timeNow - timeLast > delay) {
+    timeLast += delay
+    update()
   }
+
+  setTimeout(start, 2)
 }
