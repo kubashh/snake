@@ -41,7 +41,7 @@ export const createSnake = (nick, color, socket) => {
 
 
 // start
-const delay = 1000
+const delay = 1000 / 8
 
 const now = () => {
   return Date.now()
