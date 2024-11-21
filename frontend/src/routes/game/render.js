@@ -2,19 +2,6 @@ import { bgColor, pixelSize } from "../data"
 import { drawBox } from "./drawBox"
 
 export const render = ({ head, board }) => {
-  if(!head) {
-    console.log(head, board)
-    global.data.inGame = false
-
-    alert(`You lose!`)
-
-    localStorage.setItem(`data`, JSON.stringify(global.data.user))
-
-    window.location.reload()
-
-    return
-  }
-
   console.log(head, board)
 
   const [w, h] = [window.innerWidth, window.innerHeight]
