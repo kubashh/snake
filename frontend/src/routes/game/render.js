@@ -3,7 +3,8 @@ import { drawBox } from "./drawBox"
 import { getCanvas } from "./getCanvas"
 
 export const render = ({ head, board, boardSize }) => {
-  if(!global.data.ctx || !global.data.ctx.fillRect) {
+  const { ctx } = global.data
+  if(!ctx || !ctx.fillRect) {
     getCanvas()
     return
   }
@@ -13,7 +14,7 @@ export const render = ({ head, board, boardSize }) => {
   const [w, h] = [window.innerWidth, window.innerHeight]
 
   // Fill bg
-  drawBox(0, 0, w, h, bgColor)
+  drawBox(0, 0, ctx.width, ctx.height, h, bgColor)
 
   const xa = Math.round(-head.x * pixelSize + w / 2)
   const ya = Math.round(-head.y * pixelSize + h / 2)
