@@ -134,6 +134,6 @@ export class Snake {
       boardSize: boardSize
     }
 
-    this.socket.emit(`board`, obj)
+    this.socket.emit(`board`, JSON.stringify(obj))
   }
 }
