@@ -28,6 +28,8 @@ export const freePos = (a = 0) => {
     }
   }
 
+  console.log(pos)
+
   return pos
 }
 
