@@ -42,6 +42,8 @@ export class Snake {
   }
 
   static del(snake) {
+    snake.socket.emit(`endGame`)
+
     for(let bodyElement of snake.body) {
       if(bodyElement != snake.head() && chance(0.4)) {
         apples.push(bodyElement)

@@ -30,5 +30,11 @@ export const setUpSocket = (setState) => {
 
   global.data.socket.on(`board`, render)
 
+  global.data.socket.on(`endGame`, () => {
+    global.data.inGame = false
+
+    alert(`You lose! (From endGame)`)
+  })
+
   setDirection()
 }
