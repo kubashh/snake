@@ -37,8 +37,6 @@ export class Snake {
       }
     }
     snakes.splice(snakes.indexOf(snake), 1)
-
-    console.log(snakes)
   }
 
   static get(nick) {
