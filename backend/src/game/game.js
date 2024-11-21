@@ -4,6 +4,9 @@ import { Snake } from "./Snake.js"
 emptyBoard()
 
 const update = () => {
+  // Update board
+  emptyBoard()
+
   for(const { move } of snakes) {
     move()
   }
@@ -11,21 +14,18 @@ const update = () => {
   // Generating apple
   generateApple()
 
-  // Update board
-  emptyBoard()
+  for(let { x, y } of apples) {
+    board[x][y] = "yellow"
+  }
 
   for(let { body, color } of snakes) {
     for(let { x, y } of body) {
       board[x][y] = color
     }
   }
-  
-  for(let { x, y } of apples) {
-    board[x][y] = "yellow"
-  }
 
-  for(const { sendBoard } of snakes) {
-    sendBoard()
+  for(const snake of snakes) {
+    snake.sendBoard()
   }
 }
 
