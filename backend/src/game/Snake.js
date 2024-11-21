@@ -60,7 +60,9 @@ export class Snake {
   }
 
   head() {
-    return this.body[this.body.length - 1]
+    const { x, y } = this.body[this.body.length - 1]
+
+    return { x, y }
   }
 
   changeDirection(direction) {
@@ -75,12 +77,10 @@ export class Snake {
     }
   }
 
-  collide(head) {
-    const { x, y } = head
-
+  collide({ x, y }) {
     if(x < 0 || x >= boardSize || y < 0 || y >= boardSize) {
       Snake.del(this)
-      return
+      return true
     }
 
     for(const snake of snakes) {
@@ -91,7 +91,7 @@ export class Snake {
       for(const element of snake.body) {
         if(x == element.x && y == element.y) {
           Snake.del(this)
-          return
+          return true
         }
       }
     }
@@ -115,7 +115,9 @@ export class Snake {
         break
     }
 
-    this.collide(newHead)
+    if(!this.collide(newHead)) {
+      
+    }
   }
 
   sendBoard() {
