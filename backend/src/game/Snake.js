@@ -123,6 +123,8 @@ export class Snake {
 
       this.body.push(newHead)
     }
+
+    console.log(this.body)
   }
 
   sendBoard() {
