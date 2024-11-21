@@ -3,6 +3,7 @@ import { Snake } from "./Snake.js"
 
 const update = () => {
   // Update board
+  console.log(``)
   console.time(`clearBoard`)
   clearBoard()
   console.timeEnd(`clearBoard`)
@@ -41,7 +42,11 @@ const update = () => {
 
 const fps = 1000 / 1
 
-setInterval(update, fps)
+setInterval(() => {
+  console.time(`all`)
+  update()
+  console.timeEnd(`all`)
+}, fps)
 
 
 export const dataValidation = (nick, color) => {
