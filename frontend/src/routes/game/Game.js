@@ -24,8 +24,8 @@ export const Game = () => {
       ref={ref}
       style={{
         display: "block",
-        width: "100%",
-        height: "100%"
+        width: window.innerWidth,
+        height: window.innerHeight
       }}
     />
   )
