@@ -19,7 +19,7 @@ export const render = ({ head, board, boardSize }) => {
   const ya = Math.round(-head.y * pixelSize + h / 2)
 
   // Draw border bg
-  drawBox(100, 100, 200, 600, `#000`)
+  drawBox(100, 100, 50, 600, `#000`)
   //drawBox(w / 2, h / 2, 100, 100, `#000`)
   //drawBox(xa, ya, 100, 100, `#000`)
 
