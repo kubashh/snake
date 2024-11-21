@@ -26,8 +26,8 @@ const update = () => {
     board[apple.x][apple.y] = "yellow"
   }
 
-  for(const f of updateFunctions) {
-    f()
+  for(const snake of snakes) {
+    snake.sendBoard()
   }
 }
 
@@ -35,19 +35,6 @@ const fps = 1000 / 8
 
 setInterval(update, fps)
 
-
-export const onBoard = (nick) => {
-  const snake = snakes.find((s) => {
-    return s.nick == nick
-  })
-
-  const head = snake ? snake.head() : null
-
-  return {
-    board: board,
-    head: head
-  }
-}
 
 export const dataValidation = (nick, color) => {
   return Snake.isFree(nick, color)
@@ -61,10 +48,6 @@ export const changeDirection = (snake, direction) => {
   snake.changeDirection(direction)
 }
 
-export const addToUpdates = (f) => {
-  updateFunctions.push(f)
-}
-
-export const removeFromUpdates = (f) => {
-  updateFunctions.slice(updateFunctions.indexOf(f), 0)
+export const addToUpdates = (obj) => {
+  updateFunctions.push(obj)
 }

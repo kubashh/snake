@@ -1,4 +1,17 @@
-import { appleColor, apples, boardSize, freePos, snakes } from "./consts.js"
+import { appleColor, apples, board, boardSize, freePos, snakes } from "./consts.js"
+
+export const onBoard = (nick) => {
+  const snake = snakes.find((s) => {
+    return s.nick == nick
+  })
+
+  const head = snake ? snake.head() : null
+
+  return {
+    board: board,
+    head: head
+  }
+}
 
 export class Snake {
   static isFree(nick, color) {
@@ -45,12 +58,14 @@ export class Snake {
     }
   }
 
-  constructor(nick, color) {
+  constructor(nick, color, socket) {
     this.nick = nick
     this.color = color
     this.direction = 0
     const newBodyFragment = freePos()
     this.body = [newBodyFragment, newBodyFragment, newBodyFragment]
+
+    this.socket = socket
 
     snakes.push(this)
   }
@@ -63,8 +78,8 @@ export class Snake {
     const condition = (
       direction === 0 && this.body[this.body.length - 2].y != this.head().y - 1) || (
       direction === 1 && this.body[this.body.length - 2].x != this.head().x - 1) || (
-      direction === 1 && this.body[this.body.length - 2].y != this.head().y + 1) || (
-      direction === 1 && this.body[this.body.length - 2].x != this.head().x + 1)
+      direction === 2 && this.body[this.body.length - 2].y != this.head().y + 1) || (
+      direction === 3 && this.body[this.body.length - 2].x != this.head().x + 1)
 
     if(condition) {
       this.direction = direction
@@ -112,5 +127,9 @@ export class Snake {
     }
 
     this.collide(newHead)
+  }
+
+  sendBoard() {
+    this.socket.emit(`board`, onBoard(this.nick))
   }
 }
