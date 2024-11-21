@@ -3,7 +3,8 @@ export const setNewSnake = (setState) => {
     if(success) {
       // Start game
       global.data.inGame = true
-      setState("g")
+      global.data.reload()
+      //setState("g")
     } else {
       alert(message)
     }
