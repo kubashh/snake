@@ -59,7 +59,6 @@ export class Snake {
     this.socket = socket
 
     snakes.push(this)
-    console.log(snakes)
   }
 
   head() {
@@ -101,7 +100,6 @@ export class Snake {
   }
 
   move() {
-    console.log(`THIS`, this)
     let newHead = this.head()
 
     switch(this.direction) {
