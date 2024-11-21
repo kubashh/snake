@@ -23,6 +23,7 @@ const update = () => {
   }
 
   for(const snake of snakes) {
+    console.log(snake)
     snake.sendBoard()
   }
 }
