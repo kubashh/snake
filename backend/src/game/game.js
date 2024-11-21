@@ -39,7 +39,7 @@ const update = () => {
     snake.sendBoard()
   }
   console.timeEnd(`sendBoard`)
-  console.time(`all2`)
+  console.timeEnd(`all2`)
 }
 
 const fps = 1000 / 1
