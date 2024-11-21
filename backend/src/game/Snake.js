@@ -59,6 +59,7 @@ export class Snake {
     this.socket = socket
 
     snakes.push(this)
+    console.log(snakes)
   }
 
   head() {
