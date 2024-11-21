@@ -117,7 +117,7 @@ export class Snake {
     }
 
     if(!this.collide(newHead)) {
-      if(!board[newHead.x][newHead.y] == appleColor) {
+      if(board[newHead.x][newHead.y] !== appleColor) {
         this.body.shift()
       }
 
