@@ -9,6 +9,7 @@ export const App = () => {
     let i = 1
     global.data.reload = () => {
       setState(i)
+      console.log(`${i} refresh`)
       i++
     }
   }, [])
