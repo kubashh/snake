@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react"
 
 export const Game = () => {
   const ref = useRef()
-js
+
   const draw = (ctx) => {
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
     ctx.fillStyle = `gray`
