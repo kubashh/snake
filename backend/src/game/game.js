@@ -41,7 +41,7 @@ export const createSnake = (nick, color, socket) => {
 
 
 // start
-const delay = 1000 / 8
+const delay = 1000 / 16
 
 const now = () => {
   return Date.now()
@@ -50,9 +50,7 @@ const now = () => {
 let timeLast = now()
 
 export const start = () => {
-  let timeNow = now()
-
-  if(timeNow - timeLast > delay) {
+  if(now() - timeLast > delay) {
     timeLast += delay
     console.time(`all`)
     update()
