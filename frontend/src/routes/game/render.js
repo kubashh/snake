@@ -3,13 +3,14 @@ import { drawBox } from "./drawBox"
 import { getCanvas } from "./getCanvas"
 
 export const render = ({ head, board, boardSize }) => {
-  const { ctx } = global.data
+  const { ctx, gameCanvas } = global.data
   if(!ctx || !ctx.fillRect) {
     getCanvas()
     return
   }
 
-  console.log(head, board)
+  //console.log(head, board)
+  console.log(gameCanvas.width, gameCanvas.height)
 
   const [w, h] = [window.innerWidth, window.innerHeight]
 
