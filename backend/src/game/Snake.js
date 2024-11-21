@@ -91,7 +91,7 @@ export class Snake {
   collide(head) {
     const { x, y } = head
 
-    if(x < 0 || x > boardSize || y < 0 || y > boardSize) {
+    if(x < 0 || x >= boardSize || y < 0 || y >= boardSize) {
       Snake.del(this)
       return
     }
