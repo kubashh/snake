@@ -32,7 +32,7 @@ const fps = 1000 / 1
 setInterval(() => {
   console.time()
   update()
-  console.time()
+  console.timeEnd()
 }, fps)
 
 
