@@ -37,6 +37,8 @@ export class Snake {
       }
     }
     snakes.splice(snakes.indexOf(snake), 1)
+
+    console.log(snakes)
   }
 
   static get(nick) {
@@ -98,6 +100,7 @@ export class Snake {
   }
 
   move() {
+    console.log(`THIS`, this)
     let newHead = this.head()
 
     switch(this.direction) {
