@@ -130,7 +130,8 @@ export class Snake {
   sendBoard() {
     const obj = {
       board: board,
-      head: this.head()
+      head: this.head(),
+      boardSize: boardSize
     }
 
     this.socket.emit(`board`, obj)
