@@ -2,6 +2,7 @@ import { board, snakes, apples, generateApple, clearBoard } from "./consts.js"
 import { Snake } from "./Snake.js"
 
 const update = () => {
+  console.time(`all2`)
   // Update board
   console.log(``)
   console.time(`clearBoard`)
@@ -38,14 +39,15 @@ const update = () => {
     snake.sendBoard()
   }
   console.timeEnd(`sendBoard`)
+  console.time(`all2`)
 }
 
 const fps = 1000 / 1
 
 setInterval(() => {
-  console.time(`all`)
+  console.time(`all1`)
   update()
-  console.timeEnd(`all`)
+  console.timeEnd(`all1`)
 }, fps)
 
 
