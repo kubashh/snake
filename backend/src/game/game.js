@@ -40,8 +40,8 @@ export const dataValidation = (nick, color) => {
   return Snake.isFree(nick, color)
 }
 
-export const createSnake = (nick, color) => {
-  return new Snake(nick, color)
+export const createSnake = (nick, color, socket) => {
+  return new Snake(nick, color, socket)
 }
 
 export const changeDirection = (snake, direction) => {
