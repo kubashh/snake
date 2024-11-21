@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import { Game } from "./routes/game/Game"
 import { Menu } from "./routes/menu/Menu"
-import { setUpSocket } from "./routes/game/socket"
 
 export const App = () => {
-  const[state, setState] = useState(false)
+  const[, setState] = useState(false)
 
   useEffect(() => {
     global.data.reload = () => {
@@ -12,8 +11,6 @@ export const App = () => {
       setState(global.data.inGame)
     }
   }, [])
-
-  setUpSocket()
 
   return (
     <>

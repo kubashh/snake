@@ -1,4 +1,5 @@
 import "./setCss"
+import "../game/setSocket"
 
 const setUp = () => {
   if(!global.data) {

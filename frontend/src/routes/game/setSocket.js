@@ -6,7 +6,7 @@ import { setNewSnake } from "./responses/newSnake"
 import { setEndGame } from "./responses/endGame"
 import { setConnectAndDiconect } from "./responses/connectAndDisconnect"
 
-export const setUpSocket = () => {
+const setUpSocket = () => {
   if(global.data.setUp && global.data.socket.on) {
     return
   }
@@ -21,3 +21,5 @@ export const setUpSocket = () => {
 
   setDirection()
 }
+
+setUpSocket()
