@@ -2,8 +2,9 @@ import { connect } from "socket.io-client"
 import { address } from "../data"
 import { render } from "./render"
 import { setDirection } from "./direction"
-import { endGame } from "./responses/endGame"
-import { newSnake } from "./responses/newSnake"
+import { setNewSnake } from "./responses/newSnake"
+import { setEndGame } from "./responses/endGame"
+import { setConnectAndDiconect } from "./responses/connectAndDisconnect"
 
 export const setUpSocket = (setState) => {
   if(global.data.setUp && global.data.socket.on) {
@@ -12,19 +13,11 @@ export const setUpSocket = (setState) => {
 
   global.data.socket = connect(address)
 
-  global.data.socket.on(`connect`, () => {
-    setState("1")
-  })
-
-  global.data.socket.on(`disconnect`, () => {
-    setState("0")
-  })
-
-  global.data.socket.on(`newSnake`, newSnake)
+  setConnectAndDiconect(setState)
+  setNewSnake(setState)
+  setEndGame(setState)
 
   global.data.socket.on(`board`, render)
-
-  global.data.socket.on(`endGame`, endGame)
 
   setDirection()
 }
