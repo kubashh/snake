@@ -40,7 +40,7 @@ const update = () => {
   console.timeEnd(`sendBoard`)
 }
 
-const fps = 1000 / 1
+const fps = 1000 / 10
 
 setInterval(() => {
   console.time(`all2`)
