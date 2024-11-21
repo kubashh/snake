@@ -5,9 +5,7 @@ export const getCanvas = () => {
     const ctx = gameCanvas.getContext(`2d`)
 
     global.data.ctx = ctx
-  }
-
-  if(!global.data.ctx) {
+  } else {
     setTimeout(getCanvas, 0)
   }
 }
