@@ -1,7 +1,13 @@
 import { bgColor, pixelSize } from "../data"
 import { drawBox } from "./drawBox"
+import { getCanvas } from "./getCanvas"
 
 export const render = ({ head, board, boardSize }) => {
+  if(!global.data.ctx || !global.data.ctx.fillRect) {
+    getCanvas()
+    return
+  }
+
   console.log(head, board)
 
   const [w, h] = [window.innerWidth, window.innerHeight]
