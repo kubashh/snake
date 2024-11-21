@@ -40,16 +40,6 @@ const update = () => {
   console.timeEnd(`sendBoard`)
 }
 
-const fps = 1000 / 10
-
-setInterval(() => {
-  console.time(`all2`)
-  console.time(`all1`)
-  update()
-  console.timeEnd(`all1`)
-  console.timeEnd(`all2`)
-}, fps)
-
 
 export const dataValidation = (nick, color) => {
   return Snake.isFree(nick, color)
@@ -57,4 +47,25 @@ export const dataValidation = (nick, color) => {
 
 export const createSnake = (nick, color, socket) => {
   return new Snake(nick, color, socket)
+}
+
+const fps = 1000 / 1
+
+//setInterval(() => {
+//  update()
+//}, fps)
+
+const now = () => {
+  return Date.now()
+}
+
+let timeLast = now()
+const delay = 1000
+while(true) {
+  let timeNow = now()
+
+  if(timeNow - timeLast > delay) {
+    timeLast += delay
+    update()
+  }
 }
