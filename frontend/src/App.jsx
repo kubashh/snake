@@ -7,7 +7,6 @@ export const App = () => {
 
   useEffect(() => {
     global.data.reload = () => {
-      console.log(`inGame`, global.data.inGame)
       setState(global.data.inGame)
     }
   }, [])
