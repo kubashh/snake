@@ -70,5 +70,7 @@ export const start = () => {
       timeLast += delay
       update()
     }
+
+    setTimeout(() => {}, 0)
   }
 }
