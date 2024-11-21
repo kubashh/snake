@@ -12,15 +12,18 @@ export const render = ({ head, board, boardSize }) => {
   const xa = Math.round(-head.x * pixelSize + w / 2)
   const ya = Math.round(-head.y * pixelSize + h / 2)
 
-  for(let i = 0; i < boardSize; i++) {
+  // Draw border bg
+  drawBox(0, 0, 1000, 100, `#000`)
+
+  /*for(let i = 0; i < boardSize; i++) {
     for(let j = 0; j < boardSize; j++) {
       const x = i * pixelSize + xa
       const y = j * pixelSize + ya
       //if(0 < x && x < h && 0 < y && y < w) {
-        drawBox(x, y, pixelSize, board[i][j])
+        drawBox(x, y, pixelSize, pixelSize, board[i][j])
       //}
     }
-  }
+  }*/
 
   /*for(let snake of data.snakes) {
     let x = xa + (snake.body[snake.body.length - 1].x - 0.5) * pixelSize,
