@@ -10,4 +10,4 @@ server.listen(port, () => {
   console.log(`Snake listening on port ${port}...`)
 })
 
-start()
+setTimeout(start, 0)
