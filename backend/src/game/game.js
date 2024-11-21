@@ -59,13 +59,16 @@ const now = () => {
   return Date.now()
 }
 
-let timeLast = now()
-const delay = 1000
-while(true) {
-  let timeNow = now()
 
-  if(timeNow - timeLast > delay) {
-    timeLast += delay
-    update()
+export const start = () => {
+  let timeLast = now()
+  const delay = 1000
+  while(true) {
+    let timeNow = now()
+
+    if(timeNow - timeLast > delay) {
+      timeLast += delay
+      update()
+    }
   }
 }
