@@ -116,15 +116,15 @@ export class Snake {
         break
     }
 
-    if(!this.collide(newHead)) {
-      if(board[newHead.x][newHead.y] !== appleColor) {
-        this.body.shift()
-      }
-
-      this.body.push(newHead)
+    if(this.collide(newHead)) {
+      return
     }
 
-    console.log(this.body)
+    if(board[newHead.x][newHead.y] !== appleColor) {
+      this.body.shift()
+    }
+
+    this.body.push(newHead)
   }
 
   sendBoard() {
