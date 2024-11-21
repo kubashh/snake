@@ -8,8 +8,8 @@ export const Game = () => {
       id="gameCanvas"
       style={{
         display: "block",
-        height: "100%",
-        width: "100%"
+        width: window.innerWidth,
+        height: window.innerHeight
       }}
     />
   )
