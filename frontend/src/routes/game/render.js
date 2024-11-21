@@ -5,7 +5,8 @@ import { getCanvas } from "./getCanvas"
 export const render = ({ head, board, boardSize }) => {
   const { ctx } = global.data
   if(!ctx || !ctx.fillRect) {
-    getCanvas()
+    alert(`Don't works!!!`)
+    //getCanvas()
     return
   }
 
