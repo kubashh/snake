@@ -15,7 +15,7 @@ export const render = ({ head, board, boardSize }) => {
   console.log(width, height)
 
   // Fill bg
-  drawBox(0, 0, w, h, h, bgColor)
+  drawBox(0, 0, width, height, bgColor)
 
   const xa = Math.round(-head.x * pixelSize + width / 2)
   const ya = Math.round(-head.y * pixelSize + height / 2)
