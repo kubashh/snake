@@ -4,34 +4,24 @@ import { Snake } from "./Snake.js"
 const update = () => {
   // Update board
   console.log(``)
-  console.time(`clearBoard`)
   clearBoard()
-  console.timeEnd(`clearBoard`)
 
-  console.time(`move`)
   for(const snake of snakes) {
     snake.move()
   }
-  console.timeEnd(`move`)
 
-  console.time(`generateApple`)
   // Generating apple
   generateApple()
-  console.timeEnd(`generateApple`)
 
-  console.time(`drawApples`)
   for(let { x, y } of apples) {
     board[x][y] = "yellow"
   }
-  console.timeEnd(`drawApples`)
 
-  console.time(`drawSnakes`)
   for(let { body, color } of snakes) {
     for(let { x, y } of body) {
       board[x][y] = color
     }
   }
-  console.timeEnd(`drawSnakes`)
 
   console.time(`sendBoard`)
   for(const snake of snakes) {
