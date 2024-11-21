@@ -8,19 +8,14 @@ export const setDirection = () => {
       return
     }
 
-    switch(key) {
-      case `w`:
-        changeDirection(0)
-        break
-      case `d`:
-        changeDirection(1)
-        break
-      case `s`:
-        changeDirection(2)
-        break
-      case `a`:
-        changeDirection(3)
-        break
+    if(key === `w`) {
+      changeDirection(0)
+    } else if(key === `d`) {
+      changeDirection(1)
+    } else if(key === `s`) {
+      changeDirection(2)
+    } else if(key === `a`) {
+      changeDirection(3)
     }
   })
 }
