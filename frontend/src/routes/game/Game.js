@@ -1,4 +1,8 @@
+import { getCanvas } from "./getCanvas"
+
 export const Game = () => {
+  getCanvas()
+
   return (
     <canvas
       id="gameCanvas"
