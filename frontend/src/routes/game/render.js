@@ -16,7 +16,7 @@ export const render = ({ head, board, boardSize }) => {
     for(let j = 0; j < boardSize; j++) {
       let x = i * pixelSize + xa, y = j * pixelSize + ya
       //if(0 < x && x < h && 0 < y && y < w) {
-        drawBox(x, y, pixelSize, board[i][j])
+        drawBox(x, y, pixelSize, `#888`)// board[i][j])
       //}
     }
   }
