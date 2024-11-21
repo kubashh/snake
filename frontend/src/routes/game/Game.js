@@ -7,7 +7,7 @@ export const Game = () => {
   const ref = useRef()
 
   const draw = (ctx) => {
-    ctx.clearRect(0, 0, context.canvas.width, context.canvas.height)
+    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
     ctx.fillStyle = `gray`
     ctx.drawRect(10, 10, 100, 100)
   }
