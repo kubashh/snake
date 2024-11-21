@@ -20,9 +20,9 @@ const update = () => {
 
   console.time(`drawApples`)
   for(let { x, y } of apples) {
-    board[x][y] = "drawApples"
+    board[x][y] = "yellow"
   }
-  console.timeEnd(`clearBoard`)
+  console.timeEnd(`drawApples`)
 
   console.time(`drawSnakes`)
   for(let { body, color } of snakes) {
@@ -39,7 +39,7 @@ const update = () => {
   console.timeEnd(`sendBoard`)
 }
 
-const fps = 1000 / 0.4
+const fps = 1000 / 1
 
 setInterval(update, fps)
 
