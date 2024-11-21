@@ -1,4 +1,12 @@
+let lastDirection = 5
+
 const changeDirection = (direction) => {
+  if(lastDirection === direction) {
+    return
+  }
+
+  lastDirection = direction
+
   global.data.socket.emit(`direction`, direction)
 }
 
