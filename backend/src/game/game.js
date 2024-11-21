@@ -29,7 +29,11 @@ const update = () => {
 
 const fps = 1000 / 1
 
-setInterval(update, fps)
+setInterval(() => {
+  console.time()
+  update()
+  console.time()
+}, fps)
 
 
 export const dataValidation = (nick, color) => {
