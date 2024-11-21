@@ -25,6 +25,10 @@ export const setSocket = (socket) => {
   })
 
   socket.on(`direction`, (direction) => {
+    if(!snake.name) {
+      return
+    }
+
     changeDirection(snake, direction)
   })
 }
