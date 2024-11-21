@@ -9,7 +9,7 @@ export const Game = () => {
   const draw = (ctx) => {
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
     ctx.fillStyle = `gray`
-    ctx.drawRect(10, 10, 100, 100)
+    ctx.fillRect(10, 10, 100, 100)
   }
 
   useEffect(() => {
