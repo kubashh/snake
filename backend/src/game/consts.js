@@ -1,19 +1,6 @@
 import { chance, randInt } from "./math.js"
 
-const initBoard = () => {
-  board.length = 0
-
-  for(let i = 0; i < boardSize; i++) {
-    const array2 = []
-    for(let j = 0; j < boardSize; j++) {
-      array2.push(`#000000`)
-    }
-
-    board.push(array2)
-  }
-}
-
-export const board = initBoard()
+export const board = Array.from({ length: boardSize }, () => Array(boardSize).fill(`#000000`))
 export const boardSize = 20
 export const appleColor = `yellow`
 export const snakes = []
