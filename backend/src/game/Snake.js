@@ -84,12 +84,12 @@ export class Snake {
       return true
     }
 
-    for(const snake of snakes) {
-      if(snake.nick == this.nick) {
+    for(const { nick, body } of snakes) {
+      if(nick == this.nick) {
         continue
       }
 
-      for(const element of snake.body) {
+      for(const element of body) {
         if(x == element.x && y == element.y) {
           Snake.del(this)
           return true
@@ -121,8 +121,10 @@ export class Snake {
     }
 
     let condition = true
-    for(const { x, y } of apples) {
-      if(newHead.x === x && newHead.y === y) {
+    for(let i = 0; i < apples.length; i++) {
+      if(newHead.x === apples[i].x && newHead.y === apples[i].y) {
+        snakes.slice(i, 1)
+
         condition = false
         break
       }
