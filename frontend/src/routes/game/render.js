@@ -18,7 +18,7 @@ export const render = (data) => {
 
   const middle = {
     x: width / 2 - px2,
-    y: height / 2 - px2
+    y: height / 2 + px2
   }
 
   const h = {
