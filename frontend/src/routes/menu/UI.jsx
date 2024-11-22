@@ -1,6 +1,6 @@
 export const UI = () => {
   const connected = <div>connected</div>
-  const notConnected = <div>
+  const notConnected = <>
     <div
       style={{
         color: "red"
@@ -11,7 +11,7 @@ export const UI = () => {
     <div>
       Call Jakub Hanula to turn on the server
     </div>
-  </div>
+  </>
 
   return (
     <div
