@@ -13,7 +13,7 @@ export const render = (data) => {
   const { width, height } = ctx.canvas
 
   //console.log(head, board)
-  console.log(width, height)
+  console.log(board)
 
   // Fill bg
   drawBox(0, 0, width, height, bgColor)

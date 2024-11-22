@@ -127,7 +127,7 @@ export class Snake {
     this.body.push(newHead)
   }
 
-  sendBoard() {
+  sendData() {
     const obj = {
       board: board,
       head: this.head(),

@@ -2,10 +2,9 @@ import { board, snakes, apples, generateApple, clearBoard } from "./consts.js"
 import { Snake } from "./Snake.js"
 
 const update = () => {
-  // Update board
-  console.log(``)
   clearBoard()
 
+  // Snakes move
   for(const snake of snakes) {
     snake.move()
   }
@@ -13,21 +12,20 @@ const update = () => {
   // Generating apple
   generateApple()
 
-  for(let { x, y } of apples) {
-    board[x][y] = "yellow"
+  for(const { x, y } of apples) {
+    board.push(["yellow", x, y])
   }
 
-  for(let { body, color } of snakes) {
-    for(let { x, y } of body) {
-      board[x][y] = color
+  for(const { body, color } of snakes) {
+    for(const { x, y } of body) {
+      board.push([color, x, y])
     }
   }
 
-  console.time(`sendBoard`)
+  // Send board
   for(const snake of snakes) {
-    snake.sendBoard()
+    snake.sendData()
   }
-  console.timeEnd(`sendBoard`)
 }
 
 
