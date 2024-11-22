@@ -17,18 +17,17 @@ export const render = (data) => {
   drawBox(0, 0, width, height, bgColor)
 
   const middle = {
-    x: width / 2,
-    y: height / 2
+    x: width / 2 - px2,
+    y: height / 2 - px2
   }
 
   const h = {
-    x: Math.round(middle.x - px2 - head.x * pixelSize),
-    y: Math.round(middle.y - px2 - head.y * pixelSize)
+    x: Math.round(middle.x - head.x * pixelSize),
+    y: height - (Math.round(middle.y - head.y * pixelSize)) - boardSize * pixelSize + pixelSize
   }
 
   // Draw border bg
-  drawBox(h.x, (height - h.y) - boardSize * pixelSize + pixelSize, boardSize * pixelSize, boardSize * pixelSize, `#000`)
-  //drawBox(middle.x - px2, middle.y + px2, pixelSize, pixelSize, `#fff`)
+  drawBox(h.x, h.y, boardSize * pixelSize, boardSize * pixelSize, `#000`)
 
   for(let [color, i, j] of board) {
     i -= head.x
