@@ -27,7 +27,7 @@ export const render = (data) => {
   }
 
   // Draw border bg
-  drawBox(h.x, (height - h.y) - boardSize * pixelSize, boardSize * pixelSize, boardSize * pixelSize, `#000`)
+  drawBox(h.x, (height - h.y) - boardSize * pixelSize + pixelSize, boardSize * pixelSize, boardSize * pixelSize, `#000`)
   drawBox(middle.x - px2, middle.y + px2, pixelSize, pixelSize, `#fff`)
 
   /*for(let [color, i, j] of board) {
