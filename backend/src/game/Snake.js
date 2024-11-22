@@ -120,7 +120,15 @@ export class Snake {
       return
     }
 
-    if(board[newHead.x][newHead.y] !== appleColor) {
+    let condition = true
+    for(const { x, y } of apples) {
+      if(newHead.x === x && newHead.y === y) {
+        condition = false
+        break
+      }
+    }
+
+    if(condition) {
       this.body.shift()
     }
 
