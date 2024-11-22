@@ -21,8 +21,8 @@ export const render = (data) => {
   }
 
   const h = {
-    x: Math.round(-head.x * pixelSize + width / 2 - pixelSize / 2),
-    y: Math.round(-head.y * pixelSize + height / 2 - pixelSize / 2)
+    x: Math.round(-head.x * pixelSize + middle.x - pixelSize / 2),
+    y: Math.round(-head.y * pixelSize + middle.y - pixelSize / 2)
   }
 
   // Draw border bg
