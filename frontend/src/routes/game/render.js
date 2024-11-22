@@ -28,15 +28,15 @@ export const render = (data) => {
 
   // Draw border bg
   drawBox(h.x, (height - h.y) - boardSize * pixelSize + pixelSize, boardSize * pixelSize, boardSize * pixelSize, `#000`)
-  drawBox(middle.x - px2, middle.y + px2, pixelSize, pixelSize, `#fff`)
+  //drawBox(middle.x - px2, middle.y + px2, pixelSize, pixelSize, `#fff`)
 
-  /*for(let [color, i, j] of board) {
+  for(let [color, i, j] of board) {
     i -= head.x
     j -= head.y
-    const x = i * pixelSize + middle.y
+    const x = i * pixelSize + middle.x
     const y = j * pixelSize + middle.y
     //if(0 < x && x < height && 0 < y && y < width) {
       drawBox(x, y, pixelSize, pixelSize, color)
     //}
-  }*/
+  }
 }
