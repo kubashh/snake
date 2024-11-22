@@ -6,7 +6,7 @@ export const Game = () => {
   useEffect(() => {
     const gameCanvas = ref.current
     gameCanvas.width = window.innerWidth
-    gameCanvas.height = window.innerHeight
+    gameCanvas.height = window.innerHeight + 1000
     const ctx = gameCanvas.getContext(`2d`)
     global.data.ctx = ctx
   }, [])
