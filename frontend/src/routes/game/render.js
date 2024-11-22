@@ -23,7 +23,7 @@ export const render = (data) => {
 
   const h = {
     x: Math.round(middle.x - head.x * pixelSize),
-    y: height - (Math.round(middle.y - head.y * pixelSize)) - boardSize * pixelSize + pixelSize
+    y: height - (Math.round(middle.y - head.y * pixelSize)) - boardSize * pixelSize
   }
 
   // Draw border bg

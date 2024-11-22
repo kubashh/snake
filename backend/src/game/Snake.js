@@ -67,11 +67,16 @@ export class Snake {
   }
 
   changeDirection(direction) {
+    const { x, y } = this.head()
+    const { body } = this
+    const { length } = body
+    const element = body[length - 2]
+
     const condition = (
-      direction === 0 && this.body[this.body.length - 2].y != this.head().y - 1) || (
-      direction === 1 && this.body[this.body.length - 2].x != this.head().x - 1) || (
-      direction === 2 && this.body[this.body.length - 2].y != this.head().y + 1) || (
-      direction === 3 && this.body[this.body.length - 2].x != this.head().x + 1)
+      direction === 0 && element.y !== y + 1) || (
+      direction === 1 && element.x !== x + 1) || (
+      direction === 2 && element.y !== y - 1) || (
+      direction === 3 && element.x !== x - 1)
 
     if(condition) {
       this.direction = direction
