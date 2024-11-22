@@ -123,7 +123,7 @@ export class Snake {
     let condition = true
     for(let i = 0; i < apples.length; i++) {
       if(newHead.x === apples[i].x && newHead.y === apples[i].y) {
-        snakes.slice(i, 1)
+        snakes.splice(i, 1)
 
         condition = false
         break
