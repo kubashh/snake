@@ -1,4 +1,18 @@
 export const UI = () => {
+  const connected = <div>connected</div>
+  const notConnected = <div>
+    <div
+      style={{
+        color: "red"
+      }}
+    >
+      not connected
+    </div>
+    <div>
+      Call Jakub Hanula to turn on the server
+    </div>
+  </div>
+
   return (
     <div
       style={{
@@ -7,9 +21,7 @@ export const UI = () => {
         left: 16
       }}
     >
-      <div>
-        {global.data.socket.connected ? <div>connected</div> : <div style={{color: "red"}}>not connected</div>}
-      </div>
+      {global.data.socket.connected ? connected : notConnected}
     </div>
   )
 }
