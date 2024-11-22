@@ -3,15 +3,13 @@ import { Game } from "./routes/game/Game"
 import { Menu } from "./routes/menu/Menu"
 
 export const App = () => {
-  const[, setState] = useState(0)
+  const[i, setState] = useState(0)
 
   useEffect(() => {
-    let i = 1
     global.data.reload = () => {
-      setState(i)
-      i++
+      setState(i + 1)
     }
-  }, [])
+  })
 
   return (
     <>
