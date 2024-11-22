@@ -34,7 +34,7 @@ export const render = (data) => {
     i -= head.x
     j -= head.y
     const x = i * pixelSize + middle.x
-    const y = j * pixelSize + middle.y
+    const y = -j * pixelSize + middle.y
     //if(0 < x && x < height && 0 < y && y < width) {
       drawBox(x, y, pixelSize, pixelSize, color)
     //}
