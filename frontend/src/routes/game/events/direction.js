@@ -1,7 +1,7 @@
-let lastDirection = 5
+let lastDirection = NaN
 
 const changeDirection = (direction) => {
-  if(lastDirection === direction) {
+  if(lastDirection % 2 === direction % 2) {
     return
   }
 
