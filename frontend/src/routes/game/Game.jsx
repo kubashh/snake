@@ -9,15 +9,15 @@ export const Game = () => {
     gameCanvas.height = window.innerHeight
     const ctx = gameCanvas.getContext(`2d`)
     global.data.ctx = ctx
-  }, [])
+  })
 
   return (
     <canvas
       ref={ref}
       style={{
         display: "block",
-        width: window.innerWidth,
-        height: window.innerHeight
+        width: "100vw",
+        height: "100vh"
       }}
     />
   )
