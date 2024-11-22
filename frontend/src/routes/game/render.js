@@ -27,15 +27,13 @@ export const render = (data) => {
   drawBox(a.x, a.y, boardSize * pixelSize, boardSize * pixelSize, `#000`)
   drawBox(width / 2 - pixelSize / 2, height / 2 + pixelSize / 2, pixelSize, pixelSize, `#fff`)
 
-  /*for(let i = 0; i < boardSize; i++) {
-    for(let j = 0; j < boardSize; j++) {
-      const x = i * pixelSize + a.x
-      const y = j * pixelSize + a.y
-      //if(0 < x && x < height && 0 < y && y < width) {
-        drawBox(x, y, pixelSize, pixelSize, board[i][j])
-      //}
-    }
-  }*/
+  for(const [color, i, j] of board) {
+    const x = i * pixelSize + a.x
+    const y = j * pixelSize + a.y
+    //if(0 < x && x < height && 0 < y && y < width) {
+      drawBox(x, y, pixelSize, pixelSize, color)
+    //}
+  }
 
   /*for(let snake of data.snakes) {
     let x = xa + (snake.body[snake.body.length - 1].x - 0.5) * pixelSize,
