@@ -1,5 +1,5 @@
 export const setResize = () => {
-  document.onresize = (e) => {
+  window.addEventListener(`resize`, (e) => {
     console.log(e)
-  }
+  })
 }
