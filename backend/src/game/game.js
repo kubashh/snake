@@ -40,8 +40,15 @@ export const createSnake = (nick, color, socket) => {
 }
 
 
+const fps = 1000 / 8
+
+export const start = () => {
+  setInterval(update, fps)
+}
+
+
+/*
 // start
-const delay = 1000 / 8
 
 const now = () => {
   return Date.now()
@@ -58,4 +65,4 @@ export const start = () => {
   }
 
   setTimeout(start, 1)
-}
+}*/
