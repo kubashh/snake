@@ -4,8 +4,6 @@ export const setEndGame = () => {
 
     global.data.inGame = false
 
-    //alert(`You lose! (From endGame)`)
-
     global.data.reload()
   })
 }

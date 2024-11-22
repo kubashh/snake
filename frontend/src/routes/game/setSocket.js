@@ -1,7 +1,7 @@
 import { connect } from "socket.io-client"
 import { address } from "../data"
 import { render } from "./render"
-import { setDirection } from "./direction"
+import { setDirection } from "./events/direction"
 import { setNewSnake } from "./responses/newSnake"
 import { setEndGame } from "./responses/endGame"
 import { setConnectAndDiconect } from "./responses/connectAndDisconnect"
