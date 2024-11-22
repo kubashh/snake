@@ -1,6 +1,6 @@
 import { chance, randInt } from "./math.js"
 
-export const boardSize = 16
+export const boardSize = 64
 export const appleColor = `yellow`
 export const board = []
 export const snakes = []
