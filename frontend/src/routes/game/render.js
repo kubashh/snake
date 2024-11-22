@@ -11,6 +11,7 @@ export const render = (data) => {
   }
 
   const { width, height } = ctx.canvas
+  const px2 = pixelSize / 2
 
   // Fill bg
   drawBox(0, 0, width, height, bgColor)
@@ -21,14 +22,13 @@ export const render = (data) => {
   }
 
   const h = {
-    x: Math.round(-head.x * pixelSize + middle.x - pixelSize / 2),
-    y: Math.round(-head.y * pixelSize + middle.y - pixelSize / 2)
+    x: Math.round(middle.x - px2 - head.x * pixelSize),
+    y: Math.round(middle.y - px2 - head.y * pixelSize)
   }
 
   // Draw border bg
   drawBox(h.x, h.y, boardSize * pixelSize, boardSize * pixelSize, `#000`)
-  drawBox(100, 100, 200, 300, "white")
-  //drawBox(middle.x - pixelSize / 2, middle.y + pixelSize / 2, pixelSize, pixelSize, `#fff`)
+  drawBox(middle.x - px2, middle.y + px2, pixelSize, pixelSize, `#fff`)
 
   /*for(let [color, i, j] of board) {
     i -= head.x
