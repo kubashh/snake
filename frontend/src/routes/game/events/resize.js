@@ -1,5 +1,6 @@
 export const setResize = () => {
-  window.addEventListener(`resize`, (e) => {
-    console.log(e)
+  window.addEventListener(`resize`, () => {
+    global.data.ctx.canvas.width = window.innerWidth
+    global.data.ctx.canvas.height = window.innerHeight
   })
 }
