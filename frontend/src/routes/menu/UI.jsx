@@ -13,15 +13,13 @@ export const UI = () => {
     </div>
   </>
 
-  return (
-    <div
-      style={{
-        position: "absolute",
-        top: 8,
-        left: 16
-      }}
-    >
-      {global.data.socket.connected ? connected : notConnected}
-    </div>
-  )
+  return <div
+    style={{
+      position: "absolute",
+      top: 8,
+      left: 16
+    }}
+  >
+    {global.data.socket.connected ? connected : notConnected}
+  </div>
 }

@@ -11,9 +11,7 @@ export const App = () => {
     }
   })
 
-  return (
-    <>
-      {global.data.inGame ? <Game /> : <Menu />}
-    </>
-  )
+  return <>
+    {global.data.inGame ? <Game /> : <Menu />}
+  </>
 }
