@@ -4,7 +4,7 @@ import { start } from "./src/game/game.js"
 
 const reqRes = (req, res) => {
   res.writeHead(200, {"Content-Type": `application/json`})
-  res.write(JSON.stringify{ message: req.url })
+  res.write(JSON.stringify({ message: req.url }))
   res.end()
 }
 
