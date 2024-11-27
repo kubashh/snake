@@ -5,7 +5,7 @@ import { drawMapBorder } from "./drawMapBorder"
 import { fillBackground } from "./fillBackground"
 
 export const render = (dataFromBackend) => {
-  const [ board, head, boardSize ] = JSON.parse(dataFromBackend)
+  const [ board, head ] = JSON.parse(dataFromBackend)
 
   const { width, height } = data.ctx.canvas
   const px2 = pixelSize / 2
@@ -17,7 +17,7 @@ export const render = (dataFromBackend) => {
     y: Math.floor(height / 2 + px2)
   }
 
-  drawMapBorder(middle, head, boardSize)
+  drawMapBorder(middle, head)
 
   let color = ``
 
