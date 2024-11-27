@@ -1,16 +1,13 @@
+import { pixelSize } from "../../consts"
 import { data } from "../../data"
 import { drawBox } from "../drawBox"
+import { drawMapBorder } from "./drawMapBorder"
 import { fillBackground } from "./fillBackground"
 
 export const render = (dataFromBackend) => {
-  const { ctx, pixelSize } = data
   const { head, board, boardSize } = JSON.parse(dataFromBackend)
 
-  if(!ctx || !ctx.canvas) {
-    return
-  }
-
-  const { width, height } = ctx.canvas
+  const { width, height } = data.ctx.canvas
   const px2 = pixelSize / 2
 
   fillBackground()
@@ -20,13 +17,7 @@ export const render = (dataFromBackend) => {
     y: Math.floor(height / 2 + px2)
   }
 
-  const h = {
-    x: Math.floor(middle.x - head.x * pixelSize),
-    y: Math.floor(height - (middle.y - head.y * pixelSize) - boardSize * pixelSize)
-  }
-
-  // Draw border bg
-  drawBox(h.x, h.y, boardSize * pixelSize, boardSize * pixelSize, `#000`)
+  drawMapBorder(middle, head, boardSize)
 
   let color = ``
 
