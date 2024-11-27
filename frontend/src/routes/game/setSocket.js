@@ -31,4 +31,5 @@ export const setSocket = () => {
 
   setDirection()
   setResize()
+  setStaticData()
 }
