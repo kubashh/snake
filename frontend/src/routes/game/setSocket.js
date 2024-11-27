@@ -7,6 +7,7 @@ import { setConnectAndDiconect } from "./responses/connectAndDisconnect"
 import { setDirection } from "./events/direction"
 import { setResize } from "./events/resize"
 import { address } from "../consts"
+import { setStaticData } from "./responses/staticData"
 
 export const setSocket = () => {
   if(data.setUp && data.socket.on) {
