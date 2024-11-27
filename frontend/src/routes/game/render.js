@@ -2,6 +2,7 @@ import { data } from "../data"
 import { drawBox } from "./drawBox"
 
 const { bgColor, pixelSize } = data
+console.log(data.ctx, data.ctx.fillStyle, data.ctx.fillRect)
 
 export const render = (data) => {
   const { head, board, boardSize } = JSON.parse(data)
