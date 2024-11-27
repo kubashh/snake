@@ -4,13 +4,10 @@ import { drawBox } from "./drawBox"
 export const render = (dataFromBackend) => {
   const { ctx, bgColor, pixelSize } = data
   const { head, board, boardSize } = JSON.parse(dataFromBackend)
-  console.log(head)
 
-  if(!ctx || !ctx.fillRect) {
-    //alert(`Don't works!!!`)
+  if(!ctx || !ctx.canvas) {
     return
   }
-  console.log(data.ctx, data.ctx.fillStyle, data.ctx.fillRect)
 
   const { width, height } = ctx.canvas
   const px2 = pixelSize / 2

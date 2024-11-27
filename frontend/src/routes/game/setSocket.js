@@ -7,7 +7,7 @@ import { setConnectAndDiconect } from "./responses/connectAndDisconnect"
 import { setDirection } from "./events/direction"
 import { setResize } from "./events/resize"
 
-const setUpSocket = () => {
+export const setSocket = () => {
   if(data.setUp && data.socket.on) {
     return
   }
@@ -25,5 +25,3 @@ const setUpSocket = () => {
   setDirection()
   setResize()
 }
-
-setUpSocket()
