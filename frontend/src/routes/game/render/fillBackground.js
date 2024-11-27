@@ -1,3 +1,4 @@
+import { data } from "../../data"
 import { drawBox } from "../drawBox"
 
 export const fillBackground = () => {
