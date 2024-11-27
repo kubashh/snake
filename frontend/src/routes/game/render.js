@@ -5,7 +5,6 @@ const { bgColor, pixelSize } = data
 
 export const render = (data) => {
   const { head, board, boardSize } = JSON.parse(data)
-  console.log(head, board, boardSize)
 
   const { ctx } = data
   if(!ctx || !ctx.fillRect) {
