@@ -15,8 +15,6 @@ const update = () => {
   // Generating apple
   generateApple()
 
-  board.push(`yellow`)
-
   for(const { x, y } of apples) {
     board.push([x, y])
   }
