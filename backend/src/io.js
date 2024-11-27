@@ -1,5 +1,8 @@
 import { Server } from "socket.io"
 import { setSocket } from "./setSocket.js"
+import { boardSize } from "./game/data.js"
+
+const staticData = { boardSize }
 
 export const io = (server) => {
   const io = new Server(server, {
@@ -11,5 +14,7 @@ export const io = (server) => {
 
   io.on(`connection`, (socket) => {
     setSocket(socket)
+
+    socket.emit(`staticData`, staticData)
   })
 }
