@@ -1,9 +1,11 @@
+import { data } from "../../data"
+
 export const setEndGame = () => {
-  global.data.socket.on(`endGame`, () => {
-    localStorage.setItem(`data`, JSON.stringify(global.data.user))
+  data.socket.on(`endGame`, () => {
+    localStorage.setItem(`data`, JSON.stringify(data.user))
 
-    global.data.inGame = false
+    data.inGame = false
 
-    global.data.reload()
+    data.reload()
   })
 }

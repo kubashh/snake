@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react"
+import { data } from "../data"
 
 export const Game = () => {
   const ref = useRef()
@@ -8,7 +9,7 @@ export const Game = () => {
     gameCanvas.width = window.innerWidth
     gameCanvas.height = window.innerHeight
     const ctx = gameCanvas.getContext(`2d`)
-    global.data.ctx = ctx
+    data.ctx = ctx
   })
 
   return <canvas

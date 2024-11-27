@@ -1,10 +1,11 @@
 import { useState } from "react"
 import { TextInput } from "./TextInput"
 import { UI } from "./UI"
+import { data } from "../data"
 
 export const Menu = () => {
-  const [nick, setNick] = useState(global.data.user.nick)
-  const [color, setColor] = useState(global.data.user.color)
+  const [nick, setNick] = useState(data.user.nick)
+  const [color, setColor] = useState(data.user.color)
 
   return <>
     <UI />
@@ -49,11 +50,11 @@ export const Menu = () => {
         }}
         value="Start Game"
         onClick={() => {
-          global.data.user.nick = nick
-          global.data.user.color = color
-          if(global.data.socket.connected) {
+          data.user.nick = nick
+          data.user.color = color
+          if(data.socket.connected) {
             // Start game
-            global.data.socket.emit(`newSnake`, { nick, color })
+            data.socket.emit(`newSnake`, { nick, color })
           } else {
             alert(`Connection lost`)
           }

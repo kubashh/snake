@@ -1,9 +1,11 @@
+import { data } from "../../data"
+
 export const setNewSnake = () => {
-  global.data.socket.on(`newSnake`, ({ success, message }) => {
+  data.socket.on(`newSnake`, ({ success, message }) => {
     if(success) {
       // Start game
-      global.data.inGame = true
-      global.data.reload()
+      data.inGame = true
+      data.reload()
     } else {
       alert(message)
     }

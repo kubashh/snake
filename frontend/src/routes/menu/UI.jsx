@@ -1,3 +1,5 @@
+import { data } from "../data"
+
 export const UI = () => {
   const connected = <div>connected</div>
   const notConnected = <>
@@ -20,6 +22,6 @@ export const UI = () => {
       left: 16
     }}
   >
-    {global.data.socket.connected ? connected : notConnected}
+    {data.socket.connected ? connected : notConnected}
   </div>
 }

@@ -1,9 +1,11 @@
+import { data } from "../../data"
+
 export const setConnectAndDiconect = () => {
-  global.data.socket.on(`connect`, () => {
-    global.data.reload()
+  data.socket.on(`connect`, () => {
+    data.reload()
   })
 
-  global.data.socket.on(`disconnect`, () => {
-    global.data.reload()
+  data.socket.on(`disconnect`, () => {
+    data.reload()
   })
 }

@@ -1,10 +1,12 @@
-import { bgColor, pixelSize } from "../data"
+import { data } from "../data"
 import { drawBox } from "./drawBox"
+
+const { bgColor, pixelSize } = data
 
 export const render = (data) => {
   const { head, board, boardSize } = JSON.parse(data)
 
-  const { ctx } = global.data
+  const { ctx } = data
   if(!ctx || !ctx.fillRect) {
     //alert(`Don't works!!!`)
     return
