@@ -1,8 +1,9 @@
-import { data } from "../data"
-import { drawBox } from "./drawBox"
+import { data } from "../../data"
+import { drawBox } from "../drawBox"
+import { fillBackground } from "./fillBackground"
 
 export const render = (dataFromBackend) => {
-  const { ctx, bgColor, pixelSize } = data
+  const { ctx, pixelSize } = data
   const { head, board, boardSize } = JSON.parse(dataFromBackend)
 
   if(!ctx || !ctx.canvas) {
@@ -12,8 +13,7 @@ export const render = (dataFromBackend) => {
   const { width, height } = ctx.canvas
   const px2 = pixelSize / 2
 
-  // Fill bg
-  drawBox(0, 0, width, height, bgColor)
+  fillBackground()
 
   const middle = {
     x: Math.floor(width / 2 - px2),

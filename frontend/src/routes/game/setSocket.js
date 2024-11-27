@@ -1,6 +1,6 @@
 import { connect } from "socket.io-client"
 import { data } from "../data"
-import { render } from "./render"
+import { render } from "./render/render"
 import { setNewSnake } from "./responses/newSnake"
 import { setEndGame } from "./responses/endGame"
 import { setConnectAndDiconect } from "./responses/connectAndDisconnect"
