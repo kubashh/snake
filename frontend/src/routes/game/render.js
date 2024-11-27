@@ -28,19 +28,22 @@ export const render = (dataFromBackend) => {
   // Draw border bg
   drawBox(h.x, h.y, boardSize * pixelSize, boardSize * pixelSize, `#000`)
 
+  let color = ``
+
   for(const arr of board) {
-    const color = arr[0]
-    for(let [i, j] of arr) {
-      if(!i) {
-        continue
-      }
-      i -= head.x
-      j -= head.y
-      const x = i * pixelSize + middle.x
-      const y = -j * pixelSize + middle.y - 2 * pixelSize
-      //if(0 < x && x < height && 0 < y && y < width) {
-        drawBox(x, y, pixelSize, pixelSize, color)
-      //}
+    if(typeof(arr) == `string`) {
+      color = arr
+      continue
     }
+
+    let [i, j] = arr
+
+    i -= head.x
+    j -= head.y
+    const x = i * pixelSize + middle.x
+    const y = -j * pixelSize + middle.y - 2 * pixelSize
+    //if(0 < x && x < height && 0 < y && y < width) {
+      drawBox(x, y, pixelSize, pixelSize, color)
+    //}
   }
 }

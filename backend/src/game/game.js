@@ -13,20 +13,19 @@ const update = () => {
   // Generating apple
   generateApple()
 
-  const applesArray = [`yellow`]
+  board.push(`yellow`)
 
   for(const { x, y } of apples) {
-    applesArray.push([`yellow`, x, y])
+    board.push([`yellow`, x, y])
   }
 
   board.push(applesArray)
 
   for(const { body, color } of snakes) {
-    const snakeArray = [color]
+    board.push(color)
     for(const { x, y } of body) {
-      snakeArray.push([x, y])
+      board.push([x, y])
     }
-    board.push(snakeArray)
   }
 
   // Send board
