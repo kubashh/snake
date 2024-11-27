@@ -6,7 +6,6 @@ import { setEndGame } from "./responses/endGame"
 import { setConnectAndDiconect } from "./responses/connectAndDisconnect"
 import { setDirection } from "./events/direction"
 import { setResize } from "./events/resize"
-import { address } from "../consts"
 import { setStaticData } from "./responses/staticData"
 
 export const setSocket = () => {
@@ -16,7 +15,7 @@ export const setSocket = () => {
 
   data.setUp = true
 
-  data.socket = connect(address)
+  data.socket = connect(data.address)
 
   setConnectAndDiconect()
   setNewSnake()
