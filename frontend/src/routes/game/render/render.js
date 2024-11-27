@@ -5,7 +5,7 @@ import { fillBackground } from "./fillBackground"
 
 export const render = (dataFromBackend) => {
   const { pixelSize } = data
-  const [ board, head ] = JSON.parse(dataFromBackend)
+  const [ head, ...board  ] = JSON.parse(dataFromBackend)
 
   const { width, height } = data.ctx.canvas
   const px2 = pixelSize / 2

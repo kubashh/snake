@@ -144,8 +144,8 @@ export class Snake {
   }
 
   sendData() {
-    const obj = [board, this.head()]
+    board[0] = this.head()
 
-    this.socket.emit(`board`, JSON.stringify(obj))
+    this.socket.emit(`board`, JSON.stringify(board))
   }
 }

@@ -1,8 +1,8 @@
 import { Server } from "socket.io"
 import { setSocket } from "./setSocket.js"
-import { boardSize } from "./game/data.js"
+import { appleColor, boardSize } from "./game/data.js"
 
-const staticData = { boardSize }
+const staticData = { boardSize, appleColor }
 
 export const io = (server) => {
   const io = new Server(server, {
