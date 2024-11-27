@@ -4,7 +4,7 @@ import { drawMapBorder } from "./drawMapBorder"
 import { fillBackground } from "./fillBackground"
 
 export const render = (dataFromBackend) => {
-  const { pixelSize } = data
+  const { pixelSize, appleColor } = data
   const [ head, ...board  ] = JSON.parse(dataFromBackend)
 
   const { width, height } = data.ctx.canvas
@@ -19,10 +19,10 @@ export const render = (dataFromBackend) => {
 
   drawMapBorder(middle, head)
 
-  let color = ``
+  let color = appleColor
 
   for(const arr of board) {
-    if(typeof(arr) == `string`) {
+    if(typeof(arr) === `string`) {
       color = arr
       continue
     }
