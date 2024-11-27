@@ -29,8 +29,8 @@ export const render = (dataFromBackend) => {
   drawBox(h.x, h.y, boardSize * pixelSize, boardSize * pixelSize, `#000`)
 
   for(const arr of board) {
-    let color = arr[0]
-    for(const [i, j] of arr) {
+    const color = arr[0]
+    for(let [i, j] of arr) {
       if(!i) {
         continue
       }
