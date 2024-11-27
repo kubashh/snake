@@ -39,5 +39,5 @@ export const generateApple = () => {
 }
 
 export const clearBoard = () => {
-  board.length = 0
+  board.length = 1
 }

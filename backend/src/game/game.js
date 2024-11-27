@@ -5,14 +5,11 @@ import { Snake } from "./Snake.js"
 const update = () => {
   clearBoard()
 
-  board.push(0)
-
   // Snakes move
   for(const snake of snakes) {
     snake.move()
   }
 
-  // Generating apple
   generateApple()
 
   for(const { x, y } of apples) {
