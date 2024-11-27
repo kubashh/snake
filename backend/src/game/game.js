@@ -1,4 +1,5 @@
-import { board, snakes, apples, generateApple, clearBoard } from "./consts.js"
+import { apples, board, snakes } from "./data.js"
+import { generateApple, clearBoard } from "./functions.js"
 import { Snake } from "./Snake.js"
 
 const update = () => {

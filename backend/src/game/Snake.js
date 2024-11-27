@@ -1,4 +1,5 @@
-import { appleColor, apples, board, boardSize, freePos, snakes } from "./consts.js"
+import { appleColor, apples, board, boardSize, snakes } from "./data.js"
+import { freePos } from "./functions.js"
 import { chance } from "./math.js"
 
 export class Snake {
