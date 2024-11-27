@@ -8,11 +8,6 @@ import { setDirection } from "./events/direction"
 import { setResize } from "./events/resize"
 import { address } from "../consts"
 
-const test = async () => {
-  const res = await fetch(address)
-  console.log(res)
-}
-
 export const setSocket = () => {
   if(data.setUp && data.socket.on) {
     return
@@ -36,6 +31,4 @@ export const setSocket = () => {
 
   setDirection()
   setResize()
-
-  test()
 }
