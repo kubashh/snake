@@ -19,8 +19,6 @@ const update = () => {
     board.push([`yellow`, x, y])
   }
 
-  board.push(applesArray)
-
   for(const { body, color } of snakes) {
     board.push(color)
     for(const { x, y } of body) {
