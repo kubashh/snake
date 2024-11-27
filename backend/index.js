@@ -3,8 +3,15 @@ import { io } from "./src/io.js"
 import { start } from "./src/game/game.js"
 
 const reqRes = (req, res) => {
-  res.writeHead(200, {"Content-Type": `application/json`})
-  res.write(JSON.stringify({ message: req.url }))
+  res.writeHead(200, {
+    "Content-Type": `application/json`,
+    "Access-Control-Allow-Origin": `*`,
+    "Access-Control-Allow-Methods": `GET`,
+    "Access-Control-Max-Age": 2592000, // 30 days
+  })
+  res.write(JSON.stringify({
+    message: req.url
+  }))
   res.end()
 }
 
