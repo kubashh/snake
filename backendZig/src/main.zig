@@ -163,13 +163,16 @@ fn handle_websocket_message(
 //
 // HTTP stuff
 //
+
+const responseData = (
+    \\ <html><body>
+    \\ <h1>This is a simple Websocket chatroom example</h1>
+    \\ </body></html>
+);
+
 fn on_request(r: zap.Request) void {
     r.setHeader("Server", "zap.example") catch unreachable;
-    r.sendBody(
-        \\ <html><body>
-        \\ <h1>This is a simple Websocket chatroom example</h1>
-        \\ </body></html>
-    ) catch return;
+    r.sendBody(responseData) catch return;
 }
 
 fn on_upgrade(r: zap.Request, target_protocol: []const u8) void {
