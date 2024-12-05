@@ -210,7 +210,7 @@ pub fn main() !void {
     // setup listener
     var listener = zap.HttpListener.init(
         .{
-            .port = 3010,
+            .port = 4000,
             .on_request = on_request,
             .on_upgrade = on_upgrade,
             .max_clients = 1000,
@@ -221,8 +221,8 @@ pub fn main() !void {
     );
     try listener.listen();
     std.log.info("", .{});
-    std.log.info("Connect with browser to http://localhost:3010.", .{});
-    std.log.info("Connect to websocket on ws://localhost:3010.", .{});
+    std.log.info("Connect with browser to http://localhost:4000.", .{});
+    std.log.info("Connect to websocket on ws://localhost:4000.", .{});
     std.log.info("Terminate with CTRL+C", .{});
 
     zap.start(.{
