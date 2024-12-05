@@ -165,6 +165,7 @@ fn handle_websocket_message(
 //
 
 const responseData = (
+    \\ <!DOCTYPE html>
     \\ <html><body>
     \\ <h1>This is a simple Websocket chatroom example</h1>
     \\ </body></html>
