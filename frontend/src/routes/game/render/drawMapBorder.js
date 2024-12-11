@@ -10,7 +10,7 @@ export const drawMapBorder = (middle, head) => {
   let b = boardSize * pixelSize
 
   if(x < 0) {
-    a -= x
+    a += x
     x = 0
   }
 
