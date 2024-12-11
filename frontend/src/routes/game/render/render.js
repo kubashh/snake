@@ -33,8 +33,8 @@ export const render = (dataFromBackend) => {
     const x = i * pixelSize + middle.x
     const y = -j * pixelSize + middle.y - 2 * pixelSize
 
-    if(-pixelSize < x && x < height + pixelSize && -pixelSize < y && y < width + pixelSize) {
+    //if(-pixelSize < x && x < height + pixelSize && -pixelSize < y && y < width + pixelSize) {
       drawBox(x, y, pixelSize, pixelSize, color)
-    }
+    //}
   }
 }
