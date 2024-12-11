@@ -1,7 +1,23 @@
 import "./style.css"
-import "../game/setSocket"
-import { setUser } from "./setUser"
 import { setSocket } from "../game/setSocket"
+
+const getUser = () => {
+  const oldData = localStorage.getItem(`data`)
+
+  let user = {
+    nick: "Nick",
+    color: "#ff0000"
+  }
+
+  if(oldData) {
+    const { nick, color } = JSON.parse(oldData)
+    if(nick && color) {
+      user = { nick, color }
+    }
+  }
+
+  return user
+}
 
 const setUp = () => {
   if(window.data) {
@@ -15,12 +31,11 @@ const setUp = () => {
     inGame: false,
     boardSize: null,
     appleColor: null,
-    user: {},
+    user: getUser(),
     socket: {},
     ctx: {}
   }
 
-  setUser()
   setSocket()
 }
 
