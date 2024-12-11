@@ -3,6 +3,8 @@ import { drawMapBorder } from "./drawMapBorder"
 import { fillBackground } from "./fillBackground"
 
 export const render = (dataFromBackend) => {
+  console.time()
+
   const { pixelSize, appleColor, ctx } = window.data
   const [ head, ...board  ] = JSON.parse(dataFromBackend)
 
@@ -19,8 +21,6 @@ export const render = (dataFromBackend) => {
   drawMapBorder(middle, head)
 
   let color = appleColor
-
-  console.time()
 
   for(const arr of board) {
     if(typeof(arr) === `string`) {
