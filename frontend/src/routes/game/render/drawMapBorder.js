@@ -8,6 +8,7 @@ export const drawMapBorder = (middle, head) => {
 
   let a = boardSize * pixelSize
   let b = boardSize * pixelSize
+  const c = 0
 
   if(x < 0) {
     a += x
