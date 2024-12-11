@@ -10,9 +10,9 @@ export const drawMapBorder = (middle, head) => {
     x = 0
   }
 
-  if(y < 0) {
-    y = 0
-  }
+  //if(y < 0) {
+  //  y = 0
+  //}
 
   drawBox(x, y, boardSize * pixelSize, boardSize * pixelSize, `#000`)
 }
