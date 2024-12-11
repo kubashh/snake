@@ -1,4 +1,4 @@
-import { data } from "../../data"
+const { data } = window
 
 export const setEndGame = () => {
   data.socket.on(`endGame`, () => {

@@ -1,4 +1,4 @@
-import { data } from "../data"
+const { data } = window
 
 export const UI = () => {
   const connected = <div>connected</div>

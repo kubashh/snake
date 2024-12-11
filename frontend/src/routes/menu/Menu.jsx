@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { TextInput } from "./TextInput"
 import { UI } from "./UI"
-import { data } from "../data"
+const { data } = window
 
 export const Menu = () => {
   const [nick, setNick] = useState(data.user.nick)

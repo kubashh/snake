@@ -1,7 +1,7 @@
-import { data } from "../../data"
 import { drawBox } from "../drawBox"
 import { drawMapBorder } from "./drawMapBorder"
 import { fillBackground } from "./fillBackground"
+const { data } = window
 
 export const render = (dataFromBackend) => {
   const { pixelSize, appleColor } = data

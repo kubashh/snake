@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react"
-import { data } from "../data"
+const { data } = window
 
 export const Game = () => {
   const ref = useRef()

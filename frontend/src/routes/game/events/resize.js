@@ -1,4 +1,4 @@
-import { data } from "../../data"
+const { data } = window
 
 export const setResize = () => {
   window.addEventListener(`resize`, () => {

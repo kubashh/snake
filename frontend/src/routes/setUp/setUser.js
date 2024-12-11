@@ -1,4 +1,4 @@
-import { data } from "../data"
+const { data } = window
 
 export const setUser = () => {
   const oldData = localStorage.getItem(`data`)

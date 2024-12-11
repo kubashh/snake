@@ -1,4 +1,4 @@
-import { data } from "../../data"
+const { data } = window
 import { drawBox } from "../drawBox"
 
 export const fillBackground = () => {

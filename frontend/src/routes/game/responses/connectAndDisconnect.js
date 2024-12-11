@@ -1,4 +1,4 @@
-import { data } from "../../data"
+const { data } = window
 
 const reload = () => {
   data.reload()

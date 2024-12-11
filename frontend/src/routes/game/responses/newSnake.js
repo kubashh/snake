@@ -1,4 +1,4 @@
-import { data } from "../../data"
+const { data } = window
 
 export const setNewSnake = () => {
   data.socket.on(`newSnake`, ({ success, message }) => {

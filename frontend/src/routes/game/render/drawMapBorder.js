@@ -1,5 +1,5 @@
-import { data } from "../../data"
 import { drawBox } from "../drawBox"
+const { data } = window
 
 export const drawMapBorder = (middle, head) => {
   const { pixelSize, boardSize } = data

@@ -1,4 +1,4 @@
-import { data } from "../data"
+const { data } = window
 
 export const drawBox = (x, y, w, h, color = "white") => {
   data.ctx.fillStyle = color
