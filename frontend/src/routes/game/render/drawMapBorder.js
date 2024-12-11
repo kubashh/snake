@@ -6,7 +6,11 @@ export const drawMapBorder = (middle, head) => {
   let x = Math.floor(middle.x - head.x * pixelSize)
   let y = Math.floor(ctx.canvas.height - (middle.y - head.y * pixelSize) - boardSize * pixelSize)
 
+  let a = boardSize * pixelSize
+  let b = boardSize * pixelSize
+
   if(x < 0) {
+    a -= x
     x = 0
   }
 
@@ -14,5 +18,5 @@ export const drawMapBorder = (middle, head) => {
   //  y = 0
   //}
 
-  drawBox(x, y, boardSize * pixelSize, boardSize * pixelSize, `#000`)
+  drawBox(x, y, a, b, `#000`)
 }
