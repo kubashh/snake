@@ -14,9 +14,10 @@ export const drawMapBorder = (middle, head) => {
     x = 0
   }
 
-  //if(y < 0) {
-  //  y = 0
-  //}
+  if(y < 0) {
+    b += y
+    y = 0
+  }
 
   drawBox(x, y, a, b, `#000`)
 }
