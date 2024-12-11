@@ -1,5 +1,5 @@
 clear
 
-cd frontend
+cd backendZig
 
-npm start
+zig build run
