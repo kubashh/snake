@@ -1,10 +1,8 @@
 export const setResize = () => {
   window.addEventListener(`resize`, () => {
-    const { data } = window
-
-    if(data.inGame) {
-      data.ctx.canvas.width = window.innerWidth
-      data.ctx.canvas.height = window.innerHeight
+    if(window.data.inGame) {
+      window.data.ctx.canvas.width = window.innerWidth
+      window.data.ctx.canvas.height = window.innerHeight
     }
   })
 }

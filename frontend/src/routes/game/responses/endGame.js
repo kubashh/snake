@@ -1,11 +1,9 @@
 export const setEndGame = () => {
-  const { data } = window
+  window.data.socket.on(`endGame`, () => {
+    localStorage.setItem(`data`, JSON.stringify(window.data.user))
 
-  data.socket.on(`endGame`, () => {
-    localStorage.setItem(`data`, JSON.stringify(data.user))
+    window.data.inGame = false
 
-    data.inGame = false
-
-    data.reload()
+    window.data.reload()
   })
 }

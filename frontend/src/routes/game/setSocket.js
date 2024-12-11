@@ -10,11 +10,9 @@ import { setStaticData } from "./responses/staticData"
 export const setSocket = () => {
   const { data } = window
 
-  if(data.setUp && data.socket.on) {
+  if(data.socket && data.socket.on) {
     return
   }
-
-  data.setUp = true
 
   data.socket = connect(data.address)
 

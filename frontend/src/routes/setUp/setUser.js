@@ -14,6 +14,5 @@ export const setUser = () => {
     }
   }
 
-  window.data.user.nick = user.nick
-  window.data.user.color = user.color
+  window.data.user = user
 }

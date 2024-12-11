@@ -1,11 +1,9 @@
 export const setNewSnake = () => {
-  const { data } = window
-
-  data.socket.on(`newSnake`, ({ success, message }) => {
+  window.data.socket.on(`newSnake`, ({ success, message }) => {
     if(success) {
       // Start game
-      data.inGame = true
-      data.reload()
+      window.data.inGame = true
+      window.data.reload()
     } else {
       alert(message)
     }
