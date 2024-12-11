@@ -20,6 +20,8 @@ export const render = (dataFromBackend) => {
 
   let color = appleColor
 
+  console.time()
+
   for(const arr of board) {
     if(typeof(arr) === `string`) {
       color = arr
@@ -37,4 +39,6 @@ export const render = (dataFromBackend) => {
       drawBox(x, y, pixelSize, pixelSize, color)
     //}
   }
+
+  console.timeEnd()
 }
