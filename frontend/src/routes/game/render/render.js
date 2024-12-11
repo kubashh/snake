@@ -2,11 +2,8 @@ import { drawBox } from "../drawBox"
 import { drawMapBorder } from "./drawMapBorder"
 import { fillBackground } from "./fillBackground"
 
-export const render = (dataFromBackend) => {
-  console.time()
-
+export const render = ({ head, board }) => {
   const { pixelSize, appleColor, ctx } = window.data
-  const [ head, ...board  ] = JSON.parse(dataFromBackend)
 
   const { width, height } = ctx.canvas
   const px2 = pixelSize / 2
@@ -39,6 +36,4 @@ export const render = (dataFromBackend) => {
       drawBox(x, y, pixelSize, pixelSize, color)
     //}
   }
-
-  console.timeEnd()
 }

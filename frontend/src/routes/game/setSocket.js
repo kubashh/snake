@@ -25,7 +25,9 @@ export const setSocket = () => {
       return
     }
 
-    render(dataFromBackend)
+    const [ head, ...board  ] = JSON.parse(dataFromBackend)
+
+    render({ head, board })
   })
 
   setDirection()
