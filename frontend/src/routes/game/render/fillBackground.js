@@ -1,5 +1,5 @@
-const { data } = window
 import { drawBox } from "../drawBox"
+const { data } = window
 
 export const fillBackground = () => {
   const { width, height } = data.ctx.canvas
