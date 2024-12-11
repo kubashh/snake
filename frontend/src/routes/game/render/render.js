@@ -1,13 +1,12 @@
 import { drawBox } from "../drawBox"
 import { drawMapBorder } from "./drawMapBorder"
 import { fillBackground } from "./fillBackground"
-const { data } = window
 
 export const render = (dataFromBackend) => {
-  const { pixelSize, appleColor } = data
+  const { pixelSize, appleColor, ctx } = window.data
   const [ head, ...board  ] = JSON.parse(dataFromBackend)
 
-  const { width, height } = data.ctx.canvas
+  const { width, height } = ctx.canvas
   const px2 = pixelSize / 2
 
   fillBackground()

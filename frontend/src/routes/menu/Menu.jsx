@@ -1,9 +1,10 @@
 import { useState } from "react"
 import { TextInput } from "./TextInput"
 import { UI } from "./UI"
-const { data } = window
 
 export const Menu = () => {
+  const { data } = window
+
   const [nick, setNick] = useState(data.user.nick)
   const [color, setColor] = useState(data.user.color)
 
@@ -50,11 +51,10 @@ export const Menu = () => {
         }}
         value="Start Game"
         onClick={() => {
-          data.user.nick = nick
-          data.user.color = color
+          data.user = { nick, color }
           if(data.socket.connected) {
             // Start game
-            data.socket.emit(`newSnake`, { nick, color })
+            data.socket.emit(`newSnake`, data.user)
           } else {
             alert(`Connection lost`)
           }

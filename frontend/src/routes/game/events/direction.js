@@ -1,5 +1,3 @@
-const { data } = window
-
 let lastDirection = NaN
 
 const changeDirection = (direction) => {
@@ -9,12 +7,12 @@ const changeDirection = (direction) => {
 
   lastDirection = direction
 
-  data.socket.emit(`direction`, direction)
+  window.data.socket.emit(`direction`, direction)
 }
 
 export const setDirection = () => {
   document.addEventListener(`keydown`, ({ key }) => {
-    if(!data.inGame) {
+    if(!window.data.inGame) {
       return
     }
 

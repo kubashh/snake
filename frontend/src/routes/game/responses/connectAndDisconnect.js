@@ -1,11 +1,9 @@
-const { data } = window
-
 const reload = () => {
-  data.reload()
+  window.data.reload()
 }
 
 export const setConnectAndDiconect = () => {
-  data.socket.on(`connect`, reload)
+  window.data.socket.on(`connect`, reload)
 
-  data.socket.on(`disconnect`, reload)
+  window.data.socket.on(`disconnect`, reload)
 }

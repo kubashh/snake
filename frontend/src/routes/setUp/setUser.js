@@ -1,5 +1,3 @@
-const { data } = window
-
 export const setUser = () => {
   const oldData = localStorage.getItem(`data`)
   
@@ -16,6 +14,6 @@ export const setUser = () => {
     }
   }
 
-  data.user.nick = user.nick
-  data.user.color = user.color
+  window.data.user.nick = user.nick
+  window.data.user.color = user.color
 }

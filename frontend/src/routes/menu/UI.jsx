@@ -1,20 +1,4 @@
-const { data } = window
-
 export const UI = () => {
-  const connected = <div>connected</div>
-  const notConnected = <>
-    <div
-      style={{
-        color: "red"
-      }}
-    >
-      not connected
-    </div>
-    <div>
-      Call Jakub Hanula to turn on the server
-    </div>
-  </>
-
   return <div
     style={{
       position: "absolute",
@@ -22,6 +6,17 @@ export const UI = () => {
       left: 16
     }}
   >
-    {data.socket.connected ? connected : notConnected}
+    {window.data.socket.connected ? <div>connected</div> : <>
+      <div
+        style={{
+          color: "red"
+        }}
+      >
+        not connected
+      </div>
+      <div>
+        Call Jakub Hanula to turn on the server
+      </div>
+  </>}
   </div>
 }
