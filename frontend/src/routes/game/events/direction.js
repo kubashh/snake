@@ -1,7 +1,7 @@
-let lastDirection = NaN
+let lastDirection = null
 
 const changeDirection = (direction) => {
-  if(lastDirection % 2 === direction % 2) {
+  if(lastDirection && lastDirection % 2 === direction % 2) {
     return
   }
 
