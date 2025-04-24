@@ -19,7 +19,9 @@ const Form = () => {
         backgroundColor: `#333`,
         borderRadius: 16,
       }}
-      onSubmit={() => {
+      onSubmit={(e) => {
+        e.preventDefault()
+
         data.user = { nick, color }
         if (data.socket.connected) {
           // Start game
