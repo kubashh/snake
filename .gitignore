@@ -3,9 +3,8 @@
 /frontend/node_modules
 
 # production
+/backendZig/.zig-out
 /frontend/build
 
-# scripts
-bstart.sh
-fstart.sh
-gitacp.sh
+# Cache
+/backendZig/.zig-cache
