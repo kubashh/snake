@@ -7,7 +7,6 @@ export const setResize = () => {
   })
 }
 
-
 // Direction
 let lastDirection = null
 
@@ -32,6 +31,8 @@ export const setDirection = () => {
         return changeDirection(2)
       case `a`:
         return changeDirection(3)
+      default:
+        return
     }
   })
 }
