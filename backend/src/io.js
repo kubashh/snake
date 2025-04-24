@@ -7,9 +7,8 @@ const staticData = { boardSize, appleColor }
 export const io = (server) => {
   const io = new Server(server, {
     cors: {
-      origin: "*",
-      methods: ["GET", "POST"]
-    }
+      origin: "http://localhost:3000/snake2",
+    },
   })
 
   io.on(`connection`, (socket) => {

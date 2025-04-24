@@ -6,12 +6,12 @@ const getUser = () => {
 
   let user = {
     nick: "Nick",
-    color: "#ff0000"
+    color: "#ff0000",
   }
 
-  if(oldData) {
+  if (oldData) {
     const { nick, color } = JSON.parse(oldData)
-    if(nick && color) {
+    if (nick && color) {
       user = { nick, color }
     }
   }
@@ -20,20 +20,18 @@ const getUser = () => {
 }
 
 const setUp = () => {
-  if(window.data) {
-    return
-  }
+  if (window.data) return
 
   // Set Up Data
   window.data = {
-    address: `https://verbose-succotash-69gq79965wq6fwgx-4000.app.github.dev`,
+    address: `https://literate-lamp-wrgwx4wpwgx3g9gw-4000.app.github.dev`,
     pixelSize: 40,
     inGame: false,
     boardSize: null,
     appleColor: null,
     user: getUser(),
     socket: {},
-    ctx: {}
+    ctx: {},
   }
 
   setSocket()

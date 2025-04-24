@@ -11,12 +11,14 @@ export const Game = () => {
     window.data.ctx = ctx
   })
 
-  return <canvas
-    ref={ref}
-    style={{
-      display: "block",
-      width: "100vw",
-      height: "100vh"
-    }}
-  />
+  return (
+    <canvas
+      ref={ref}
+      style={{
+        display: "block",
+        width: "100vw",
+        height: "100vh",
+      }}
+    />
+  )
 }

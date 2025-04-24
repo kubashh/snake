@@ -12,15 +12,15 @@ export const render = ({ head, board }) => {
 
   const middle = {
     x: Math.floor(width / 2 - px2),
-    y: Math.floor(height / 2 + px2)
+    y: Math.floor(height / 2 + px2),
   }
 
   drawMapBorder(middle, head)
 
   let color = appleColor
 
-  for(const arr of board) {
-    if(typeof(arr) === `string`) {
+  for (const arr of board) {
+    if (typeof arr === `string`) {
       color = arr
       continue
     }
@@ -33,7 +33,7 @@ export const render = ({ head, board }) => {
     const y = -j * pixelSize + middle.y - 2 * pixelSize
 
     //if(-pixelSize < x && x < height + pixelSize && -pixelSize < y && y < width + pixelSize) {
-      drawBox(x, y, pixelSize, pixelSize, color)
+    drawBox(x, y, pixelSize, pixelSize, color)
     //}
   }
 }

@@ -5,7 +5,8 @@ body {
   color: white;
 }
 
-input[type="text"], input[type="button"] {
+input[type="text"],
+input[type="button"] {
   background-color: black;
   color: white;
 }
