@@ -1,4 +1,4 @@
-import { render } from "./render/render"
+import { render } from "./render"
 import { setEvents } from "./events"
 import { data } from "../../lib/consts"
 

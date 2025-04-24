@@ -11,9 +11,8 @@ export const Menu = () => {
     <>
       <UI />
       <div
-        className="flex"
+        className="flex flex-col"
         style={{
-          flexDirection: "column",
           alignSelf: "center",
           margin: "100px auto 0 auto",
           width: 480,
@@ -29,7 +28,7 @@ export const Menu = () => {
           setValue={setNick}
         />
         <TextInput
-          text="color"
+          text="Color"
           input={{ type: "color", value: color }}
           setValue={setColor}
         />

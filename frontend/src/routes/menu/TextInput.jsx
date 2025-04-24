@@ -1,5 +1,5 @@
 export const TextInput = ({ text, input, setValue }) => (
-  <div style={{ display: "flex", flexDirection: "row", margin: "16px auto" }}>
+  <div className="flex flex-row" style={{ margin: "16px auto" }}>
     <div style={{ marginRight: 16, height: 48, width: 196, fontSize: 24 }}>
       {text}
     </div>

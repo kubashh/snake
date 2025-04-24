@@ -11,11 +11,5 @@ export const Game = () => {
     data.ctx = gameCanvas.getContext(`2d`)
   }
 
-  return (
-    <canvas
-      ref={ref}
-      className="w-screen h-screen"
-      style={{ display: "block" }}
-    />
-  )
+  return <canvas ref={ref} className="w-screen h-screen block" />
 }

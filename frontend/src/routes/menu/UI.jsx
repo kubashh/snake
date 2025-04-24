@@ -1,7 +1,7 @@
 import { data } from "../../lib/consts"
 
 export const UI = () => (
-  <div style={{ position: "absolute", top: 8, left: 16 }}>
+  <div className="absolute" style={{ top: 8, left: 16 }}>
     {data.socket.connected ? (
       <div>connected</div>
     ) : (
