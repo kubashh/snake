@@ -40,3 +40,6 @@ input:hover {
 .flex-col {
   flex-direction: column;
 }
+.z-1 {
+  z-index: 1;
+}

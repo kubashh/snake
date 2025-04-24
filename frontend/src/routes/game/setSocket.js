@@ -10,13 +10,13 @@ export const setSocket = () => {
   data.socket.on(`disconnect`, () => data.refresh())
 
   // Static
-  data.socket.on(`staticData`, ({ boardSize, appleColor }) => {
+  data.socket.on(`static`, ({ boardSize, appleColor }) => {
     data.boardSize = boardSize
     data.appleColor = appleColor
   })
 
   // New
-  data.socket.on(`newSnake`, ({ success, message }) => {
+  data.socket.on(`new`, ({ success, message }) => {
     if (success) {
       // Start game
       data.inGame = true
@@ -27,7 +27,7 @@ export const setSocket = () => {
   })
 
   // End
-  data.socket.on(`endGame`, () => {
+  data.socket.on(`end`, () => {
     localStorage.setItem(`data`, JSON.stringify(data.user))
 
     data.inGame = false

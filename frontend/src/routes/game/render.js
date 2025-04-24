@@ -26,9 +26,11 @@ const drawMapBorder = (middle, head) => {
 }
 
 export const render = ({ head, board }) => {
-  const { pixelSize, appleColor, ctx } = data
+  if (!data.ctx.canvas) return
 
   fillBackground()
+
+  const { pixelSize, appleColor, ctx } = data
 
   const middle = {
     x: Math.floor((ctx.canvas.width - pixelSize) / 2),

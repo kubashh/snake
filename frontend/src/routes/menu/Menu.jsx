@@ -2,22 +2,26 @@ import { useState } from "react"
 import { TextInput } from "./TextInput"
 import { UI } from "./UI"
 import { data } from "../../lib/consts"
+import { useRefresh } from "../../lib/hooks"
 
 export const Menu = () => {
+  data.refresh = useRefresh()
+
   const [nick, setNick] = useState(data.user.nick)
   const [color, setColor] = useState(data.user.color)
 
-  return (
-    <>
+  return !data.inGame ? (
+    <header className="absolute z-1 w-screen">
       <UI />
       <div
-        className="flex flex-col"
+        className="absolute flex flex-col"
         style={{
-          alignSelf: "center",
-          margin: "100px auto 0 auto",
-          width: 480,
+          margin: `10vh auto 0 auto`,
           padding: 32,
-          backgroundColor: "#333",
+          left: 0,
+          right: 0,
+          width: `fit-content`,
+          backgroundColor: `#333`,
           borderRadius: 16,
         }}
       >
@@ -46,13 +50,13 @@ export const Menu = () => {
             data.user = { nick, color }
             if (data.socket.connected) {
               // Start game
-              data.socket.emit(`newSnake`, data.user)
+              data.socket.emit(`new`, data.user)
             } else {
               alert(`Connection lost`)
             }
           }}
         />
       </div>
-    </>
-  )
+    </header>
+  ) : null
 }
