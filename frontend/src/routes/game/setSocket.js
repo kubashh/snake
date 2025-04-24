@@ -1,35 +1,48 @@
-import { connect } from "socket.io-client"
 import { render } from "./render/render"
-import {
-  setConnectAndDiconect,
-  setEndGame,
-  setNewSnake,
-  setStaticData,
-} from "./responses"
-import { setDirection, setResize } from "./events"
+import { setEvents } from "./events"
+import { data } from "../../lib/consts"
 
 export const setSocket = () => {
-  const { data } = window
+  // Connect
+  data.socket.on(`connect`, () => data.refresh())
 
-  if (data.socket && data.socket.on) return
+  // Disconnect
+  data.socket.on(`disconnect`, () => data.refresh())
 
-  data.socket = connect(data.address)
+  // Static
+  data.socket.on(`staticData`, ({ boardSize, appleColor }) => {
+    data.boardSize = boardSize
+    data.appleColor = appleColor
+  })
 
-  setConnectAndDiconect()
-  setNewSnake()
-  setEndGame()
-
-  data.socket.on(`board`, (dataFromBackend) => {
-    if (!data.ctx.canvas) {
-      return
+  // New
+  data.socket.on(`newSnake`, ({ success, message }) => {
+    if (success) {
+      // Start game
+      data.inGame = true
+      data.refresh()
+    } else {
+      alert(message)
     }
+  })
+
+  // End
+  data.socket.on(`endGame`, () => {
+    localStorage.setItem(`data`, JSON.stringify(data.user))
+
+    data.inGame = false
+
+    data.refresh()
+  })
+
+  // Board
+  data.socket.on(`board`, (dataFromBackend) => {
+    if (!data.ctx.canvas) return
 
     const [head, ...board] = JSON.parse(dataFromBackend)
 
     render({ head, board })
   })
 
-  setDirection()
-  setResize()
-  setStaticData()
+  setEvents()
 }

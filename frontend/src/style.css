@@ -3,6 +3,7 @@ body {
   font-family: sans-serif;
   background-color: black;
   color: white;
+  box-sizing: border-box;
 }
 
 input[type="text"],
@@ -13,4 +14,15 @@ input[type="button"] {
 
 input:hover {
   cursor: pointer;
+}
+
+.w-screen {
+  width: 100vw;
+}
+.h-screen {
+  height: 100vh;
+}
+
+.flex {
+  display: flex;
 }

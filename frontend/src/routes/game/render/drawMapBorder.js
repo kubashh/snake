@@ -1,7 +1,8 @@
-import { drawBox } from "../drawBox"
+import { data } from "../../../lib/consts"
+import { drawBox } from "../../../lib/utils"
 
 export const drawMapBorder = (middle, head) => {
-  const { pixelSize, boardSize, ctx } = window.data
+  const { pixelSize, boardSize, ctx } = data
 
   let x = Math.floor(middle.x - head.x * pixelSize)
   let y = Math.floor(

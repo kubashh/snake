@@ -1,9 +1,9 @@
-import { drawBox } from "../drawBox"
+import { data } from "../../../lib/consts"
+import { drawBox, fillBackground } from "../../../lib/utils"
 import { drawMapBorder } from "./drawMapBorder"
-import { fillBackground } from "./fillBackground"
 
 export const render = ({ head, board }) => {
-  const { pixelSize, appleColor, ctx } = window.data
+  const { pixelSize, appleColor, ctx } = data
 
   const { width, height } = ctx.canvas
   const px2 = pixelSize / 2

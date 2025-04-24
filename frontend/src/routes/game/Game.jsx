@@ -1,24 +1,21 @@
-import { useEffect, useRef } from "react"
+import { useRef } from "react"
+import { data } from "../../lib/consts"
 
 export const Game = () => {
   const ref = useRef()
 
-  useEffect(() => {
+  if (ref.current) {
     const gameCanvas = ref.current
     gameCanvas.width = window.innerWidth
     gameCanvas.height = window.innerHeight
-    const ctx = gameCanvas.getContext(`2d`)
-    window.data.ctx = ctx
-  })
+    data.ctx = gameCanvas.getContext(`2d`)
+  }
 
   return (
     <canvas
       ref={ref}
-      style={{
-        display: "block",
-        width: "100vw",
-        height: "100vh",
-      }}
+      className="w-screen h-screen"
+      style={{ display: "block" }}
     />
   )
 }

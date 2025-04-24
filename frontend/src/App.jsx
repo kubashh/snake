@@ -1,17 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react"
 import { Game } from "./routes/game/Game"
 import { Menu } from "./routes/menu/Menu"
+import { useRefresh } from "./lib/hooks"
+import { data } from "./lib/consts"
 
 export const App = () => {
-  const[i, setState] = useState(0)
+  const refresh = useRefresh()
 
   useEffect(() => {
-    window.data.reload = () => {
-      setState(i + 1)
-    }
+    data.refresh = refresh
   })
 
-  return <>
-    {window.data.inGame ? <Game /> : <Menu />}
-  </>
+  return <>{data.inGame ? <Game /> : <Menu />}</>
 }

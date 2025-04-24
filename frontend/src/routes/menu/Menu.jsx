@@ -1,10 +1,9 @@
 import { useState } from "react"
 import { TextInput } from "./TextInput"
 import { UI } from "./UI"
+import { data } from "../../lib/consts"
 
 export const Menu = () => {
-  const { data } = window
-
   const [nick, setNick] = useState(data.user.nick)
   const [color, setColor] = useState(data.user.color)
 
@@ -12,8 +11,8 @@ export const Menu = () => {
     <>
       <UI />
       <div
+        className="flex"
         style={{
-          display: "flex",
           flexDirection: "column",
           alignSelf: "center",
           margin: "100px auto 0 auto",
@@ -26,19 +25,12 @@ export const Menu = () => {
         <h1>Menu</h1>
         <TextInput
           text="Nick"
-          input={{
-            type: "text",
-            value: nick,
-            placeholder: "Your nick",
-          }}
+          input={{ type: "text", value: nick, placeholder: "Your nick" }}
           setValue={setNick}
         />
         <TextInput
           text="color"
-          input={{
-            type: "color",
-            value: color,
-          }}
+          input={{ type: "color", value: color }}
           setValue={setColor}
         />
         <input
