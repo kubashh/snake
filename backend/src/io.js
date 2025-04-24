@@ -1,6 +1,6 @@
 import { Server } from "socket.io"
 import { setSocket } from "./setSocket.js"
-import { appleColor, boardSize } from "./game/data.js"
+import { appleColor, boardSize } from "./lib/consts.js"
 
 const staticData = { boardSize, appleColor }
 
@@ -14,6 +14,6 @@ export const io = (server) => {
   io.on(`connection`, (socket) => {
     setSocket(socket)
 
-    socket.emit(`staticData`, staticData)
+    socket.emit(`static`, staticData)
   })
 }
