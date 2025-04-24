@@ -1,7 +1,9 @@
 import { data } from "../../lib/consts"
 import { drawBox, fillBackground } from "../../lib/utils"
 
-const drawMapBorder = (middle, head) => {
+const drawMapBorder = (middle: XY, head: XY) => {
+  if (!data.ctx) return
+
   const { pixelSize, boardSize, ctx } = data
 
   let x = Math.floor(middle.x - head.x * pixelSize)
@@ -25,8 +27,8 @@ const drawMapBorder = (middle, head) => {
   drawBox(x, y, a, b, `#000`)
 }
 
-export const render = ({ head, board }) => {
-  if (!data.ctx.canvas) return
+export const render = (head: XY, board: [number, number][]) => {
+  if (!data.ctx) return
 
   fillBackground()
 

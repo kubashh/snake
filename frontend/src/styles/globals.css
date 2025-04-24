@@ -1,11 +1,16 @@
-body {
+* {
   margin: 0;
   border: 0;
-  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: inherit;
+  color: inherit;
+}
+
+body {
   font-family: sans-serif;
   background-color: black;
   color: white;
-  box-sizing: border-box;
 }
 
 input[type="text"],
@@ -42,4 +47,7 @@ input:hover {
 }
 .z-1 {
   z-index: 1;
+}
+.w-fit {
+  width: fit-content;
 }
