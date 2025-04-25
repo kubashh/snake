@@ -1,4 +1,4 @@
-import { apples, board, boardSize, snakes } from "./consts.js"
+import { apples, data, boardSize, snakes } from "./consts.js"
 
 export const randInt = (min: number, max: number) =>
   Math.floor(Math.random() * (max - min) + min)
@@ -40,8 +40,4 @@ export const generateApple = () => {
       apples.push(freePos(2))
     }
   }
-}
-
-export const clearBoard = () => {
-  board.length = 1
 }

@@ -1,9 +1,9 @@
-import { apples, board, snakes } from "../lib/consts.js"
-import { generateApple, clearBoard } from "../lib/utils.js"
+import { apples, data, snakes } from "../lib/consts.js"
+import { generateApple } from "../lib/utils.js"
 import { Snake } from "./Snake.js"
 
 const update = () => {
-  clearBoard()
+  data.board = ``
 
   // Snakes move
   for (const snake of snakes) {
@@ -13,15 +13,17 @@ const update = () => {
   generateApple()
 
   for (const { x, y } of apples) {
-    board.push([x, y])
+    data.board += `${JSON.stringify([x, y])},`
   }
 
   for (const { body, color } of snakes) {
-    board.push(color)
+    data.board += `${JSON.stringify(color)},`
     for (const { x, y } of body) {
-      board.push([x, y])
+      data.board += `${JSON.stringify([x, y])},`
     }
   }
+
+  data.board = `${data.board.slice(0, -1)}]`
 
   // Send board
   for (const snake of snakes) {
@@ -39,22 +41,21 @@ export const start = () => {
   setInterval(update, fps)
 }
 
-/*
-// start
+// // start
 
-const now = () => {
-  return Date.now()
-}
+// const now = () => {
+//   return Date.now()
+// }
 
-let timeLast = now()
+// let timeLast = now()
 
-export const start = () => {
-  if(now() - timeLast > delay) {
-    timeLast += delay
-    console.time(`all`)
-    update()
-    console.timeEnd(`all`)
-  }
+// export const start = () => {
+//   if (now() - timeLast > delay) {
+//     timeLast += delay
+//     console.time(`all`)
+//     update()
+//     console.timeEnd(`all`)
+//   }
 
-  setTimeout(start, 1)
-}*/
+//   setTimeout(start, 1)
+// }

@@ -1,4 +1,4 @@
-import { appleColor, apples, board, boardSize, snakes } from "../lib/consts.js"
+import { appleColor, apples, data, boardSize, snakes } from "../lib/consts.js"
 import { freePos, chance, randInt } from "../lib/utils.js"
 
 export const isFree = (nick: string, color: string) => {
@@ -125,8 +125,8 @@ export class Snake {
   }
 
   sendData() {
-    board[0] = this.head()
+    const dataToSend = `[${JSON.stringify(this.head())},${data.board}`
 
-    this.socket.emit(`board`, JSON.stringify(board))
+    this.socket.emit(`board`, dataToSend)
   }
 }
