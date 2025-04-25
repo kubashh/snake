@@ -1,7 +1,7 @@
 import { connect } from "socket.io-client"
 import { getUser } from "./utils"
 
-const address = `https://literate-lamp-wrgwx4wpwgx3g9gw-4000.app.github.dev`
+const address = `https://stunning-succotash-g4qjw449r59xh99wj-4000.app.github.dev`
 
 export const data: DataType = {
   inGame: false,

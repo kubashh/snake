@@ -3,8 +3,9 @@
 /frontend/node_modules
 
 # production
+/backend/dist
 /backend-zig/zig-out
-/frontend/build
+/frontend/dist
 
 # Cache
 /backend-zig/.zig-cache
