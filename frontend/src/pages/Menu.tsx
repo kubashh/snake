@@ -21,7 +21,7 @@ const Form = () => (
         if (element.id === `nick`) data.nick = element.value
       }
 
-      localStorage.setItem(`nick`, JSON.stringify(data.nick))
+      localStorage.setItem(`nick`, data.nick)
 
       if (data.socket.connected) {
         // Start game

@@ -7,7 +7,7 @@ export const data: DataType = {
   lastDirection: -1,
   refresh: null,
 
-  nick: JSON.parse(localStorage.getItem(`nick`) || ``),
+  nick: localStorage.getItem(`nick`) || ``,
   socket: connect(address),
   ctx: null,
 
