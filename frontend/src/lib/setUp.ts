@@ -4,20 +4,10 @@ import { render } from "./render"
 // Socket
 
 // Connect
-data.socket.on(`connect`, (e: any) => {
-  console.log(e)
-  data.refresh?.()
-})
-data.socket.on(`connection`, (e: any) => {
-  console.log(e)
-  data.refresh?.()
-})
+data.socket.on(`connect`, () => data.refresh?.())
 
 // Disconnect
-data.socket.on(`disconnect`, (e: any) => {
-  console.log(e)
-  data.refresh?.()
-})
+data.socket.on(`disconnect`, () => data.refresh?.())
 
 // Static
 data.socket.on(`static`, ({ boardSize, appleColor }: StaticType) => {
@@ -68,11 +58,10 @@ document.addEventListener(`keydown`, ({ key }) => {
   const direction = directions[key.toLowerCase()]
 
   if (direction === undefined) return
-  if (data.lastDirection !== -1 && data.lastDirection % 2 === direction % 2)
+  if (data.lastDirection !== -1 && (data.lastDirection - direction) % 2 === 0)
     return
 
   data.lastDirection = direction
-
   data.socket.emit(`direction`, direction)
 })
 
