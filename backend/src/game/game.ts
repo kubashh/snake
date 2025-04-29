@@ -1,6 +1,5 @@
 import { apples, data, snakes } from "../lib/consts.js"
 import { generateApple } from "../lib/utils.js"
-import { Snake } from "./Snake.js"
 
 const update = () => {
   data.board = ``

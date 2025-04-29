@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "clear && tsc && node dist/index.js"
+    "start": "clear && rm -rf dist && tsc && node dist/index.js"
   },
   "keywords": [],
   "author": "",

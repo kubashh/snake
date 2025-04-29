@@ -22,11 +22,11 @@
 .w-48 {
   width: 12rem;
 }
-.h-12 {
-  height: 3rem;
-}
 .h-screen {
   height: 100vh;
+}
+.h-12 {
+  height: 3rem;
 }
 
 .flex {
@@ -38,9 +38,6 @@
 .absolute {
   position: absolute;
 }
-.flex-row {
-  flex-direction: row;
-}
 .flex-col {
   flex-direction: column;
 }
@@ -48,35 +45,23 @@
   z-index: 1;
 }
 
-.mt-\[10vh\] {
-  margin-top: 10vh;
-}
-.mr-auto {
-  margin-right: auto;
-}
-.ml-auto {
-  margin-left: auto;
-}
 .mx-auto {
   margin-inline: auto;
 }
 .my-8 {
+  margin-inline: 2rem;
+}
+.my-8 {
   margin-block: 2rem;
 }
-.mr-8 {
-  margin-right: 2rem;
-}
-.my-auto {
-  margin-block: auto;
+.mt-\[10vh\] {
+  margin-top: 10vh;
 }
 .mt-2 {
   margin-top: 0.5rem;
 }
 .mx-6 {
   margin-inline: 1.5rem;
-}
-.my-8 {
-  margin-inline: 2rem;
 }
 
 .p-8 {
@@ -85,14 +70,8 @@
 .py-2 {
   padding-block: 0.5rem;
 }
-.px-8 {
-  padding-inline: 2rem;
-}
 .px-2 {
   padding-inline: 0.5rem;
-}
-.py-6 {
-  padding-block: 1.5rem;
 }
 
 .left-0 {
@@ -127,8 +106,8 @@
   inherits: false;
   initial-value: solid;
 }
-.border-black {
-  border-color: #000;
+.border-zinc-400 {
+  border-color: oklch(70.5% 0.015 286.067);
 }
 .cursor-pointer {
   cursor: pointer;
@@ -140,7 +119,6 @@
 .bg-transparent {
   background-color: transparent;
 }
-
 .bg-zinc-800 {
   background-color: #27272a;
 }
