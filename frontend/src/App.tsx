@@ -7,7 +7,7 @@ export const App = () => {
         <Menu />
       </header>
       <main>
-        <canvas className="w-screen h-screen block" />
+        <canvas className="block" />
       </main>
     </>
   )
