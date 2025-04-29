@@ -14,7 +14,7 @@ const io = new Server(server, {
   },
 })
 
-io.on(`connection`, (socket) => {
+io.on(`connection`, (socket: any) => {
   setSocket(socket)
   socket.emit(`static`, staticData)
 })

@@ -21,22 +21,17 @@ data.socket.on(`new`, ({ success, message }: NewType) => {
     // Start game
     data.inGame = true
     data.refresh?.()
-  } else {
-    alert(message)
-  }
+  } else alert(message)
 })
 
 // End
 data.socket.on(`end`, () => {
-  localStorage.setItem(`data`, JSON.stringify(data.user))
-
   data.inGame = false
-
   data.refresh?.()
 })
 
 // Board
-data.socket.on(`board`, (dataFromBackend: any) => {
+data.socket.on(`board`, (dataFromBackend: string) => {
   if (!data.ctx?.canvas) return
 
   const [head, ...board] = JSON.parse(dataFromBackend)
@@ -61,9 +56,24 @@ document.addEventListener(`keydown`, ({ key }) => {
   const direction = { w: 0, d: 1, s: 2, a: 3 }[key.toLowerCase()]
 
   if (direction === undefined) return
-  if (data.lastDirection && data.lastDirection % 2 === direction % 2) return
+  if (data.lastDirection !== -1 && data.lastDirection % 2 === direction % 2)
+    return
 
+  console.log(direction)
   data.lastDirection = direction
 
   data.socket.emit(`direction`, direction)
 })
+
+// Get Canvas
+const getCanvas = () => {
+  const inputs = document.getElementsByTagName(`canvas`)
+
+  if (inputs.length > 0) {
+    const gameCanvas = inputs[0]
+    gameCanvas.width = window.innerWidth
+    gameCanvas.height = window.innerHeight
+    data.ctx = gameCanvas.getContext(`2d`)
+  } else setTimeout(getCanvas)
+}
+getCanvas()

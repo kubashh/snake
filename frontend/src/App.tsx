@@ -1,12 +1,13 @@
-import { Game } from "./routes/game/Game"
-import { Menu } from "./routes/menu/Menu"
+import { Menu } from "./pages/Menu"
 
 export const App = () => {
   return (
     <>
-      <Menu />
+      <header className="absolute z-1 w-screen">
+        <Menu />
+      </header>
       <main>
-        <Game />
+        <canvas className="w-screen h-screen block" />
       </main>
     </>
   )

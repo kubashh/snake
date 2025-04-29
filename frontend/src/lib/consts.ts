@@ -1,5 +1,4 @@
 import { connect } from "socket.io-client"
-import { getUser } from "./utils"
 
 const address = `https://stunning-succotash-g4qjw449r59xh99wj-4000.app.github.dev`
 
@@ -8,7 +7,7 @@ export const data: DataType = {
   lastDirection: -1,
   refresh: null,
 
-  user: getUser(),
+  nick: JSON.parse(localStorage.getItem(`nick`) || ``),
   socket: connect(address),
   ctx: null,
 

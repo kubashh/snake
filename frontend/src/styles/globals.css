@@ -7,24 +7,23 @@
   color: inherit;
 }
 
-body {
+:root {
   font-family: sans-serif;
   background-color: black;
   color: white;
 }
 
-input[type="text"],
-input[type="button"] {
-  background-color: black;
-  color: white;
-}
-
-input:hover {
-  cursor: pointer;
-}
-
 .w-screen {
   width: 100vw;
+}
+.w-fit {
+  width: fit-content;
+}
+.w-48 {
+  width: 12rem;
+}
+.h-12 {
+  height: 3rem;
 }
 .h-screen {
   height: 100vh;
@@ -48,9 +47,6 @@ input:hover {
 .z-1 {
   z-index: 1;
 }
-.w-fit {
-  width: fit-content;
-}
 
 .mt-\[10vh\] {
   margin-top: 10vh;
@@ -60,22 +56,6 @@ input:hover {
 }
 .ml-auto {
   margin-left: auto;
-}
-.p-8 {
-  padding: 2rem;
-}
-.left-0 {
-  left: 0;
-}
-.right-0 {
-  right: 0;
-}
-
-.bg-zinc-800 {
-  background-color: #27272a;
-}
-.rounded-3xl {
-  border-radius: 1.5rem;
 }
 .mx-auto {
   margin-inline: auto;
@@ -89,13 +69,24 @@ input:hover {
 .my-auto {
   margin-block: auto;
 }
-.px-8 {
-  padding-inline: 2rem;
+.mt-2 {
+  margin-top: 0.5rem;
+}
+.mx-6 {
+  margin-inline: 1.5rem;
+}
+.my-8 {
+  margin-inline: 2rem;
 }
 
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 1.3333;
+.p-8 {
+  padding: 2rem;
+}
+.py-2 {
+  padding-block: 0.5rem;
+}
+.px-8 {
+  padding-inline: 2rem;
 }
 .px-2 {
   padding-inline: 0.5rem;
@@ -103,11 +94,29 @@ input:hover {
 .py-6 {
   padding-block: 1.5rem;
 }
-.w-48 {
-  width: 12rem;
+
+.left-0 {
+  left: 0;
 }
-.h-12 {
-  height: 3rem;
+.right-0 {
+  right: 0;
+}
+.top-4 {
+  top: 1rem;
+}
+.left-8 {
+  left: 2rem;
+}
+
+.rounded-3xl {
+  border-radius: 1.5rem;
+}
+.rounded-2xl {
+  border-radius: 1rem;
+}
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 1.3333;
 }
 .border-2 {
   border-style: var(--tw-border-style);
@@ -121,27 +130,17 @@ input:hover {
 .border-black {
   border-color: #000;
 }
-.rounded-2xl {
-  border-radius: 1rem;
+.cursor-pointer {
+  cursor: pointer;
 }
-.top-4 {
-  top: 1rem;
-}
-.left-8 {
-  left: 2rem;
-}
+
 .text-red-600 {
   color: oklch(57.7% 0.245 27.325);
 }
-.mt-2 {
-  margin-top: 0.5rem;
+.bg-transparent {
+  background-color: transparent;
 }
-.mx-6 {
-  margin-inline: 1.5rem;
-}
-.py-2 {
-  padding-block: 0.5rem;
-}
-.cursor-pointer {
-  cursor: pointer;
+
+.bg-zinc-800 {
+  background-color: #27272a;
 }

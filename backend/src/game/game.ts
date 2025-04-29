@@ -31,14 +31,8 @@ const update = () => {
   }
 }
 
-export const createSnake = (nick: string, color: string, socket: any) => {
-  return new Snake(nick, color, socket)
-}
-
-const fps = 1000 / 8
-
 export const start = () => {
-  setInterval(update, fps)
+  setInterval(update, 125 /* 1000 / 8 */)
 }
 
 // // start

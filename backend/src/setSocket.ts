@@ -1,13 +1,12 @@
-import { createSnake } from "./game/game.js"
-import { isFree } from "./game/Snake.js"
+import { isFree, Snake } from "./game/Snake.js"
 
 export const setSocket = (socket: any) => {
   let snake: any = null
 
-  socket.on(`new`, ({ nick, color }: NewType) => {
-    const data = isFree(nick, color)
+  socket.on(`new`, (nick: string) => {
+    const data = isFree(nick)
     if (data.success) {
-      snake = createSnake(nick, color, socket)
+      snake = new Snake(nick, socket)
     }
     socket.emit(`new`, data)
   })

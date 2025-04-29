@@ -1,23 +1,5 @@
 import { data } from "./consts"
 
-export const getUser = () => {
-  const oldData = localStorage.getItem(`data`)
-
-  let user = {
-    nick: "Nick",
-    color: "#ff0000",
-  }
-
-  if (oldData) {
-    const { nick, color } = JSON.parse(oldData)
-    if (nick && color) {
-      user = { nick, color }
-    }
-  }
-
-  return user
-}
-
 export const drawBox = (
   x: number,
   y: number,

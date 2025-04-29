@@ -4,7 +4,7 @@ type DataType = {
   lastDirection: number
   refresh: (() => void) | null
 
-  user: { nick: string; color: string }
+  nick: string
   socket: any
   ctx: CanvasRenderingContext2D | null
 
@@ -21,11 +21,3 @@ type NewType = { success: boolean; message: string }
 
 // XY
 type XY = { x: number; y: number }
-
-// TextInputType
-type TextInputType = {
-  text: string
-  input: any
-  setValue: (a) => void
-  className?: string
-}

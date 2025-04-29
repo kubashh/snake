@@ -1,23 +1,15 @@
-import { appleColor, apples, data, boardSize, snakes } from "../lib/consts.js"
-import { freePos, chance, randInt } from "../lib/utils.js"
+import { apples, data, boardSize, snakes } from "../lib/consts.js"
+import { freePos, chance, randInt, createColor } from "../lib/utils.js"
 
-export const isFree = (nick: string, color: string) => {
+export const isFree = (nick: string) => {
   // Check values
-  if (!nick || !color) {
+  if (!nick) {
     return { message: `Bad data` }
   }
 
   // Check nick
   if (snakes.find((snake: any) => snake.nick === nick)) {
     return { message: `Choose other nick` }
-  }
-
-  // Check color
-  if (
-    snakes.find((snake: any) => snake.color === color) ||
-    snakes.find((snake: any) => snake.color === appleColor)
-  ) {
-    return { message: `Choose other color` }
   }
 
   return { success: true }
@@ -38,17 +30,17 @@ export class Snake {
   nick: string
   color: string
   direction: number
-  body: any[]
   socket: any
+  body: any[]
 
-  constructor(nick: string, color: string, socket: any) {
+  constructor(nick: string, socket: any) {
     this.nick = nick
-    this.color = color
+    this.color = createColor()
     this.direction = randInt(0, 4)
-    const newBodyFragment = freePos()
-    this.body = [newBodyFragment, newBodyFragment, newBodyFragment]
-
     this.socket = socket
+
+    const nbf = freePos()
+    this.body = [nbf, nbf, nbf]
 
     snakes.push(this)
   }
