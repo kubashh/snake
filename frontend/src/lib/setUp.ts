@@ -4,10 +4,20 @@ import { render } from "./render"
 // Socket
 
 // Connect
-data.socket.on(`connect`, () => data.refresh?.())
+data.socket.on(`connect`, (e: any) => {
+  console.log(e)
+  data.refresh?.()
+})
+data.socket.on(`connection`, (e: any) => {
+  console.log(e)
+  data.refresh?.()
+})
 
 // Disconnect
-data.socket.on(`disconnect`, () => data.refresh?.())
+data.socket.on(`disconnect`, (e: any) => {
+  console.log(e)
+  data.refresh?.()
+})
 
 // Static
 data.socket.on(`static`, ({ boardSize, appleColor }: StaticType) => {
@@ -50,16 +60,17 @@ window.addEventListener(`resize`, () => {
 })
 
 // Direscion
+const directions: Record<string, number> = { w: 0, d: 1, s: 2, a: 3 }
+
 document.addEventListener(`keydown`, ({ key }) => {
   if (!data.inGame) return
 
-  const direction = { w: 0, d: 1, s: 2, a: 3 }[key.toLowerCase()]
+  const direction = directions[key.toLowerCase()]
 
   if (direction === undefined) return
   if (data.lastDirection !== -1 && data.lastDirection % 2 === direction % 2)
     return
 
-  console.log(direction)
   data.lastDirection = direction
 
   data.socket.emit(`direction`, direction)
