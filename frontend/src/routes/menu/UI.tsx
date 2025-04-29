@@ -2,8 +2,9 @@ import { data } from "../../lib/consts"
 
 export const UI = () => (
   <div
-    className="absolute"
-    style={{ top: 8, left: 16, color: !data.socket.connected ? `red` : `` }}
+    className={`absolute z-1 top-4 left-8 ${
+      !data.socket.connected ? `text-red-600` : ``
+    }`}
   >
     {!data.socket.connected && `not `}connected
   </div>

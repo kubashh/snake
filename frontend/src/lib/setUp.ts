@@ -1,5 +1,5 @@
 import { data } from "./consts"
-import { render } from "../routes/game/render"
+import { render } from "./render"
 
 // Socket
 

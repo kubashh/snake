@@ -27,5 +27,5 @@ type TextInputType = {
   text: string
   input: any
   setValue: (a) => void
-  style?: { padding: string }
+  className?: string
 }

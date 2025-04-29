@@ -1,16 +1,13 @@
-export const TextInput = ({ text, input, setValue, style }: TextInputType) => (
-  <div className="flex flex-row" style={{ margin: `16px auto` }}>
-    <div style={{ marginRight: 16, height: 48, width: 196, fontSize: 24 }}>
-      {text}
-    </div>
+export const TextInput = ({
+  text,
+  input,
+  setValue,
+  className,
+}: TextInputType) => (
+  <div className="flex flex-row mx-auto my-8">
+    <div className="mr-8 my-auto px-8 text-2xl">{text}</div>
     <input
-      style={{
-        height: 48,
-        width: 196,
-        borderRadius: 32,
-        fontSize: 24,
-        ...style,
-      }}
+      className={`w-48 h-12 border-2 border-black text-2xl rounded-2xl ${className}`}
       type={input.type}
       value={input.value}
       placeholder={input.placeholder}

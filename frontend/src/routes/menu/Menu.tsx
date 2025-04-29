@@ -10,15 +10,7 @@ const Form = () => {
 
   return (
     <form
-      className="absolute w-fit flex flex-col"
-      style={{
-        margin: `10vh auto 0 auto`,
-        padding: 32,
-        left: 0,
-        right: 0,
-        backgroundColor: `#333`,
-        borderRadius: 16,
-      }}
+      className="absolute w-fit flex flex-col mt-[10vh] mr-auto ml-auto p-8 left-0 right-0 rounded-3xl bg-zinc-800"
       onSubmit={(e) => {
         e.preventDefault()
 
@@ -36,7 +28,7 @@ const Form = () => {
         text="Nick"
         input={{ type: "text", value: nick, placeholder: "Your nick" }}
         setValue={setNick}
-        style={{ padding: `4px 12px` }}
+        className="px-2 py-6"
       />
       <TextInput
         text="Color"
@@ -45,13 +37,7 @@ const Form = () => {
       />
       <input
         type="submit"
-        style={{
-          marginTop: 12,
-          border: 0,
-          borderRadius: 8,
-          height: 48,
-          fontSize: 32,
-        }}
+        className="mt-2 mx-6 border-2 border-black py-2 text-2xl rounded-2xl cursor-pointer"
         value="Start Game"
       />
     </form>

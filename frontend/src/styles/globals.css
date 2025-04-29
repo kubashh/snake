@@ -51,3 +51,97 @@ input:hover {
 .w-fit {
   width: fit-content;
 }
+
+.mt-\[10vh\] {
+  margin-top: 10vh;
+}
+.mr-auto {
+  margin-right: auto;
+}
+.ml-auto {
+  margin-left: auto;
+}
+.p-8 {
+  padding: 2rem;
+}
+.left-0 {
+  left: 0;
+}
+.right-0 {
+  right: 0;
+}
+
+.bg-zinc-800 {
+  background-color: #27272a;
+}
+.rounded-3xl {
+  border-radius: 1.5rem;
+}
+.mx-auto {
+  margin-inline: auto;
+}
+.my-8 {
+  margin-block: 2rem;
+}
+.mr-8 {
+  margin-right: 2rem;
+}
+.my-auto {
+  margin-block: auto;
+}
+.px-8 {
+  padding-inline: 2rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 1.3333;
+}
+.px-2 {
+  padding-inline: 0.5rem;
+}
+.py-6 {
+  padding-block: 1.5rem;
+}
+.w-48 {
+  width: 12rem;
+}
+.h-12 {
+  height: 3rem;
+}
+.border-2 {
+  border-style: var(--tw-border-style);
+  border-width: 2px;
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+.border-black {
+  border-color: #000;
+}
+.rounded-2xl {
+  border-radius: 1rem;
+}
+.top-4 {
+  top: 1rem;
+}
+.left-8 {
+  left: 2rem;
+}
+.text-red-600 {
+  color: oklch(57.7% 0.245 27.325);
+}
+.mt-2 {
+  margin-top: 0.5rem;
+}
+.mx-6 {
+  margin-inline: 1.5rem;
+}
+.py-2 {
+  padding-block: 0.5rem;
+}
+.cursor-pointer {
+  cursor: pointer;
+}

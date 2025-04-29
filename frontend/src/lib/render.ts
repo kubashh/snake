@@ -1,5 +1,5 @@
-import { data } from "../../lib/consts"
-import { drawBox, fillBackground } from "../../lib/utils"
+import { data } from "./consts"
+import { drawBox, fillBackground } from "./utils"
 
 const drawMapBorder = (middle: XY, head: XY) => {
   if (!data.ctx) return

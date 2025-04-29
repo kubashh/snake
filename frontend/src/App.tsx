@@ -5,7 +5,9 @@ export const App = () => {
   return (
     <>
       <Menu />
-      <Game />
+      <main>
+        <Game />
+      </main>
     </>
   )
 }
