@@ -1,0 +1,28 @@
+{
+  "name": "snake",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "clear && bun server.ts",
+    "start": "next build && NODE_ENV=production bun server.ts"
+  },
+  "dependencies": {
+    "next": "15.3.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "socket.io": "^4.8.1",
+    "socket.io-client": "^4.8.1"
+  },
+  "devDependencies": {
+    "typescript": "^5",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@tailwindcss/postcss": "^4",
+    "tailwindcss": "^4"
+  },
+  "prettier": {
+    "semi": false,
+    "printWidth": 112
+  }
+}
