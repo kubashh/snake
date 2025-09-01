@@ -1,4 +1,4 @@
-import info from "../../public/info.json" assert { type: "json" }
+import info from "../../public/info.json"
 import type { Snake } from "../game/Snake"
 
 export const boardSize = info.boardSize
