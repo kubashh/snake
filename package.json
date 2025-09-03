@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "clear && DEV=true bun --hot backend/server.ts",
     "start": "clear && bun backend/server.ts",
-    "build": "clear && bun run build.ts"
+    "build": "clear && bun --bun run build.ts"
   },
   "dependencies": {
     "bun-plugin-tailwind": "^0.0.14",
