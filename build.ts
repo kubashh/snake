@@ -1,4 +1,5 @@
-import { type BuildConfig } from "bun"
+#!/usr/bin/env bun
+import { build, type BuildConfig } from "bun"
 import plugin from "bun-plugin-tailwind"
 import { existsSync } from "fs"
 import { rm } from "fs/promises"
@@ -58,10 +59,7 @@ const parseValue = (value: string): any => {
 
 // Magical argument parser that converts CLI args to BuildConfig
 function parseArgs(): Partial<BuildConfig> {
-  const config: Record<string, any> = {
-    minify: true,
-    sourceMap: `none`,
-  }
+  const config: Record<string, any> = {}
   const args = process.argv.slice(2)
 
   for (let i = 0; i < args.length; i++) {
@@ -137,10 +135,15 @@ if (existsSync(outdir)) {
 const start = performance.now()
 
 // Scan for all HTML files in the project
-const entrypoints = ["./frontend/index.html"]
+const entrypoints = [...new Bun.Glob("**.html").scanSync("src")]
+  .map((a) => path.resolve("src", a))
+  .filter((dir) => !dir.includes("node_modules"))
+console.log(
+  `📄 Found ${entrypoints.length} HTML ${entrypoints.length === 1 ? "file" : "files"} to process\n`
+)
 
 // Build all the HTML files
-const result = await Bun.build({
+const result = await build({
   entrypoints,
   outdir,
   plugins: [plugin],
