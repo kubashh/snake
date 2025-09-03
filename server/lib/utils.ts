@@ -4,13 +4,6 @@ export function randInt(min: number, max: number) {
   return Math.floor(Math.random() * (max - min) + min)
 }
 
-export function numToPos(n: number) {
-  return {
-    x: Math.floor(n / 256),
-    y: n - Math.floor(n / 256) * 256,
-  }
-}
-
 function randPos(a = 0) {
   return randInt(a, boardSize - a) * 256 + randInt(a, boardSize - a)
 }

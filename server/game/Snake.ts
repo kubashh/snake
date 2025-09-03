@@ -1,5 +1,5 @@
 import { apples, data, boardSize, snakes } from "../lib/consts.js"
-import { freePos, chance, randInt, createColor, isFreePos, numToPos, encode } from "../lib/utils.js"
+import { freePos, chance, randInt, createColor, isFreePos, encode } from "../lib/utils.js"
 
 export function isNickFree(nick: string) {
   return !nick || !snakes.find((snake) => snake.nick === nick)
@@ -43,8 +43,7 @@ export class Snake {
   }
 
   collide(pos: number) {
-    const { x, y } = numToPos(pos)
-    if (x < 0 || x >= boardSize || pos < 0 || y >= boardSize) {
+    if (0 < pos || (boardSize <= pos && pos < 256) || 256 + boardSize < pos) {
       del(this)
       return true
     }
