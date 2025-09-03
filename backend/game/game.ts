@@ -1,4 +1,4 @@
-import { apples, data, snakes } from "../lib/consts.js"
+import { apples, board, snakes } from "../lib/consts.js"
 import { encode, generateApple } from "../lib/utils.js"
 
 function snakesMove() {
@@ -6,13 +6,13 @@ function snakesMove() {
 }
 
 function genetereBoard() {
-  data.board = ``
-  data.board = Object.keys(apples).reduce((prev, e) => `${prev}${encode(Number(e))}`, ``)
+  board.value = ``
+  board.value = Object.keys(apples).reduce((prev, e) => `${prev}${encode(Number(e))}`, ``)
 
   for (const { body, color } of snakes) {
-    data.board += color
+    board.value += color
     for (const pos of body) {
-      data.board += encode(pos)
+      board.value += encode(pos)
     }
   }
 }

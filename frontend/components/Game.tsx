@@ -1,10 +1,9 @@
 "use client"
 
 import { useEffect, useRef } from "react"
-
 import { data } from "../lib/consts"
 
-export const Game = () => {
+export default function Game() {
   const ref = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {

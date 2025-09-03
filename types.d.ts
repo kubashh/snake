@@ -1,12 +1,6 @@
-/// <reference types="next" />
-/// <reference types="next/image-types/global" />
-
 // Data
 type DataType = {
-  inGame: boolean
-  setInGame: ((arg: boolean) => void) | null
   lastDirection: number
-
   nick: string
   ctx: CanvasRenderingContext2D | null
 }

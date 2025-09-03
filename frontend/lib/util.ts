@@ -1,7 +1,27 @@
 import { appleColor, boardSize, data, pixelSize } from "./consts"
-import { drawBox, fillBackground } from "./util"
 
-const drawMapBorder = (middle: XY, head: XY) => {
+export function decodeToPos(s: string) {
+  return {
+    x: Math.floor(s.charCodeAt(0) / 256),
+    y: s.charCodeAt(0) - Math.floor(s.charCodeAt(0) / 256) * 256,
+  }
+}
+
+function drawBox(x: number, y: number, w: number, h: number, color: string) {
+  if (!data.ctx) return
+
+  if (color) data.ctx.fillStyle = color
+
+  data.ctx.fillRect(x, y, w, h)
+}
+
+function fillBackground() {
+  if (!data.ctx) return
+
+  drawBox(0, 0, data.ctx.canvas.width, data.ctx.canvas.height, `#008`)
+}
+
+function drawMapBorder(middle: XY, head: XY) {
   if (!data.ctx) return
 
   let x = Math.floor(middle.x - head.x * pixelSize)
@@ -23,7 +43,7 @@ const drawMapBorder = (middle: XY, head: XY) => {
   drawBox(x, y, a, b, `#000`)
 }
 
-export const render = (head: XY, board: (XY | string)[]) => {
+export function render(head: XY, board: (XY | string)[]) {
   if (!data.ctx) return
 
   fillBackground()

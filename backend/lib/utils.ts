@@ -8,7 +8,8 @@ function randPos(a = 0) {
   return randInt(a, boardSize - a) * 256 + randInt(a, boardSize - a)
 }
 
-function toHex(n: number) {
+function randHex() {
+  const n = randInt(0, 16)
   return n < 10 ? n.toString() : String.fromCharCode(65 - 10 + n)
 }
 
@@ -44,11 +45,9 @@ export function generateApple() {
 }
 
 export function createColor() {
-  const color = `${colorHash}${toHex(randInt(0, 16))}${toHex(randInt(0, 16))}${toHex(randInt(0, 16))}`
+  const color = `${colorHash}${randHex()}${randHex()}${randHex()}`
 
-  for (const snake of snakes) {
-    if (snake.color === color) return createColor()
-  }
+  if (snakes.find((snake) => snake.color === color)) return createColor()
 
   return color
 }

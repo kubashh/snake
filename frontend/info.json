@@ -1,4 +1,5 @@
 {
+  "adress": "localhost:3000",
   "boardSize": 64,
   "appleColor": "#FF0",
   "colorHash": "ÿ"

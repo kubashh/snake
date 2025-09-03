@@ -1,18 +1,8 @@
-import { apples, data, boardSize, snakes } from "../lib/consts.js"
+import { apples, board, boardSize, snakes } from "../lib/consts.js"
 import { freePos, chance, randInt, createColor, isFreePos, encode } from "../lib/utils.js"
 
 export function isNickFree(nick: string) {
   return !nick || !snakes.find((snake) => snake.nick === nick)
-}
-
-function del(snake: Snake) {
-  snakes.splice(snakes.indexOf(snake), 1)
-
-  for (const pos of snake.body) {
-    if (pos != snake.head() && isFreePos(pos) && chance(0.4)) apples[pos] = true
-  }
-
-  snake.socket.emit(`end`)
 }
 
 export class Snake {
@@ -22,19 +12,18 @@ export class Snake {
   socket
   body
 
-  constructor(nick: string, socket: any) {
+  constructor(nick: string, socket: Bun.ServerWebSocket<unknown>) {
     this.nick = nick
     this.color = createColor()
     this.direction = randInt(0, 4)
     this.socket = socket
 
-    const nbf = freePos(5)
-    this.body = [nbf, nbf, nbf]
+    this.body = [-1, -1, freePos(5)]
 
     snakes.push(this)
   }
 
-  head() {
+  get head() {
     return this.body.at(-1)!
   }
 
@@ -43,8 +32,9 @@ export class Snake {
   }
 
   collide(pos: number) {
-    if (0 < pos || (boardSize <= pos && pos < 256) || 256 + boardSize < pos) {
-      del(this)
+    const y = pos - Math.floor(pos / 256) * 256
+    if (pos < 0 || Math.floor(pos / 256) >= boardSize || y < 0 || boardSize <= y) {
+      this.destroy()
       return true
     }
 
@@ -53,7 +43,7 @@ export class Snake {
 
       for (const pos2 of snake.body) {
         if (pos2 === pos) {
-          del(this)
+          this.destroy()
           return true
         }
       }
@@ -61,7 +51,7 @@ export class Snake {
   }
 
   move() {
-    let newHead = this.head()
+    let newHead = this.head
 
     switch (this.direction) {
       case 0:
@@ -89,7 +79,16 @@ export class Snake {
   }
 
   sendData() {
-    const dataToSend = `${encode(this.head())}${data.board}`
-    this.socket.emit(`board`, dataToSend)
+    this.socket.send(`b${encode(this.head)}${board.value}`)
+  }
+
+  destroy() {
+    snakes.splice(snakes.indexOf(this), 1)
+
+    for (const pos of this.body) {
+      if (pos != this.head && isFreePos(pos) && chance(0.4)) apples[pos] = true
+    }
+
+    this.socket.send(`e`)
   }
 }

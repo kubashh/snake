@@ -12,7 +12,7 @@ function useRefresh() {
 }
 
 class Sig<T> {
-  v: T
+  private v: T
   refresh: () => void = () => {
     throw Error(`Refresh not bind!`)
   }

@@ -1,7 +1,0 @@
-# dependencies
-/node_modules
-
-# next.js
-/.next
-/dist
-next-env.d.ts
