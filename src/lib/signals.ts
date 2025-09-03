@@ -1,17 +1,24 @@
 import { useState } from "react"
 
+type Void = () => void
+
+function useConst<T>(v: T) {
+  return useState<T>(v)[0]
+}
+
 function useRefresh() {
   const f = useState(false)[1]
   return () => f((prev) => !prev)
 }
 
-export class Signal<T> {
+class Sig<T> {
   v: T
-  refresh: (() => void) | undefined
+  refresh: () => void = () => {
+    throw Error(`Refresh not bind!`)
+  }
 
-  constructor(v: T, bind?: boolean) {
+  constructor(v: T) {
     this.v = v
-    if (bind) this.refresh = useRefresh()
   }
 
   bind(fn?: () => void) {
@@ -31,4 +38,16 @@ export class Signal<T> {
     this.v = v
     this.refresh?.()
   }
+}
+
+export type Signal<T> = Sig<T>
+
+export function signal<T>(v: T) {
+  return new Sig(v)
+}
+
+export function useSignal<T>(v: T, f?: Void) {
+  const sig = useConst(new Sig(v))
+  sig.bind(f)
+  return sig
 }

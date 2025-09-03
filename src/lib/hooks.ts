@@ -1,9 +1,9 @@
 import { useEffect } from "react"
 import { socket } from "./socket"
-import { Signal } from "./classes"
+import { useSignal } from "./signals"
 
 export function useSoket() {
-  const isConnected = new Signal(false)
+  const isConnected = useSignal(false)
 
   useEffect(() => {
     const onConnect = () => {

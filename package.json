@@ -2,8 +2,8 @@
   "version": "2.0.1",
   "private": true,
   "scripts": {
-    "dev": "clear && bun server.ts",
-    "start": "next build --turbopack && clear && NODE_ENV=production bun server.ts"
+    "dev": "clear && DEV=true bun server.ts",
+    "start": "next build --turbopack && clear && bun server.ts"
   },
   "dependencies": {
     "next": "15.5.2",

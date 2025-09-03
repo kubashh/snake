@@ -7,7 +7,7 @@ import { start } from "./server/game/game.js"
 const hostname = `192.168.0.55`
 const port = 3000
 
-const app = next({ dev: process.env.NODE_ENV !== `production`, hostname, port })
+const app = next({ dev: process.env.DEV === `true`, hostname, port })
 const handler = app.getRequestHandler()
 
 app.prepare().then(() => {
