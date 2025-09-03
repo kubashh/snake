@@ -1,5 +1,5 @@
 {
-  "adress": "localhost:3000",
+  "adress": "192.168.0.55:3000",
   "boardSize": 64,
   "appleColor": "#FF0",
   "colorHash": "ÿ"
