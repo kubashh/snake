@@ -5,7 +5,8 @@ import { onMessage } from "./websoket.js"
 
 const server = Bun.serve({
   routes: {
-    "/*": index,
+    "/": index,
+    "/*": Response.redirect(`/`),
   },
 
   fetch(req) {
