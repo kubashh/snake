@@ -13,7 +13,7 @@ function useRefresh() {
 
 class Sig<T> {
   private v: T
-  refresh: () => void = () => {
+  refresh: Void = () => {
     throw Error(`Refresh not bind!`)
   }
 
@@ -21,7 +21,7 @@ class Sig<T> {
     this.v = v
   }
 
-  bind(fn?: () => void) {
+  bind(fn?: Void) {
     if (fn) {
       const refresh = useRefresh()
       this.refresh = () => {
