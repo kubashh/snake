@@ -1,4 +1,4 @@
-import index from "../frontend/index.html"
+import index from "../frontend/app/index.html"
 import { start } from "./game/game"
 import { snakes } from "./lib/consts"
 import { onMessage } from "./websoket.js"
@@ -11,7 +11,7 @@ const server = Bun.serve({
 
   fetch(req) {
     // upgrade the request to a WebSocket
-    if (server.upgrade(req)) return
+    if (this.upgrade(req)) return
 
     return new Response(`Upgrade failed`, { status: 500 })
   },

@@ -1,6 +1,6 @@
-import Game from "./components/Game"
-import Menu from "./components/Menu"
-import { socket } from "./lib/consts"
+import Game from "../components/Game"
+import Menu from "../components/Menu"
+import { socket } from "../lib/consts"
 
 export default function App() {
   return (
