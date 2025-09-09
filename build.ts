@@ -2,7 +2,7 @@
 import plugin from "bun-plugin-tailwind"
 import { existsSync } from "fs"
 import { rm } from "fs/promises"
-import path from "path"
+import { relative } from "path"
 
 const outdir = `./dist`
 
@@ -49,7 +49,7 @@ const end = performance.now()
 const buildTime = (end - start).toFixed(2)
 
 const outputTable = result.outputs.map((output) => ({
-  File: path.relative(process.cwd(), output.path),
+  File: relative(process.cwd(), output.path),
   Type: output.kind,
   Size: formatFileSize(output.size),
 }))
