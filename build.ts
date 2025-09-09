@@ -7,7 +7,7 @@ import { relative } from "path"
 const outdir = `./dist`
 
 const config: Bun.BuildConfig = {
-  entrypoints: [`./src/app/index.html`],
+  entrypoints: [`./frontend/app/index.html`],
   outdir,
   plugins: [plugin],
   minify: true,
