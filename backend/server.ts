@@ -1,7 +1,7 @@
 import index from "../frontend/app/index.html"
 import { start } from "./game/game"
 import { snakes } from "./lib/consts"
-import { onMessage } from "./websoket.js"
+import { onMessage } from "./websoket"
 
 const server = Bun.serve({
   routes: {

@@ -1,5 +1,5 @@
-import { apples, board, snakes } from "../lib/consts.js"
-import { encode, generateApple } from "../lib/utils.js"
+import { apples, board, snakes } from "../lib/consts"
+import { encode, generateApple } from "../lib/utils"
 
 function snakesMove() {
   for (const snake of snakes) snake.move()

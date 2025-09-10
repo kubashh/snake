@@ -1,4 +1,4 @@
-import { apples, boardSize, colorHash, snakes } from "./consts.js"
+import { apples, boardSize, colorHash, snakes } from "./consts"
 
 export function randInt(min: number, max: number) {
   return Math.floor(Math.random() * (max - min) + min)

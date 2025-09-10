@@ -1,5 +1,3 @@
-"use client"
-
 import { data, inGame, socket } from "../lib/consts"
 
 function Form() {

@@ -1,5 +1,5 @@
-import { isNickFree, Snake } from "./game/Snake.js"
-import { snakes } from "./lib/consts.js"
+import { isNickFree, Snake } from "./game/Snake"
+import { snakes } from "./lib/consts"
 
 export function onMessage(ws: Bun.ServerWebSocket<unknown>, message: string) {
   const data = message.slice(1)

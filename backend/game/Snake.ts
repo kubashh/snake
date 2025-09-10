@@ -1,5 +1,5 @@
-import { apples, board, boardSize, snakes } from "../lib/consts.js"
-import { freePos, chance, randInt, createColor, isFreePos, encode } from "../lib/utils.js"
+import { apples, board, boardSize, snakes } from "../lib/consts"
+import { freePos, chance, randInt, createColor, isFreePos, encode } from "../lib/utils"
 
 export function isNickFree(nick: string) {
   return !nick || !snakes.find((snake) => snake.nick === nick)
