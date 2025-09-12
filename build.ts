@@ -50,7 +50,6 @@ const buildTime = (end - start).toFixed(2)
 
 const outputTable = result.outputs.map((output) => ({
   File: relative(process.cwd(), output.path),
-  Type: output.kind,
   Size: formatFileSize(output.size),
 }))
 
