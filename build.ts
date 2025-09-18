@@ -57,4 +57,4 @@ console.table(outputTable)
 console.log(`\n✅ Build completed in ${buildTime}ms\n`)
 
 const file = Bun.file(`.nojekyll`)
-if (file.exists()) file.delete()
+if (await file.exists()) await file.delete()
