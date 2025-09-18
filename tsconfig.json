@@ -10,7 +10,7 @@
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./backend/*", "./frontend/*"]
+      "@/*": ["./backend/*", "frontend/*"]
     }
   },
   "exclude": ["dist", "node_modules"]
