@@ -55,6 +55,3 @@ const outputTable = result.outputs.map((output) => ({
 
 console.table(outputTable)
 console.log(`\n✅ Build completed in ${buildTime}ms\n`)
-
-const file = Bun.file(`.nojekyll`)
-if (await file.exists()) await file.delete()
